@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+.datos_contacto{
+	float:left;
+	border:#CCCCCC solid 1px;
+	border-radius:4px;
+	padding:10px;
+	margin:15px;
+	margin-left:0;
+	width:17%;
+	padding-top:0;
+}
+.datos_contacto h1{
+	color:#31C5DA;
+	font-size:18px;
+	border-top:#31C5DA solid 4px;
+	margin-top:0;
+	margin-left:-10px;
+	margin-right:-10px;
+	margin-bottom:10px;
+	padding:10px;
+}
+.datos_contacto .btn.small{
+	width:40%;
+}
+
+/*MODAL DETALLE*/
+.datos_detalle{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.datos_detalle .nombre{
+	color:#31C5DA;
+	font-size:24px;
+	margin-top:0;
+	margin-bottom:10px;
+}
+.datos_detalle li{
+	border-bottom:none !important;
+}
+.datos_detalle label, .datos_detalle .input{
+	display:inline-block;
+}
+
+.bolita {
+    background-color: steelblue;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: antiquewhite;
+}
+
+#geocomplete { width: 200px}
+
+.map_canvas { 
+  width: 600px; 
+  height: 400px; 
+  margin: 10px 20px 10px 0;
+}
+
+.backp {
+    float: right;
+    margin: 0 auto;
+    margin-right: 10px;
+}

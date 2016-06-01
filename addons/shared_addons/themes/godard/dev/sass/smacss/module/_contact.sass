@@ -1,0 +1,57 @@
+
+
+
+//@Contact
+
+
+main.contact
+
+	#map_wrapper,
+	.mapping
+		height: 310px
+	
+	form
+		padding: 10px
+
+	label.error
+		+co($error)
+		+tRight
+		left: $in
+		right: 0
+		+fs(1, 100%, 300)
+		
+	#map_wrapper
+		border: 4px solid $gray-light
+		+noScroll
+	.contact-data
+		+mt($space)
+		+bg($color)
+		+co($white)
+		+mb(20px)
+		padding: 10px $space 10px
+		h3
+			+mb(20px)
+			+tCenter
+			+pb(10px)
+			+fs(1.6, 100%, 400)
+			+upper
+			+bb(thin solid $white)
+		ul
+			+tCenter
+		li
+			margin: 0 5px
+			+mb(10px)
+			+ib
+			+fs(1.4, 100%, 400)
+			+wauto
+			i
+				+co($white)
+	input[type="submit"]
+		+bg(none)
+		+pointer
+		+noBorder
+		+white
+		+ls(.1rem)
+		
+	.datos_contac
+		+mt(20px)

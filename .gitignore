@@ -1,0 +1,16 @@
+.DS_Store
+.buildpath
+.project
+.settings
+.idea
+assets/cache/*
+system/cms/cache/*
+system/cms/config/database.php
+system/cms/logs/log-*.php
+nbproject/
+material/
+system/cms/config/config.php
+addons/shared_addons/themes/picasso/dev/node_modules
+addons/shared_addons/themes/picasso/dev/node_modules/*
+addons/shared_addons/themes/picasso/dev/.sass-cache/*
+addons/shared_addons/themes/picasso/dev/.sass-cache

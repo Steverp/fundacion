@@ -1,0 +1,447 @@
+.myPanel
+	+mb(20px)
+	+fs(1.5, 150%, 300)
+	.container
+		+pb(20px)
+		+bb(thin solid $gray-light - 20)
+
+main
+	+bc(white)
+	+mt(0px)
+
+
+	
+.panel
+	margin: 0
+	padding: 20px 0
+	+block
+	+fs(1.7, 150%, 400)
+	+bg($gray-light - 5)
+	
+
+//@Home
+
+
+section.logos
+	+bg($white)
+	+tCenter
+	padding: 30px 0
+	+relative
+	+z(999)
+	img
+		+ib
+		+va
+		margin: 0 30px 0px
+		height: 44px
+		+grayFilter(0)
+		+transition(.6s)
+		+pointer
+	.text
+		+fs(1.8, 130%, 300)
+		+co($gray-dark)
+		+ml(10px)
+		width: 50%
+		+ib
+		+tLeft
+	+hover
+		img
+			+grayFilter(0)
+	a
+		+ib
+		+va
+		+fs(2, 100%, 300)
+		+co($gray-dark)
+		+mt(0px)
+	.actions
+		+ib
+		+va
+		+tLeft
+		width: 30%
+		a
+			+block
+			+co($gray-dark)
+
+	
+			+fs(1.8, 100%, 100)
+			margin: 0 0 5px
+			+hover
+				+co($color - 30)
+			i
+				+mr(7px)
+				+ib
+				+va
+				+mt(-3px)
+				+fs(.8)
+				+co($color)
+		
+	
+
+section.quotes
+	+relative
+	+bg($gray-light - 10)
+	+tCenter
+	+noScroll
+	padding: 30px 0
+	.text
+		+fs(2.2, 160%, 100)
+		+co($gray - 30)
+		+tCenter
+		+noScroll
+		+relative
+		padding: 0 100px
+		+z(9)
+	.icon
+		+bot-left(50%, 15%)
+		+size(80px)
+		margin: 0 0 -40px 0
+		+z(1)
+		i
+			+fs(8)
+			+co($gray-light - 20)
+		
+	.icon2
+		+bot-right(50%, 15%)
+		+size(80px)
+		+rotate(180)
+		margin: 0 0 -40px 0
+		+z(1)
+		i
+			+fs(8)
+			+co($gray-light - 20)
+	
+.videosGallery
+	.item-gallery
+		+relative
+		+tCenter
+		padding: 10px
+		+w100
+		+bg($gray-light)
+		.icon
+			+top-left(50%, 50%)
+			+size(60px)
+			+tCenter
+			+radius(100%)
+			margin: -30px 0 0 -30px
+			pointer-events: none
+			i
+				+f(5rem)
+				+co($white)
+				+mt(15px)
+				+ml(10px)
+
+	.big
+		padding: 20px
+		+mb(10px)
+		.icon
+			+top-left(50%, 50%)
+			+size(80px)
+			+tCenter
+			+bg($color)
+			+radius(100%)
+			margin: -40px 0 0 -40px
+			pointer-events: none
+			i
+				+f(5rem)
+				+co($white)
+				+mt(15px)
+				+ml(10px)
+
+		
+.modalx
+	h2
+		+co($color)
+		+upper
+		+mb(20px)
+		+fs(2.6, 100%, 500)
+	.modal-close
+		+top-right(10px, 10px)
+	.steps
+		+tCenter
+		+mt(20px)
+		.step
+			padding: 5px 0
+			+bb(thin solid $gray)
+			.number
+
+				+radius(100%)
+				+pt(17px)
+				+ib
+				+size(50px)
+				+co($white)
+				+patt(5)
+				+f(2rem)
+				+mr(10px)
+				
+			.text
+				+ib
+				width: 90%
+				+tLeft
+			+nth1
+				.number
+					+bc($color + 60)
+			+nth2
+				.number
+					+bc($color + 50)
+			+nth3
+				.number
+					+bc($color + 40)
+			+nth4
+				.number
+					+bc($color + 30)
+		
+			+nth5
+				.number
+					+bc($color + 20)
+		
+			+nth5
+				.number
+					+bc($color + 10)
+		
+		
+main.trip
+	figure
+		height: 300px
+		+w100
+		+background
+		border: 4px solid $gray-light
+		+mb(20px)
+	
+section.numbers
+	height: 170px
+
+	+noScroll
+	+bc($colorSec)
+	+patt(5)
+	+co($white)
+	.otherSlide
+		height: 120px
+		.number
+			+fs(7, 100%, 400)
+			+mt(20px)
+			+ib
+			+co(white)
+		.data
+			+fs(4, 100%, 400)
+			+ib
+			+relative
+			+mt(40px)
+			+ml(20px)
+			+z(9)
+		.otherNumber
+			+fs(12, 100%, 400)
+			+bot-right(0px, 10%)
+			+opa(.2)
+			+z(8)
+	h2
+		+tCenter
+		+fs(3.2, 100%, 400)
+		+pt(20px)
+		+block
+		+co($colorTer + 10)
+	
+	
+main.askUs
+	+background
+	+relative
+	height: 580px
+	figure
+		height: 500px	
+		+background(contain)
+		background-position: right bottom
+	.consultant
+		+top-right
+		+size(400px 100%)
+		+opa(0)
+		+transition(.4s)
+		.caption
+			+pb(20px)
+			+bb(thin solid $gray)
+			+tRight
+			+top-right(60px, 280px)
+			width: 220px
+			h2
+				+mb(20px)
+			.text
+				+font-text
+		
+		
+	.form
+		+top-left(50px, 0)
+		+radius(4px)
+		padding: 20px
+		width: 400px
+		height: 320px
+		+bgBlack(.8)
+		+none
+		+co($white)
+		h2
+			+mb(20px)
+			+co($white)
+		.text
+			+co($white)
+			+font-text
+		textarea
+			margin: 20px 0 0
+			+radius(4px)
+			resize: none
+			height: 100px
+			+transition(.4s)
+			+co(white $i)
+			+font-text
+			padding: 5px
+			border: thin solid $white
+			+focus
+				border: thin solid $colorTer
+		.btn
+			+bg($blue)
+			+mt(20px)
+		label
+			+mb(10px)
+			+block
+		select
+			+block
+			+mb(20px)
+	
+	.consultant-active
+		+opa(1)
+		+transition(.4s)
+		
+	.form-active
+		+block
+	
+main.process
+	.help
+		+bg($gray-light)
+		+mt(20px)
+		border: thin solid $gray-light - 10
+		padding: 8px 10px
+		+fs(1.4, 130%, 300)
+		
+	.status
+		+co($colorQua)
+	.btn-link
+		+fs(1.4, 100%, 300)
+		+co($color)
+		+hover
+			+co($color - 20)
+	.row
+		+mb(0)
+	.panel
+		+tLeft
+		.icon
+			+size(40px)
+			+ib
+			+mt(5px)
+			+mr(20px)
+			+radius(100%)
+			+bg($color)
+			+tCenter
+			i
+				+co($white)
+				+fs(3)
+				+mt(5px)
+		p
+			+ib
+			width: 84%
+			+fs(1.6, 150%, 300)
+			+tLeft
+		span
+			+co($color)
+			+fw(700)
+	
+	.filters
+		margin: 20px 0
+		+bg($gray-light)
+		+pb(20px)
+		.input-field
+			margin: 5px 20px
+		.btn
+			+mr(20px)
+		h2
+			+bg($color)
+			+co($white)
+			padding: 10px
+			i
+				+fs(2)
+				+mr(10px)
+		select
+			height: 35px
+			+bb(1px solid $color)
+			+mb(20px)
+		.text
+			margin: 10px 20px 20px
+			+pb(10px)
+			+fs(1.4, 130%, 300)
+			+bb(thin solid $gray-light - 20)
+
+	
+	table
+		+mt(20px)
+		+mb(60px)
+		+bg(white)
+		thead
+			+bg($color)
+			+co($white)
+
+			tr
+				th
+					+radius(0)
+					+fs(1.8, 100%, 300)
+					+fw(300 $i)
+		th, td
+			padding: 10px 20px
+			+fs(1.4, 100%, 300)
+			+fw(300 $i)
+		.btn
+			+ib
+		a
+			+fs(1.4, 100%, 300)
+			+hover
+				+co($color - 20)
+		
+		
+		
+.detail.process
+	+pb(20px)
+	.process-status
+		+bg($gray-light)
+		padding: 20px
+		.autor
+			+bb(thin dotted $gray-light - 30)
+			padding: 0 0 10px
+		
+		h3
+			+upper
+			margin: 15px 0
+		a
+			+fs(1.4, 130%, 300)
+			+co($color)
+			+block
+			+mb(5px)
+			+hover
+				+co($color - 20)
+			
+			i
+				+mr(10px)
+		
+	.intro
+		+bg($colorSec + 10)
+		+co($gray-dark)
+		padding: 20px
+		+mb(20px)
+		+fs(1.6, 150%, 500)
+	
+	.text
+		+fs(1.6, 150%, 300)
+	
+	
+.modal-content
+	+relative
+	video
+		width: 100% $i
+		height: auto $i
+	.btn-floating
+		+top-right(5px, 5px)
+		i
+			+fs(2)
+			+mt(6px)

@@ -1,0 +1,239 @@
+
+//@Products
+
+main.products
+	.card-reveal
+		+font-text
+		i
+			+co($colorSec)
+	.row
+		+mb(0)
+	.panel
+		+mb(20px)
+	article
+		+hover
+			figure
+				i
+					+co($color)
+
+		p
+			+mt(20px)
+		.btn
+			+co(white)
+
+			+f(1.2rem)
+		
+		h2
+			+fs(1.6, 130%, 700)
+			+m0
+			+co($colorSec)
+			+pointer
+			+transition(.2s)
+			padding: 10px 0
+			+hover
+				+co($colorSec)
+	
+			span
+				+ib
+				width: 88%
+				+va
+
+			i
+				+ib
+				+va
+
+	.card-action a
+		+block
+		margin: 0 auto
+		+tCenter
+		//		+after
+		//			+content('')
+		//			+size(4px 100%)
+		//			+bg($colorSec)
+		//			+block
+		//			+top-right(0, 4px)
+		//		+before
+		//			+content('')
+		//			+size(4px 100%)
+		//			+bg($colorSec)
+		//			+block
+		//			+top-right(0, 10px)
+	
+	
+			
+	figure
+		+w100
+		+tCenter
+		+background()
+		height: 160px
+		+relative
+		+pointer
+		i
+			+transition
+	
+	.price
+		+bg($colorSec)
+		padding: 10px
+		+top-right(20px, 0)
+		+none
+		+white
+		+radius-custom(5px, 0, 0, 5px)
+		i
+			+co($white $i)
+	
+
+	.card-action
+		+tCenter
+		padding: 10px $i
+	
+	
+	.card-title
+		+lh(100%)
+	
+	i
+		+pointer
+	
+	.btn
+		+borderFix
+		i
+			+co(white)
+			+borderFix
+	
+	.card-content
+		padding: 10px $i
+	
+	
+main.products.categories
+	ul.list-group
+		+mb(20px)
+		+mt(5px)
+		> li
+			+bb(1px solid $gray-light)
+
+			+transition
+			> a
+				+block
+				padding: 15px 10px
+				+co($gray-dark)
+				+bg($gray-light + 20)
+				+transition(.2s)
+				+fs(1.4, 100%, 400)
+				+hover
+					+bg($colorSec)
+					+white
+					+before
+						+white
+			
+			> ul
+				+none
+		
+		> .class_active
+			margin: 0 $i
+			> a
+				+bg($colorSec)
+				+white
+				+before
+					+white
+
+	
+main.products.categories
+	ul.list-group
+		+bg($gray-light)
+		> li
+			a
+				+before
+					font-family: fontAwesome 
+					color: $gray-dark
+					+mr(10px)
+					content: '\f054'	
+				i
+					+none
+		
+			+nth1
+				a
+					+before
+						content: '\f0ae'		
+
+		
+		.ico-more
+			+none
+	.distribuitors
+		.element-item
+			width: 50%
+			.text
+				width: 100%
+
+.gallery-images
+	h2
+		margin-bottom: 18px
+		font-weight: 500
+		padding-bottom: 18px
+		width: 193px
+		color: #20607a !important
+	.image
+		position: relative
+		overflow: hidden
+		height: 220px
+		margin-bottom: 10px
+		a
+			position: absolute
+			width: 100%
+			height: 160px
+			top: 0
+		figure
+			height: 220px
+			background-repeat: no-repeat
+			background-position: center
+			background-size: cover
+		.fondo
+			top: -100%
+			left: 0
+			opacity: 1
+			background-color: #20607a !important
+			position: absolute
+			height: 95%
+			width: 98%
+			transition: all 0.5s ease
+			i
+				position: absolute
+				top: 87px
+				left: 180px
+				font-size: 38px
+				color: #c6c6c6
+				cursor: pointer
+
+
+		&:hover		
+			.fondo
+				top: 6px
+				left: 0
+				
+main.detail
+	.list-detail
+		background-color: #3683a3 !important
+		min-height: 224px
+		height: auto
+		h2
+			background-color: #20607a !important
+			color: #fff
+			padding: 15px
+			text-align: center
+			font-weight: 200
+		p
+			color: #fff
+			padding: 20px
+			i
+				margin-right: 5px
+
+		ul
+			li
+				color: #fff
+				padding: 10px
+				font-size: 1.5rem
+				&:hover
+					background-color: #3683a3 !important
+					color: #fff
+				i
+					margin-right: 5px
+
+			

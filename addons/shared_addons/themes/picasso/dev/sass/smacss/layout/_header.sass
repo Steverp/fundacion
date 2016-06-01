@@ -1,0 +1,248 @@
+.social
+	+top-right(200px, 10px)
+	+fixed
+	+ib
+	width: auto
+	margin: 20px 2px 0 0
+	+z(99999999999 $i)
+	a
+		+block
+		+size(36px)
+		+bg($color)
+		+tCenter
+		+radius(100%)
+		+mb(5px)
+		i
+			+fs(1.8)
+			+co($white)
+			+mt(9px)
+		+hover
+			+bg($color + 30)
+		+nth2
+			+bg($facebook)
+			+hover
+				+bg($facebook + 20)
+		+nth3
+			+bg($twitter)
+			+hover
+				+bg($twitter + 20)
+		+nth4
+			+bg($linkedin)
+			+hover
+				+bg($linkedin + 20)
+
+//@Header
+
+=preheader-active
+	@if $preheader-active
+		
+		+bt(2px solid $header-colorBorder)
+
+	@else
+		
+
+=header-shadow
+	@if $header-shadow
+		@debug "$header-shadow is #{$header-shadow}"
+		box-shadow: 0px 2px 3px rgba(80, 80, 80, .5)
+
+	@else
+		@debug "$header-shadow is #{$header-shadow}"
+
+header.fixed
+	+z(99999)
+	+w100
+	+top-left
+	+fixed
+
+header
+	+relative
+	+z(999)
+	+w100
+	box-shadow: 0px 2px 3px rgba(80, 80, 80, .5)
+
+//.myHeader
+//	+transition(.6s)
+//	+z(99999999 $i)
+//	+fixed
+//	+w100
+//	.headerx
+//		height: 83px
+//		nav
+//			+mt(15px)
+//		.logo
+//			margin: 5px 0
+//			height: 70px
+.myHeader
+	-webkit-transition: all 1s ease-in-out
+	-moz-transition: all 1s ease-in-out
+	-ms-transition: all 1s ease-in-out
+	-o-transition: all 1s ease-in-out
+	+z(99999999 $i)
+	+fixed
+	+w100
+	.logo
+		height: 80px $i
+	nav
+		+mt(15px)
+.headerx
+	background-color: #fff
+	box-shadow: 0px 3px 3px 0px rgba(6, 0, 36, 0.38)
+	+contain
+	+fixed
+	+z(999)
+	+w100
+	+background
+	height: auto
+	.row
+		+mb(0)
+	.logo
+		margin: 10px 0
+		+block
+		+w100
+		height: 110px
+		+background(contain)
+		+bp(center, center)
+
+
+//header.fixed
+//	+header-shadow
+//
+//	+top-left()
+//	+w100
+//	+z(99)
+//	.row
+//		+mb(0)
+//		.col
+//			+p0
+//
+//	
+//header.noFixed
+//	+relative
+//	+w100
+//	nav
+//		+mt(40px)
+//	.logo
+//		height: 80px
+//		margin: $space-mini 0	
+//	li
+//		a
+//			+co($color)
+//			+transition(.2s)
+//			+hover
+//				+co($colorSec)
+	
+.menu-top
+	+wauto
+	+ib
+	+mt(20px)
+	+noFont
+	.myBtn
+		+co($white)
+		height: 35px
+		+ib
+		+pr(10px)
+		margin:  0 2px
+		+bg($colorTer)
+		+fs(1.5, 37px, 300)
+		+transition(.2s)
+		span
+			+size(37px 35px)
+			pointer-events: none
+			+ib
+			+bc($colorQua)
+			+mr(10px)
+			+tCenter
+			i
+				+f(1.8rem)
+		i
+			margin: 0 10px
+			+f(1rem)
+		+hover
+			+bg($colorTer + 20)
+		+nth1
+			+bg($color)
+			span
+				+size(40px 35px)
+				+bg($color + 20)
+			+hover
+				+bg($color + 20)
+	
+	//	+tRight
+	//	+noFont
+	//	+bg($gray-light - 10)
+	//	+wauto
+	//	+ib
+	//	+mt(10px)
+	//	padding: 10px 10px
+	//	
+	//	.btn-link
+	//		+fs(1.5, 100%, 300)
+	//		+co($gray - 20)
+	//		+ib
+	//		padding: 0 15px
+	//		margin: 0
+	//		+transition(.2s)
+	//		i
+	//			+mr(8px)
+	//		+nth1
+	//			+br(thin dotted $gray - 10)
+	//		+nth2
+	//			+br(thin dotted $gray - 10)
+	//		+hover
+	//			+co($color)
+
+
+.headerx
+	.slogan
+		+ib
+		+va
+		+tLeft
+		+mt(18px)
+		+ml(20px)
+		+fs(2.2, 100%, 700)
+		+co($color)
+		span
+			+block
+			+fw(300)
+
+	
+	
+	.actions
+		+noFont
+		margin: 12px -13px 10px 0
+		.myBtn
+			+co($white)
+			height: 35px
+			+ib
+			+pr(10px)
+			margin:  0 5px
+			+bg($colorTer)
+			+fs(1.5, 37px, 300)
+			+transition(.2s)
+			span
+				+size(37px 35px)
+				pointer-events: none
+				+ib
+				+bc($colorQua)
+				+mr(10px)
+				i
+					+f(1.8rem)
+			i
+				margin: 0 10px
+				+f(1rem)
+			+hover
+				+bg($colorTer + 20)
+			+nth2
+				+bg($color)
+				span
+					+size(40px 35px)
+					+bg($color + 20)
+				+hover
+					+bg($color + 20)
+		
+.fix
+	position: relative
+	height: 130px
+	display: block
+	width: 100%

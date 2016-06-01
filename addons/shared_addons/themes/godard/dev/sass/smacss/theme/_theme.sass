@@ -1,0 +1,229 @@
+#logo
+	height: auto
+	+bg($color)
+
+nav#primary
+	+cero
+	+w100
+	+noScroll
+	+bg($gray-light)
+	> ul
+		margin: 0
+		> li
+			+bb(thin solid $gray-light - 20)
+			> a
+				+w100
+				+cero
+				+font
+				padding: 10px 10px 10px 20px
+				+noShadow
+				text-shadow: none
+				+fs(1.6, 100%, 400)
+				+block
+				+transition(.4s)
+				+co($gray - 20)
+				//				background-image: none
+				+hover
+					+co($color)
+				+after
+					+none
+		#dashboard-link
+			+cero
+	
+.topbar ul li ul
+	+bg($gray-light + 5)
+	li
+		+bb(thin solid $gray-light - 10)
+		a
+			+w100
+			+cero
+			+font
+			padding: 10px 10px 10px 30px $i
+			+noShadow
+			+gray
+			+transition(.4s)
+			text-shadow: none
+			+fs(1.4, 100%, 300)
+			+block
+			+bg(none)
+
+			+hover
+				+co($color)
+				+bg(none)
+
+
+.topbar ul li ul li.first
+	+cero
+
+.topbar ul li.open a.menu
+	+co($color)
+
+.topbar ul li
+	a
+		+before
+			font-family: fontAwesome 
+			color: $gray
+			+mr(10px)
+			+transition(.4s)
+		+hover
+			+before
+				+co($color)
+	+nth1
+		a
+			+before
+				content: '\f0e4'
+		> ul
+				a
+					+before
+						content: '\f0e4'
+	+nth2
+		a
+			+before
+				content: '\f0ea'
+		> ul
+			a
+				+before
+					content: '\f0ea'
+	
+	+nth3
+		a
+			+before
+				content: '\f00a'	
+		> ul
+			a
+				+before
+					content: '\f00a'
+	+nth4
+		a
+			+before
+				content: '\f233'	
+		> ul
+			a
+				+before
+					content: '\f233'
+	+nth5
+		a
+			+before
+				content: '\f0c0'	
+			> ul
+			a
+				+before
+					content: '\f0c0'
+	+nth6
+		a
+			+before
+				content: '\f085'	
+			> ul
+			a
+				+before
+					content: '\f085'
+	+nth7
+		a
+			+before
+				content: '\f0d0'	
+		> ul
+			a
+				+before
+					content: '\f0d0'
+	+nth8
+		a
+			+before
+				content: '\f011'	
+			> ul
+			a
+				+before
+					content: '\f011'
+	
+.menu-btn	
+	+bg(none)
+	+size(40px)
+	+cero
+	margin: 0 0 0 -10px
+	+relative
+	+before
+		font-family: fontAwesome 
+		color: $gray
+		+f(3rem)
+		+block
+		+bot-left(5px, 0)
+		+cero
+		+transition(.4s)
+		content: '\f061'
+	+hover
+		+before
+			+co($color)
+
+.menu-btn.active
+	+before
+		content: '\f0c9'
+
+.topbar ul li a.menu
+	+bg(url(../../img/select-arrow.png))
+	background-repeat: no-repeat
+	background-position: 220px 2px
+
+
+.topbar ul li.open a.menu
+	+bg(url(../../img/select-arrow.png))
+	background-repeat: no-repeat
+	background-position: 220px 2px
+
+.topbar ul li ul li a
+	+before
+		content: '\f192' $i
+		+fs(1)
+
+.btn.small
+	padding: 0 10px
+	height: 33px $i
+	+fs(1.4, 33px, 300)
+	+radius(4px)
+	
+
+.btn.blue
+	+bg($color)
+
+.langs
+	+tRight
+	margin: 10px
+	span
+		+ib
+		+va
+		+fs(1.4, 100%, 300)
+		margin: 7px 5px 0 0
+		+co($gray-dark)
+	form
+		+va
+		+ib
+	img
+		+size(30px)
+	
+.leads 
+	h2
+		+co($gray-dark)
+	.text
+		+fs(1.6, 150%, 300)
+		+co($gray-dark)
+	.btn-floating
+		+mb(20px)
+
+
+	.block
+		display: inline-block
+		position: relative
+		+noShadow
+		width: auto
+		+noScroll
+	
+	tfoot
+		+none
+	
+	table tbody tr:nth-child(2n+1) td
+		+bg($white !important)
+
+.myAdds
+	h2
+		+co($gray-dark)
+	.add
+		+mb(10px)
+		height: 150px

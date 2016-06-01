@@ -1,0 +1,45 @@
+@import ../main
+
+//@AboutUs
+
+main.aboutUs
+	.row
+		+grid
+		+m0
+		
+	.tabs-list
+		flex: 0 25%
+		+mr($space)
+		+mt(-10px)
+	.tab-content
+		flex: 1
+	.tabs
+		li
+			width: 100% $i
+			a
+				+fs(1.6, 150%, 700)
+				+tLeft
+				+ib
+				+va
+				padding: 10px $i
+				+bb(2px solid white)
+				i
+					+ib
+					+va
+					+mt(-5px)
+			.active 
+				+co($color $i)
+				+bb(2px solid $color)
+		
+	.tabs .indicator
+		+bg($color $i)
+		+none
+	
+main.aboutUs
+	+fluid
+		.tabs-list
+			flex: 100%
+			+mr(0)
+			+mb($space)
+		.tab-content
+			flex: 100%

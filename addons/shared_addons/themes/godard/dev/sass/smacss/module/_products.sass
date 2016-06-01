@@ -1,0 +1,149 @@
+
+//@Products
+
+main.products
+	.row
+		+mb(0)
+	article
+		+hover
+			figure
+				i
+					+co($color)
+		h2, p
+			+co($gray $i)
+		p
+			+mt(20px)
+		.btn
+			+co(white)
+
+			+f(1.2rem)
+		
+		h2
+			+fs(1.6, 100%, 700)
+			+m0
+			+co($gray)
+	
+			span
+				+ib
+				width: 88%
+				+va
+
+			i
+				+ib
+				+va
+
+	.card-action a.btn
+		+block
+		margin: 0 auto
+		+tCenter
+		//		+after
+		//			+content('')
+		//			+size(4px 100%)
+		//			+bg($colorSec)
+		//			+block
+		//			+top-right(0, 4px)
+		//		+before
+		//			+content('')
+		//			+size(4px 100%)
+		//			+bg($colorSec)
+		//			+block
+		//			+top-right(0, 10px)
+	
+	
+			
+	figure
+		+w100
+		+tCenter
+		+background()
+		height: 160px
+		+relative
+		+pointer
+		i
+			+transition
+	
+	.price
+		+bg($colorSec)
+		padding: 10px
+		+top-right(20px, 0)
+		+none
+		+white
+		+radius-custom(5px, 0, 0, 5px)
+		i
+			+co($white $i)
+	
+
+	.card-action
+		+tCenter
+		padding: 10px $i
+	
+	
+	.card-title
+		+lh(100%)
+	
+	i
+		+pointer
+	
+	.btn
+		+borderFix
+		i
+			+co(white)
+			+borderFix
+	
+	.card-content
+		padding: 10px $i
+	
+	
+main.products.categories
+	ul.list-group
+		+mb(20px)
+		+mt(5px)
+		> li
+			+bb(1px solid $gray-light)
+
+			+transition
+			> a
+				+block
+				padding: 15px 10px
+				+co($gray)
+				+bg($gray-light + 20)
+				+transition(.2s)
+				+fs(1.4, 100%, 400)
+				+hover
+					+bg($colorSec)
+					+white
+					+before
+						+white
+			
+			> ul
+				+none
+		
+		> .class_active
+			margin: 0 $i
+			> a
+				+bg($colorSec)
+				+white
+				+before
+					+white
+
+	
+main.products.categories
+	ul.list-group
+		+bg($gray-light)
+		> li
+			a
+				+before
+					font-family: fontAwesome 
+					color: $gray
+					+mr(10px)
+					content: '\f054'	
+				i
+					+none
+		
+			+nth1
+				a
+					+before
+						content: '\f0ae'		
+
+		
+		.ico-more
+			+none

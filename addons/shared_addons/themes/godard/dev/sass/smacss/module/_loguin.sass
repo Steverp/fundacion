@@ -1,0 +1,111 @@
+//@loguin
+body.loguin
+	+bc($color)
+	+patt(4)
+main.loguin
+
+	+noScroll
+	img
+		+centered(5%,0)
+		+block
+		width: 20%
+	.box
+		+bg($gray-light)
+		+radius(4px)
+		padding: 20px
+		border: thin solid $gray-light - 20
+		.form
+			button
+				+right
+				+mt(10px)
+			.remember
+				+left
+				width: 40%
+
+		.help-info
+			+br(thin solid $gray-light - 20)
+			+pr(20px)
+			.text
+				+fs(1.4, 140%, 300)
+				+co($gray-dark + 20)
+			h1
+				+upper
+				+fs(2.6, 120%, 400)
+				+mb(10px)
+				+co($gray-dark)
+		
+.help
+	+bg($gray-light - 10)
+	border: thin solid $gray-light - 20
+	padding: 10px
+	+mt(10px)
+	.icon
+		+ib
+		+va
+		i
+			+mr(10px)
+			+fs(3)
+			+co($gray-dark)
+	span
+		+ib
+		+va
+		width: 80%
+		+fs(1.4, 130%, 400)
+		+co($gray-dark)
+		
+		
+.btn	
+	+f(1.6rem)
+	+fw(300)
+	height: 40px $i
+	+radius(4px)
+	+focus
+		+bg($color + 10)
+		+noShadow
+
+h2
+	+fs(2.4, 100%, 300)
+	+co($white)
+	+block
+	+tCenter
+	+upper
+	+mb(20px)
+
+.add
+	+bc($colorSec)
+	+fs($white)
+	+block
+	padding: 20px
+	+radius(4px)
+	+tCenter
+	+transition(.2s)
+	height: 120px
+	+hover
+		+bc($colorSec - 20)
+	h3
+		+fs(1.8, 100%, 400)
+		+co($white)
+		+block
+		+mb(10px)
+		+tCenter
+		+upper
+	.text
+		+fs(1.5, 120%, 100)
+		+co($white)
+		+tLeft
+	
+footer.loguin
+	+bot-left
+	+z(99999)
+	+w100
+	padding: 10px 0
+	.ahorranito
+		+tCenter
+	
+.alert, .alert-error, .alert-success
+	width: 100% $i
+	+bg($colorTer)
+	+co($gray-dark)
+	+tCenter
+	+fs(1.6, 100%, 300)
+	margin: 0 0 20px

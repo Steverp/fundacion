@@ -1,0 +1,24 @@
+<div class="top_up"><i class="fa fa-angle-double-up"></i></div>
+<footer>
+    <section class="marco">
+      <!-- widget chat -->
+        {{ theme:partial name="chat" }} 
+      <!-- fin widget chat -->  
+
+      <ul class="nav_fotter">
+        {{ navigation:links group="footer" }}
+      </ul>      
+
+      <div class="creditos"> 
+      {{ widgets:instance id="3"}}     
+                   
+        <div class="derechos-autor">
+            <div class="derechos">&#169; {{ helper:date format="Y" }} - <span>{{ settings:site_name }}</span> - {{ helper:lang line="all_right_reserved" }}</div>   
+            <div class="footer-autor">
+              <span id="ahorranito2"></span><a href="http://www.imaginamos.com" target="_blank">Desarrollo de Software imagin<span>a</span>mos</a>
+            </div>                
+        </div>
+      </div>
+
+    </section>
+</footer>

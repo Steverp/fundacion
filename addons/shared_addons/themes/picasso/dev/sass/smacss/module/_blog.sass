@@ -1,0 +1,289 @@
+
+
+//@Blog
+main.blog
+	.row
+		+mb(0)
+	.blog-big
+		+br(thin solid $gray-light)
+		+pr(20px)
+
+		img
+			max-width: 100%
+			height: auto
+			+centered(20px, 0)
+			+block
+			border: 4px solid $gray-light
+	.blog-mini
+		padding: 0px 20px 60px
+
+		
+		
+	
+	article
+		+pb(40px)
+		+bb(thin solid $gray-light)
+		+relative
+		+mb(40px)
+		+w100
+	
+		h2
+			+fs(2, 100%, 500)
+			+gray-dark
+		.text
+			margin: 20px 0
+		figure
+			+size(350px 200px)
+			+right
+			+ml(20px)
+			+figure
+			img
+				+s100
+		.icon
+			+ib
+			+bot-left(-22px, 50%)
+			+ml(-22px)
+			padding: 0 10px
+			+tCenter
+			background-size: 50%
+			+block
+			+size(44px)
+			i
+				+fs(2.4)
+				+gray-light
+				+mt(8px)
+				
+	
+main.blog,
+main.blogDetail
+	.row
+		+mb(0)
+	h2
+		+block
+		+fs(2, 100%, 500)
+		+gray-dark
+		+mb(3px)
+	
+	article
+		+w100
+		+mb(20px)
+		+w100
+	
+	figure
+		+none
+	
+	aside
+		+block
+		+w100
+		+bg($color)
+		
+		.keywords
+			padding: 10px
+			h3
+				+fs(1.6, 100%, 700)
+				+tCenter
+				+upper
+				+white
+				+mb(10px)
+			a
+				+borderFix
+				+ib
+				+va
+				+noBg
+				+wauto
+				+under
+				padding: 0 $i
+				margin: 3px 5px 10px
+				+white
+				+odd
+					+fs(2)
+					+ib
+					+va
+					margin: 0px 5px 10px
+	
+	.date,
+	.autor,
+	.category
+		+noFont
+		+ib
+		+va
+		+wauto
+		+mr(5px)
+		+pr(5px)
+		+br(thin dotted $gray)
+		a
+			+co($colorSec)
+		a,
+		span
+			+ib
+			+va
+			
+			+fs(1.3, 100%, 300)
+		i
+			+fs(1.4)
+			+ib
+			+va
+			
+	
+	.category
+		+noBorder
+
+	
+	.text
+		margin: 20px 0
+	
+	
+		
+main.blogDetail
+	aside
+		flex: 0 120px
+		+ml(20px)
+		.date,
+		.autor,
+		a
+			+w100
+			+fs(1.3, 130%, 400)
+			+block
+			+bg($color)
+			+white
+			+tCenter
+			padding: 10px
+			i
+				+mb(10px)
+				+block
+				+fs(3)
+		.date,
+		.autor
+			margin: 0
+			i
+				+white
+		.autor
+			+bg($colorSec)
+		a
+			+bg($gray)
+			+hover
+				+bg($gray-dark)
+			
+			i
+				+mb(10px)
+				+block
+				+fs(3)
+	article
+		+tLeft
+		flex: 1
+		+noFont
+		+pb(30px)
+		//		+bb(thin solid $gray-light)
+		.text
+			+tLeft
+
+		img
+			+size(350px 200px)
+			+right
+			margin: 0 0 20px 20px
+			+figure
+			img
+				+s100	
+		.icon
+			+ib
+			+bot-left(50%, -12px)
+			+ml(-22px)
+			+bgWhite
+			padding: 0 10px
+			i
+				+fs(2)
+				+gray-light	
+	
+	figure
+		+block
+	aside
+		+block
+		flex: 0 200px
+		//	.category
+		//		i
+		//			+fs(1.3)
+		//		a
+		//			
+
+	.keywords
+		+bg($color)
+		padding: 10px
+		h3
+			+fs(1.6, 100%, 700)
+			+tCenter
+			+upper
+			+white
+			+mb(10px)
+		a
+			+borderFix
+			+ib
+			+va
+			+noBg
+			+wauto
+			padding: 0 $i
+			margin: 5px 5px 10px
+			+odd
+				+fs(2)
+				+ib
+				+va
+				margin: 0px 5px 10px
+	
+#existing-comments 
+	margin: 10px 0
+
+#create-comment
+	+bg($gray-light)
+	padding: 20px
+	h4
+		margin: 10px 0
+		+co($black $i)
+	label
+		+co($black $i)
+	
+#comment.form-control
+	height: 200px
+	border: 1px solid $gray-light
+	padding: 10px
+	+focus
+		border: 1px solid $gray-light
+
+#commentPost
+	.form_submit
+		+right
+		margin: 20px 0
+
+//@blog
+
+.myComments 
+	.name,
+	.date,
+	.image
+		+ib
+		+wauto
+		+va
+		+noBorder
+		+fw(700)
+	.row
+		+mb(0)
+	
+	.comment
+		border: thin solid $gray-light + 10 $i
+		+bg($gray-light + 20 $i)
+		padding: 10px
+		+mb(10px)
+		+odd
+			+bg($gray-light + 10 $i)
+	
+	.comments-profile
+		+br(thin solid $gray-light)
+		
+	.comments-text
+		+pl(20px)
+	
+	.res_form
+		+mt(40px)
+		+w100
+		+relative
+		+block
+		h4
+			+mb(20px)

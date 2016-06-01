@@ -1,0 +1,145 @@
+
+
+
+
+
+//main
+//	+bc(white)
+//	+patt(5)
+
+main
+	.panel
+		+bg($gray-light)
+
+//@Home
+
+
+section.logos
+	+bg(white)
+	+tCenter
+	padding: 20px 0
+	
+	img
+		+ib
+		margin: 0 30px 0px
+		height: 60px
+		+grayFilter(0)
+		+transition(.6s)
+	.text
+		+fs(1.8, 130%, 300)
+		+co($gray-dark)
+		+ml(10px)
+		width: 50%
+		+ib
+		+tLeft
+	+hover
+		img
+			+grayFilter(0)
+	a
+		+ib
+		+fs(2, 100%, 400)
+		+co($gray-dark)
+		+mt(25px)
+	
+
+	
+
+	
+.videosGallery
+	.item-gallery
+		+relative
+		+tCenter
+		padding: 10px
+		+w100
+		+bg($gray-light)
+		.icon
+			+top-left(50%, 50%)
+			+size(60px)
+			+tCenter
+			+radius(100%)
+			margin: -30px 0 0 -30px
+			pointer-events: none
+			i
+				+f(5rem)
+				+co($white)
+				+mt(15px)
+				+ml(10px)
+
+	.big
+		padding: 20px
+		+mb(10px)
+		.icon
+			+top-left(50%, 50%)
+			+size(80px)
+			+tCenter
+			+bg($color)
+			+radius(100%)
+			margin: -40px 0 0 -40px
+			pointer-events: none
+			i
+				+f(5rem)
+				+co($white)
+				+mt(15px)
+				+ml(10px)
+
+		
+.modal
+	h2
+		+co($color)
+		+upper
+		+mb(20px)
+		+fs(2.6, 100%, 500)
+	.modal-close
+		+top-right(10px, 10px)
+	.steps
+		+tCenter
+		+mt(20px)
+		.step
+			padding: 5px 0
+			+bb(thin solid $gray)
+			.number
+
+				+radius(100%)
+				+pt(17px)
+				+ib
+				+size(50px)
+				+co($white)
+				+patt(5)
+				+f(2rem)
+				+mr(10px)
+				
+			.text
+				+ib
+				width: 90%
+				+tLeft
+			+nth1
+				.number
+					+bc($color + 60)
+			+nth2
+				.number
+					+bc($color + 50)
+			+nth3
+				.number
+					+bc($color + 40)
+			+nth4
+				.number
+					+bc($color + 30)
+		
+			+nth5
+				.number
+					+bc($color + 20)
+		
+			+nth5
+				.number
+					+bc($color + 10)
+		
+		
+main.trip
+	figure
+		height: 300px
+		+w100
+		+background
+		border: 4px solid $gray-light
+		+mb(20px)
+	
+	

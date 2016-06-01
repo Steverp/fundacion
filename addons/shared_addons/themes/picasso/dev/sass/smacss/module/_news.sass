@@ -1,0 +1,124 @@
+
+
+
+//@News
+
+
+main.news
+	h1
+		+mb(20px)
+	.follow
+		.social
+			+tCenter
+			margin: 20px 0
+			a
+				+ib
+				+tCenter
+				+size(40px)
+				+radius(100%)
+				margin: 0 3px 
+				+bg($colorTer)
+				+co($white)
+				+transition
+				+hover
+					+bg($colorSec)
+						
+				i
+					+mt(8px)
+					+fs(2.2)
+					+co($white)
+					+transition(.2s)
+	.youtube,
+	.facebook,
+	.twitter
+		width: 100%
+		+noScroll
+		+bg($white)
+	.facebook
+		iframe
+			width: 294px $i
+			border: none $i
+	h3
+		+bc($color)
+		+patt(11)
+		+fs(2)
+		padding: 8px 10px
+
+		+co($white)
+		i
+			+mr(10px)
+	.twitter
+		+mt(20px)
+	.youtube
+		+mb(20px)
+		iframe
+			+w100
+	.row
+		+mb(0)
+	.panel
+		+mb(20px)
+	article
+		border-bottom: thin solid $color
+		+relative
+		+mb(30px)
+		+pb(20px)
+		height: auto
+		+w100
+		.text
+			+font-text
+			+fs(1.4, 150%, 300)
+		h2
+			+lh(150%)
+			+co($gray-dark)
+			+fs(2, 130%, 400)
+			text-transform: uppercase
+			padding: 15px 0
+
+		.date
+			+co($gray-dark - 10)
+			i
+				+co($gray-dark - 10)
+		figure
+			+size(50% 250px)	
+			+left
+			+mr(20px)
+			+background
+			+border
+			margin-bottom: 20px
+	
+		a.btn-link
+			+ib
+			+fs(1.4, 150%, 300)
+			+co($color)
+			+hover
+				+under
+				+co($color)
+
+		.icon
+			+bot-left(-12px, 50%)
+			+ml(-24px)
+			padding: 0 10px
+			+bg(white)
+			+patt(5)
+			+block
+			+tCenter
+
+			i
+				+fs(2)
+				color: $color
+		
+.noMargin
+	+mb(0)
+
+main.news
+	+fluid
+		article
+			height: auto
+			+pb(60px)
+			figure
+				+tCenter
+				max-width: 100%
+				+noFloat
+				margin: 0 0 20px
+
+

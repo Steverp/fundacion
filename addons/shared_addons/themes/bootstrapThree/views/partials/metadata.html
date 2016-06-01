@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<meta name="description" content="FastProject">
+<meta name="keywords" content="HTML5">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ template:title }} | {{ settings:site_name }}</title>
+{{ theme:favicon file="favicons/favicon.ico"}}
+<base href="{{ url:base }}"/>
+<script>var CHAT_SERVER_URL = "{{ url:site }}";</script>
+<script>var SITE_URL = '{{ url:site }}'</script>
+<!-- CSS -->
+{{ asset:css file="nucleo.css" }}
+<!-- JS -->
+{{ theme:js file="lib/jquery-1.11.0.min.js" }}
+<!-- para el chat -->
+<script>var CHAT_SERVER_URL = "{{ url:site }}";</script>
+<script>var SITE_URL = '{{ url:site }}'</script>
+{{ theme:js file="lib/handlebars.js" }}
+<!--Libreria-->
+{{ asset:js file="lib/slider.js" }}
+{{ asset:js file="lib/owl.carousel.min.js" }}
+{{ asset:js file="lib/jquery.magnific-popup.js" }}
+{{ asset:js file="lib/jquery.scrollpanel.js" }}
+{{ asset:js file="lib/initslider-1.js" }}
+{{ asset:js file="lib/amazingslider.js" }}
+{{ asset:js file="app.js" }}
+
+{{ asset:render }}
+
+{{ template:metadata }}
+
+
+
+
+
+
+
+

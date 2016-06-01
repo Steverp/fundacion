@@ -1,0 +1,330 @@
+//=prefooter-active
+//	@if $prefooter-active
+//		@debug "$prefooter-active is #{$prefooter-active}"
+//		+bb(4px solid $footer-colorBorder)
+//	
+//	@else
+//		@debug "$prefooter-active is #{$prefooter-active}"
+//
+//footer.fixed
+//	+bot-left
+//
+//footer
+//	.link
+//		+white
+//		+under
+//		+mb(20px)
+//		+block
+//		+fs(1.6, 100%, 100)
+//	+tCenter
+//	img
+//		+ib
+//		height: 60px
+//		+opa(.5)
+//		+transition
+//		margin: 20px 0 0
+//		+hover
+//			+opa(1)
+//	
+//	.social
+//		+tCenter
+//		margin: 20px 0
+//		a
+//			+ib
+//			+tCenter
+//			+size(40px)
+//			+radius(100%)
+//			margin: 0 3px 
+//			+bgWhite(.5)
+//			+transition
+//			+hover
+//				+bgWhite(1)
+//				
+//				i
+//					+co($color)
+//			i
+//				+mt(8px)
+//				+co($color)
+//				+fs(2.6)
+//				+transition(.2s)
+//	+w100
+//
+//	+z(99999999)
+//	+co($footer-color)
+//	+prefooter-active
+//	+patt($footer-bgPattern)
+//	
+//	+bc($footer-bg)
+//	+fs(1.4, 100%, 400)
+//	.text
+//		+co($gray-light + 20)
+//		+fs(1.4, 150%, 300)
+//	.capa
+//		+bg($color - 10)
+//
+//		padding: 10px 0
+//		.row
+//			+mb(0)
+//	a
+//		+co($color)
+//	.row
+//		+mb(0)
+//	figure
+//		margin: 20px 0
+//		+w100
+//		+tCenter
+//		img
+//			height: 80px
+//			+opa(.6)
+//	nav
+//		margin: 45px 0 0
+//		+bl(thin solid $white)
+//		ul
+//			+w100
+//			+tCenter
+//			li
+//				+block
+//				margin: 0 0px
+//				a
+//					padding: 10px 0px 10px 20px
+//					+tLeft
+//					+upper
+//					+block
+//					+transition
+//					+co($footer-anchorColor)
+//					+hover
+//						+co($footer-anchorColor_hover)
+//
+//			.last
+//				+noBorder
+//
+//
+//	.contact-info
+//		+w100
+//		margin: 20px 0 10px
+//
+//		+tCenter
+//		> div
+//			+ib
+//			margin: 0 5px
+//			+fs(1.6, 100%, 300)
+//			i
+//				+mr(5px)
+//			a
+//				+co($footer-anchorColor)
+//				+under
+//				+hover
+//					+co($footer-anchorColor_hover)
+//		
+//	.copyright
+//		+mt(7px)
+//		+block
+//
+//	.ahorranito
+//		+tRight
+//		+mt(3px)
+//		a
+//			+ib
+//			+co($footer-anchorColor)
+//			+va
+//		.ahorranito-icon
+//			+ib
+//			+va
+//
+//footer .ahorranito, 
+//footer .copyright
+//	+fluid
+//		+mb(0px)
+//		+tCenter
+//		+lh(120%)
+//
+//footer nav ul li a,
+//footer .contact-info > div
+//	+mobil
+//		+lh(150%)
+//
+//.ahorranito
+//	span
+//		+co(#1d9ad4)
+//		
+//	.ahorranito-icon 
+//		+img(ahorranito)
+//		background-position: center
+//		background-repeat: no-repeat
+//		display: inline-block
+//		height: 20px
+//		vertical-align: middle
+//		width: 20px
+//
+//.footer-bot
+//	+bg($color)
+//	padding: 8px 0
+//	
+
+=prefooter-active
+	@if $prefooter-active
+		@debug "$prefooter-active is #{$prefooter-active}"
+		+bb(4px solid $footer-colorBorder)
+	
+	@else
+		@debug "$prefooter-active is #{$prefooter-active}"
+
+footer.fixed
+	+bot-left
+
+footer
+	.link
+		+white
+		margin: 20px 0
+		+tCenter
+		+block
+		+fs(1.8, 100%, 100)
+		+hover
+			+under
+	.branding
+		img
+			+ib
+			margin: 0 20px
+			height: 40px
+	.social
+		+tCenter
+		margin: 20px 0
+		a
+			+ib
+			+tCenter
+			+size(40px)
+			+radius(100%)
+			margin: 0 3px 
+			+bgWhite(.5)
+			+transition
+			+hover
+				+bgWhite(1)
+				
+				i
+					+co($color)
+			i
+				+mt(8px)
+				+co($color)
+				+fs(2.6)
+				+transition(.2s)
+	+w100
+
+	+z(99999999)
+	+co($footer-color)
+	+prefooter-active
+	+patt($footer-bgPattern)
+	
+	+bc($footer-bg)
+	+fs(1.4, 100%, 400)
+	.text
+		+co($white)
+		+fs(1.6, 150%, 300)
+		+mb(20px)
+	.capa
+		+bg($color)
+
+		padding: 10px 0
+		.row
+			+mb(0)
+	a
+		+co($color)
+	.row
+		+mb(0)
+	figure
+		margin: 30px 0
+		+w100
+		+tCenter
+		img
+			height: 50px
+			+opa(.6)
+	nav
+		margin: 25px 0 20px
+		+bl(thin dotted $gray)
+		ul
+			+w100
+			+tCenter
+			li
+				+block
+				margin: 0 0px
+				a
+					padding: 10px 0px 10px 20px
+					+tLeft
+					+upper
+					+block
+					+transition(.4s)
+					+co($footer-anchorColor)
+					+hover
+						+co($footer-anchorColor_hover)
+
+			.last
+				+noBorder
+
+
+	.contact-info
+		+w100
+		margin: 10px 0 20px
+
+		+tCenter
+		> div
+			+ib
+			margin: 0 5px
+			i
+				+mr(5px)
+			a
+				+co($footer-anchorColor)
+				+under
+				+transition(.4s)
+				+hover
+					+co($footer-anchorColor_hover)
+		
+	.copyright
+		+mt(6px)
+		+block
+		+co(white)
+
+	.ahorranito
+		+tRight
+		+mt(3px)
+		a
+			+ib
+			+co($footer-anchorColor)
+			+va
+		.ahorranito-icon
+			+ib
+			+va
+
+footer .ahorranito, 
+footer .copyright
+	+fluid
+		+mb(10px)
+		+tCenter
+		+lh(120%)
+
+footer nav ul li a,
+footer .contact-info > div
+	+mobil
+		+lh(150%)
+
+.ahorranito
+	span
+		+co(#1d9ad4)
+		
+	.ahorranito-icon 
+		+img(ahorranito)
+		background-position: center
+		background-repeat: no-repeat
+		display: inline-block
+		height: 20px
+		vertical-align: middle
+		width: 20px
+
+footer
+	+relative
+	+noScroll
+	.icon2
+		+bot-right(-40px, -50px)
+		+size(240px 320px)
+		+background
+		+opa(.1)
+
+	

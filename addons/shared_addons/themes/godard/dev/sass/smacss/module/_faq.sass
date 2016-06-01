@@ -1,0 +1,69 @@
+//@FAQ
+
+
+
+main.faq
+	.myTabs
+		li
+			+bg($gray-light)
+			padding: 10px
+			+transition(.2s)
+			+bb(thin solid $gray)
+			a
+				+fs(1.4, 100%, 400)
+				+transition(.2s)
+				+block
+				i
+					+ml(10px)
+			+hover
+				+bg($colorSec)
+				a
+					+co($white)
+	.tab-content
+		min-height: 120px
+		padding: 0px
+		figure
+			+w100
+			height: 240px
+			+noScroll
+			+radius(10px)
+	
+			img
+				+w100
+		h2
+			+fs(1.5, 120%, 600)
+			+white
+			+pointer
+			+bg($color)
+			border: thin solid $color
+			+radius(0)
+			+noFlex
+			+w100
+			padding: 10px 20px
+			margin: 0px
+			+transition
+			+bb(1px solid white)
+			+hover
+				+bg($colorSec)
+				border: thin solid $gray-dark
+			i
+				+right
+				+rotate(90)
+				+transition
+				+mt(2px)
+	
+		.text
+			+none
+			border: thin solid $gray-light
+			padding: 10px
+			+bgWhite
+			+transition()
+	
+.accordeon-active
+	display: block $i
+	
+main.faq .tab-content h2.faq-active
+	+bg($colorSec $i)
+	border: thin solid $colorSec $i
+	i
+		+rotate(-90)

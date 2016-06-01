@@ -1,0 +1,306 @@
+
+//@Header
+
+=menu-active
+	@if $menu-active
+		+co($color-menu_hover)
+		+noUnder
+		+bg($colorSec)
+
+	@else
+
+
+
+.dropdown-content li > a
+	+fw(300 $i)
+	+f(1.5rem $i)
+	
+	+co($gray $i)
+	+hover
+		+co($color $i)
+		+bg($gray-light)
+	i
+		+mr(10px)
+
+=mainMenu
+	+mt(5%)
+	+tRight
+	//	+bt(thin solid $gray-light - 10)
+	//	+bb(thin solid $gray-light - 10)
+	
+	ul
+		+tCenter
+		+noFont
+	li
+		+tCenter
+		margin: 0 0 0
+		padding: 2px 12px
+		+relative
+		//		+before
+		//			+content('')
+		//			+top-right
+		//			+size(2px 10px)
+		//			+bg(white)
+		//			+block
+
+		+ib
+		+br(thin dotted $gray-light - 20)
+
+		i
+			+ml(5px)
+			+va
+			+lh(90% $i)
+			
+	a
+		+va
+		+fs(2, 100%, 400)
+		+co($white)
+		+ib
+		+relative
+		padding: 10px 27px
+		padding-left: 2%
+		+mt(10px)
+		+transition(.2s)
+		+noUnder
+		+relative
+		+noScroll
+		+hover
+			+co($color)
+			//			&:before
+			//				+size(100% 3px)
+			//				+bc($yellow)
+			//		+before
+			//			+content('')
+			//			+block
+			//			+transition(.2s)
+			//			+size(4px 3px)
+			//			+bg($white)
+			//			+bot-left(0px, 0)
+
+
+		i
+			+f(1.2rem $i)
+		+nth5
+			+noBorder
+
+		a.high
+			border: 2px solid $colorSec
+			+radius(4px)
+			+ml(12px)
+			+mt(-2px)
+			
+	
+		.subnav,
+		.dropdown
+			+bg($white)
+			+relative
+
+			li
+				+block
+				+bb(thin solid $gray-light)
+				+relative
+				a
+					+tCenter
+					+relative
+					+fs(1.5, 100%, 400)
+				
+
+				
+				
+	
+				//		.myDropdown-active
+				//			+b1
+	
+				//				+before
+				//					+size(100% $height-under)
+				//					+bg($color-menu_hover)
+				//			+before
+				//				+content('')
+				//				+size(10px $height-under)
+				//				+bg($color-menu)
+				//				+block
+				//				+bot-left(0%, 0%)
+				//				+transition
+	
+		+nth4
+			a
+				+menu-active
+	
+	.icon
+		+bg($color)
+		+tCenter
+		width: 40px
+		padding: 0 $i
+		height: 35px
+		a
+			+tCenter
+			+block
+			height: 35px
+			padding: 0 $i
+			+hover
+				+bg($colorSec)
+			i
+				+m0
+				+fs(2)
+				+mt(7px)
+				+transition(.2s)
+
+
+		
+	.current
+		a
+			+co($color-menu_hover)
+			+noUnder
+			+before
+				+size(100% $height-under)
+				+bg($color-menu_hover)
+	
+.dropdown-content li>a
+	+co($color-menu $i)
+	+hover
+		+co($gray-dark $i)
+
+.dropdown-content
+	width: auto $i	
+	overflow: hidden $i
+	+radius(0px)
+	//	top: 98px $i
+	.divider
+		+bg($gray-light - 20)
+
+
+.dropdown-button
+	i
+		+ib
+		+va
+
+nav
+	+mainMenu 
+	+w100
+	+z(99)
+	.row
+		+mb(0)
+
+
+.button-collapse
+	+top-left(10px, 10px)
+	+z(996)
+	+transition
+	+pointer
+	i
+		+fs(3)
+
+#sidenav-overlay,
+.drag-target
+	+pointer
+
+.container > .logo
+	+fluid
+		width: 100%
+		max-width: 100%
+		+tCenter
+
+
+.myMenu
+	.logo
+		+none
+
+.side-nav
+	li
+		+bb(thin solid $gray-light)
+		a
+			+co($color)
+			+block
+			padding: 10px
+			+fs(1.6, 100%, 400)
+
+		
+		
+.fixed-menu
+	+top-left
+	+w100
+	+fixed
+	+z(9999)
+
+.fixed-nav
+	+top-left(80px, 0)
+	+w100
+	+fixed
+	+z(9999)
+
+
+
+.button-collapse
+	i
+		+co($menuMobile-color)
+	
+header nav
+	strong
+		+co($color)
+		+fw(bolder)
+
+
+.submenu-active
+	opacity: 1 $i
+	+transition(.4s)
+	pointer-events: visible $i
+	
+	
+.submenu
+	+transition(.4s)
+	+p0
+	pointer-events: none
+	+top-left(40px, 0)
+	background-color: #FFFFFF
+	margin: 0px
+	+opa(0)
+	min-width: 100px
+	z-index: 1000
+	width: 100%
+	height: auto
+	overflow-y: hidden
+	will-change: width, height, opacity
+	li
+		+block
+	
+#dropdown1
+	width: 168px $i
+	+bb(3px solid $colorSec)
+	top: 98px $i
+
+#dropdown2
+	width: 229px $i
+	+bb(3px solid $color)
+	top: 98px $i
+	
+.dropdown-content li>a, 
+.dropdown-content li>span
+	padding: 10px $i
+
+#dropdown3
+	width: auto $i
+	min-width: 240px
+	+bb(1px solid $color)
+	top: 151px $i
+	+ml(-4px)
+	+z(99999999999 $i)
+nav
+	a
+		color: $color
+		&:hover
+			color: #083b4f!important
+
+nav li
+	+relative
+	a
+		+relative
+
+@media screen and (max-width: 1055px)
+	.parallax
+		img
+			height: 100%
+	
+@media screen and (max-width: 1080px)
+	nav
+		a
+			padding-left: 1%

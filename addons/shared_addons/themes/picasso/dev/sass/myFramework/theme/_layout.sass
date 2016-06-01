@@ -1,0 +1,166 @@
+
+=border
+	border: 6px solid $gray-light
+
+
+=ts
+	text-shadow: -1px -1px 1px #bbb, 1px 1px 1px #ccc
+
+
+
+
+=paragraph    
+	p, span, li
+		+fs(1.4, 150%, 400)
+		color: $color-txt
+		
+=para  
+	+fs(1.4, 150%, 400)
+	color: $color-txt
+	
+
+	
+=shadow
+	box-shadow: 0px 1px 1px rgba(0,0,0,.3)
+
+
+
+
+/**/
+
+=title_home
+	+upper
+	+cero
+	+fs(1, 100%, 800)
+	+w100
+	+relative
+	+gray
+	margin: 40px 0 10px
+	+tCenter
+	+before
+		+content('')
+		+w100
+		height: 1px
+		+bg($gray-light)
+		+top-left(50%, 0)
+		+z(1)
+
+
+	span
+		+bg(#f3f5f8 url("../img/bg_texture-home.png") center top)
+		+relative
+		+z(999)
+		+inline-block
+		padding: 0 10px
+		
+=titleArticle
+	+co($blue)
+	+cero
+	+fs(1.8, 100%, 400)
+	padding: 0px 0 10px
+	+upper
+	+bb(thin solid $gray-light)
+	+ml(2px)
+
+	
+
+	
+
+	
+	
+
+	
+
+
+	
+	
+=shadow
+	box-shadow: 0px 1px 1px rgba(0,0,0,.3)
+		
+
+		
+		
+
+		
+=help
+	+white
+	+bg($gray-light)
+	padding: 5px
+	+mt(1px)
+	+noFont
+	+gray
+	i
+		+mr(5px)
+		+fs(2)
+		+ib
+		+gray
+	p
+		+cero
+		+ib
+		width: 85%
+		+fs(1.1, 130%, 300)
+		+gray-dark
+
+
+	
+
+=title-home
+	flex: 100%
+	+tCenter
+	+white
+	+fs(1.1, 100%, 800)
+	+upper
+	+mb(10px)
+	+relative
+	+before
+		+content('')
+		+top-left(5px, 100px)
+		+block
+		+size(400px 1px)
+		+bg($gray-dark + 10)
+	+after
+		+content('')
+		+top-right(5px, 100px)
+		+block
+		+size(400px 1px)
+		+bg($gray-dark + 10)
+	
+
+
+		
+=subTitle
+	+fs(2.2, 100%, 600)
+	+mb(20px)
+	+upper
+
+
+=background($back: cover)
+	background-size: $back
+	background-position: center center
+	background-repeat: $nr
+
+=figure
+	+noScroll
+	+bg(white)
+	+tCenter
+	+background
+
+
+//@TITULOS
+	
+
+		
+=ts
+	text-shadow: 1px 2px 0px white, 0 0 0 white, 1px 2px 0px white, 2px 2px 0px white
+
+=title-home
+	+relative
+	+wauto
+	+fs(2.6, 100%, 700)
+	+upper
+	+ib
+	padding: 0 $space-big $space-mini
+
+	margin: $space-mini 0 $space
+
+	

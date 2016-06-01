@@ -1,0 +1,90 @@
+{{ theme:css file="chat.css" }}
+
+<div class="mensajecerrar" style="display: none;">
+    <div class="contemensaje">
+        <a class="acepto"><i class="salir icon-cross-3"></i></a>
+        <p>Estas seguro de que quieres borrar los mensajes del chat</p>
+        <input type="submit" value="BORRAR" class="btnclose">
+    </div>
+</div>
+<div class="chat">
+    <div class="headerchat">
+        <h3 class="nombredeusuario" data-toggle="title-open-chat">
+            <i class="fa fa-comments-o"></i> Chat 
+            <i class="icos icon-record" data-content="icon-status"></i>
+        </h3>
+
+        <div class="iconos">
+            <div class="toggle">
+                <a class="icos icon-browser" data-toggle="open-chat"></a>
+                <a class="icos icon-minus" style="display:none;" data-toggle="close-chat"></a>
+            </div>
+        </div>
+    </div>
+    <div class="collapchat" data-content="chat">
+        <div class="tamanochat" data-chat="height">
+            <div class="contenidochat">
+                <div>
+                    <div class="chat-messages" id="chatMesage" style="display: none;" data-content="chat-messages">
+                        <p class="chat-status-message">
+                            <small data-content="chat-status-message">
+                                Cargando el chat, por favor espere...
+                            </small>
+                        </p>
+
+                        <div class="new-messages-wrap" data-content="new-messages"></div>
+                    </div>
+
+                    <div class="ingresa-chat" style="display: none" data-content="login-chat">
+                        <form id="ingresachat" data-form="login-chat">
+                            <label>Ingresar tus datos</label>
+                            <input class="input-chat" type="text" placeholder="Usuario" id="name_chat" name="name_chat" required>
+                            <input class="input-chat" type="email" placeholder="E-mail" id="email_chat" name="email_chat" required>
+                            <div class="clear"></div>
+                            <textarea class="men" placeholder="Mensaje" id="message_text" name="message_text" required></textarea>
+
+                            <button type="submit" id="enviarmail" data-join-text="Ingresar al chat" style="display: none;">Enviar E-mail</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            <form class="areadetexto" style="display: none" data-form="message-area">
+                <input type="hidden" name="sender" value="client">
+                <i class="icon-bubbles-3 iconochat"></i>
+                <input type="text" name="message" class="chattextarea" placeholder="Enviar un mensaje..." />
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{{ theme:js file="plugins/jquery.timeago.js"}}
+{{ theme:js file="plugins/jquery.timeago.locale.es.js"}}
+{{ theme:js file="api/chat.js"}}
+
+{{ noparse }}
+
+<script id="message-template"  type="text/x-handlebars-template">
+    {{#each messages}}
+    <div class="leter chat-message {{#if is_client}} visitante {{/if}}" data-id="{{ id }}">
+    <div class="headerleter">
+    <h3 class="nombreusu"><i class="icos icon-user online"></i> {{ username }}</h3>
+    <h3 class="hora"><i class="icon-clock icoflr"></i> <time class="timeago" datetime="{{ datetime_iso }}">{{ datetime }}</time></h3>
+    </div>
+    <div class="conteleter">
+    {{ message }}
+    </div>
+    </div>
+    {{/each}}
+</script>
+
+{{ /noparse }}
+
+
+<audio id="chatAudio">
+    <source src="<?= base_url() ?>assets/audio/notify.ogg" type="audio/ogg">
+    <source src="<?= base_url() ?>assets/audio/notify.mp3" type="audio/mpeg">
+    <source src="<?= base_url() ?>assets/audio/notify.wav" type="audio/wav">
+</audio>

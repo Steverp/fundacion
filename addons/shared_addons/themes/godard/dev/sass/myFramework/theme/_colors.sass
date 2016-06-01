@@ -1,0 +1,89 @@
+//$color: rgba(72, 107, 224, 1)
+
+		
+
+//=color($opa1: 1)
+//	color: rgba(72, 107, 224, $opa1)
+//		
+//=bgColor($opa2: 1)
+//	background: rgba(72, 107, 224, $opa2)
+		
+//$colorSec: rgb(64, 54, 139)
+	
+
+	
+//=colorSec
+//	+co($colorSec)
+//
+//$colorTer: rgba(78, 153, 207,1)
+//	
+//=colorTer
+//	+co($colorTer)
+
+//$Colors
+
+$transparent: rgba(0,0,0,0)
+
+//Cake
+$cake: #E3DAD6
+$cake-dark:#BDB0AA
+
+
+
+//COLORS MIXINS
+
+=gray()
+	color: $gray
+	
+=gray-dark()
+	color: $gray-dark
+
+=gray-light()
+	color: $gray-light
+
+=white()
+	color: $white
+	
+
+=blue()
+	color: $blue
+
+=black
+	color: $black
+
+=bgWhite($opacity:1)
+	background: rgba(255,255,255,$opacity)
+
+=bgBlack($opacity:1)
+	background: rgba(0,0,0,$opacity)
+
+$facebook: #3b5998
+$twitter: #4099FF 
+
+
+
+//Gradient
+=degra
+	+gradient(top,#fff, 10%, #f9f9f9, 80%)
+	
+=degraHeader
+	+gradient(left,$color, 25%, $colorSec, 95%)
+	
+=degraTop
+	+gradient(top,$color, 1%, $colorSec, 99%)
+	
+=degraRight
+	+gradient(right,$color, 1%, $colorSec, 99%)
+	
+=degraLeft
+	+gradient(left,$color, 1%, $colorSec, 99%)
+	
+	
+//Alerts
+
+$error: #FF9494
+$success: #5fe35f
+
+
+
+

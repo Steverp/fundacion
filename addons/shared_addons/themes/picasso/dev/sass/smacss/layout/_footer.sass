@@ -1,0 +1,204 @@
+=prefooter-active
+	@if $prefooter-active
+		
+		+bb(4px solid $footer-colorBorder)
+	
+	@else
+		
+
+footer.fixed
+	+bot-left
+
+footer
+	+relative
+	+z(999)
+	+tCenter
+	+bg($color)
+	.actions
+		a
+			+ib
+			+va
+			margin: 0 20px
+		img
+			+ib
+			height: 40px
+			+opa(.8)
+			+transition
+			margin: 20px 0 0
+			+hover
+				+opa(1)
+
+	
+	+pb(10px)
+	.newLetter
+		z-index: 999999
+		position: relative
+		background-color: #a8171f
+		background-size: 476px
+		height: 100%
+		.news
+			height: 17px !important
+		[type="checkbox"]:not(:checked)+label:before
+			border: 2px solid #fff 
+
+		input[type=text]
+			border-bottom: none
+			background: aliceblue
+	.newsletter
+		margin-top: 30px
+	.one_newsletter
+		display: inline-block
+		margin-right: 130px
+		margin-bottom: 35px
+		color: #fff
+		
+	.news2
+		display: inline-block
+		cursor: pointer
+		color: #fff
+
+	.two_newsletter
+		margin-top: 27px
+		border-top: transparent !important
+	.social
+		+tCenter
+		margin: 20px 0
+		a
+			+ib
+			+tCenter
+			+size(30px)
+			+radius(5px)
+			margin: 0 0 0 2px
+			+bg($white)
+			+transition
+			+hover
+				+bg($colorTer)
+
+				i
+					+white
+			i
+				+mt(5px)
+				+co($colorTer)
+				+fs(2)
+				+transition()
+	+w100
+
+	+z(999)
+	+co($white)
+	+prefooter-active
+	+patt($footer-bgPattern)
+	//	+gradient(top,$colorSec, 50%, $color, 99%)
+	+fs(1.4, 100%, 400)
+	.text
+		+co($gray-light + 20)
+		+fs(1.4, 150%, 300)
+
+	.capa
+		+bg($color - 20)
+
+		padding: 10px 0
+		.row
+			+mb(0)
+	a
+		+co($white)
+	.row
+		+mb(0)
+	figure
+		margin: 20px 0
+		+w100
+		+tCenter
+		img
+			height: 80px
+			+opa(.6)
+	nav
+		margin: 45px 0 0
+		+bl(thin solid $white)
+		ul
+			+w100
+			+tCenter
+			li
+				+block
+				margin: 0 0px
+				a
+					padding: 10px 0px 10px 20px
+					+tLeft
+					+upper
+					+block
+					+transition
+					+co($footer-anchorColor)
+					+hover
+						+co($footer-anchorColor_hover)
+
+			.last
+				+noBorder
+
+
+	.contact-info
+		+w100
+		padding-top: 8px
+		+fs(1.5, 100%, 400)
+		+tCenter
+		> div
+			+ib
+			margin: 0 5px
+			i
+				+mr(5px)
+			a
+				+co($gray)
+				+under
+				+hover
+					+co($color)
+		
+
+
+.postFooter .ahorranito, 
+.postFooter.copyright
+	+fluid
+		+mb(10px)
+		+tCenter
+		+lh(120%)
+
+.postFooter nav ul li a,
+.postFooter .contact-info > div
+	+mobil
+		+lh(150%)
+
+.ahorranito
+	span
+		+co(#1d9ad4)
+		
+	.ahorranito-icon 
+		+img(ahorranito)
+		background-position: center
+		background-repeat: no-repeat
+		display: inline-block
+		height: 20px
+		vertical-align: middle
+		width: 20px
+
+.postFooter
+	padding: 0px 0 5px
+	+relative
+	+z(999)
+	+fs(1.3, 100%, 300)
+	+bg($color)
+	.row
+		+mb(0)
+	.copyright
+		+mt(5px)
+		+block
+		+co($white)
+	.ahorranito
+		+tRight
+		+mt(3px)
+		a
+			+ib
+			+co($footer-anchorColor)
+			+va
+		.ahorranito-icon
+			+ib
+			+va
+
+.back
+	+background
+	background-position: center top

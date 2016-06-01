@@ -1,0 +1,67 @@
+//@carrousel
+
+section.carousel
+	+bc($carousel-bgColor)
+	+patt($carousel-bgPattern)
+	padding: 30px 0 30px
+	+m0
+	+w100
+	+relative
+	+tCenter
+	img
+		height: 100px
+		+w100
+		+transition(.4s)
+		+grayFilter(100%)
+		+hover
+			+grayFilter(0)
+
+	i
+		+fs(12)
+		+co($white)
+		+opa(.4)
+	h2
+		+co($carousel-colorTitle)
+		+fs(2.6, 100%, 400)
+		+bg($color)
+		+ib
+		padding: 10px 60px
+		margin: 0px 0 30px
+		+upper
+	h3
+		margin: 10px 0 0
+		+fs(1.6, 100%, 400)
+		+tRight
+		+co($carousel-colorSubtitle)
+	
+	.text
+		+fs(1.5, 140%, 300)
+		+co($white)
+		+bb(thin solid $white)
+		+tLeft
+		+pb(10px)
+	
+	.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto
+		bottom: -40px $i
+	
+	.bx-wrapper .bx-pager.bx-default-pager a
+		+bg($carousel-bgBullet $i)
+		+size($carousel-sizeBullet)
+		+radius(100%)
+		margin: 0 $carousel-spaceBullet $i
+		border: $carousel-borderBullet
+		+transition
+	.bx-wrapper .bx-pager.bx-default-pager a.active
+		+bg($carousel-bgBullet_active $i)
+		border: $carousel-borderBullet_active
+
+	
+	.container-responsive
+		width: 100%
+		+centered
+	
+//section.carousel
+//	+mobil
+//		.container-responsive
+//			width: 70%
+//			+b2

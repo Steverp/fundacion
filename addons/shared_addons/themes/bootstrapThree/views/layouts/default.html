@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 9]>
+    {{ theme:js file="lib/html5.js" }}
+<![endif]-->
+<html lang="es">
+    <head>
+        {{ theme:partial name="metadata" }}
+    </head>
+        
+    <body>
+        <section id="preload">
+            <div id="preload-container">
+              <div id="dot"></div>
+                <div class="step" id="s1"></div>
+                <div class="step" id="s2"></div>
+                <div class="step" id="s3"></div>
+            </div>
+        </section>
+
+        {{ theme:partial name="header" }}
+        <section class="barra_int"></section>
+        <section class="content_all">
+            {{ session:messages success="alert alert-success" notice="alert alert-block" error="alert alert-error" }}
+
+            <!--Contenidos Sitio-->
+            <section class="cont_home">  
+                {{ theme:partial name="breadcrumbs"}}
+                {{ template:body }}
+            </section>
+            <!--Fin Contenidos Sitio-->
+            	<div class="clear"></div>
+            {{ theme:partial name="footer" }}
+        </section>
+
+    </body>
+</html>
+
+

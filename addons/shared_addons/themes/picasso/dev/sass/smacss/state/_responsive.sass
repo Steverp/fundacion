@@ -1,0 +1,107 @@
+@media screen and (max-width: 768px)
+	.postFooter
+		.copyright
+			+tCenter
+		.ahorranito
+			+tCenter
+	.areas
+		article
+			figure
+				+mb(20px)
+	main.contact
+		.contact-data
+			+mt(40px)
+	section.banner
+		.logo-banner
+			left: 0
+			top: 20px
+	#sidenav-overlay
+		+z(9 $i)
+	
+	.workTeam
+		.panel
+			height: 390px $i
+	.workTeam
+		.nivel2
+			article
+				width: 30% $i
+	.workTeam
+		.nivel3
+			article
+				width: 30% $i
+	.distribuitors
+		.element-item
+			width: 50%
+@media screen and (max-width: 420px)
+	.headerx
+		.logo
+			margin: 0
+			width: 120%
+	.mySlide
+		.caption
+			h2
+				+mt(80px $i) 
+				+fs(3, 110%, 300)
+			p
+				+fs(2, 110%, 300)
+	.banner
+		.bx-wrapper
+			.bx-pager
+				+none
+	section.logos
+		.actions
+			+block
+			+tCenter
+			width: 100%
+		img
+			margin: 20px auto
+			+block
+	section.video
+		.capa
+			padding: 10px 0
+			.text
+				+none
+				
+	
+	.areas
+		.icon
+			+none
+	.workTeam
+		.nivel2
+			article
+				width: 50% $i
+	.workTeam
+		.nivel3
+			article
+				width: 49% $i
+	h2.items
+		strong
+			line-height: 110%
+	.distribuitors
+		.element-item
+			width: 100%
+	footer
+		.contact-info
+			+tCenter
+	main.services
+		article
+			height: auto
+@media screen and (max-width: 320px)
+	.mySlide
+		.caption
+			left: 10%
+			width: 80%
+			.actions
+				margin: 10px 0
+			h2
+				+mt(40px $i)
+				+fs(2.5)
+	#carousel2
+		figure
+			+size(100% 300px)
+			img
+				+size(100% 300px)
+	main.contact
+		#map_wrapper,
+		.mapping
+			height: 300px

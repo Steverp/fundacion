@@ -1,0 +1,116 @@
+//@projects
+
+main.projects
+	.row 
+		+m0
+		.col
+			+p0
+
+.da-thumbs
+	+relative
+	
+	.myBox
+		+bg($white)
+		padding: 0px
+		+relative
+		+w100
+		+block
+		height: 210px
+		margin: 0
+		h2
+			+fs(1.6, 110%, 700)
+			padding: 10px 0
+			margin: 20px 20px 0px
+			+upper
+			+white
+		a
+			+block
+			+relative
+			margin: 0
+			img
+				+block
+				+relative
+				+s100
+				height: 210px
+				margin: 0
+			div
+				+absolute
+				+bgBlack(.8)
+				+s100
+				margin: 0
+				span
+					+block
+					padding: 10px 0
+					margin: 20px 20px 20px
+					+fs(1.4, 140%, 300)
+					+white
+					border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+					box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 -10px 0 rgba(255, 255, 255, 0.3)
+		
+		
+main.projects.categories
+	ul.list-group
+		+mb(0px)
+		+bg($gray-light + 20)
+		+tCenter
+		> li
+			+bb(1px solid $gray-light + 10)
+			padding: 15px 10px
+			+transition
+			+ib
+			> a
+				+block
+				+co($colorSec)
+				+fs(1.4, 100%, 400)
+				+before
+					+co($colorSec $i)
+
+			+hover
+				+bg($white)
+				> a
+					+co($color $i)
+					+before 
+						+co($color $i)
+			> ul
+				+none
+		> .class_active
+			margin: 0 $i
+			> a
+				+co($color)
+				+before
+					content: '\f0c8'
+				+hover
+					+co($colorSec)
+	.text
+		+mb(20px)
+	
+	.ico-more
+		+none
+		
+		
+		
+
+main.projects.categories
+	ul.list-group
+
+		> li
+			a
+				+before
+					font-family: fontAwesome 
+					color: $white
+					+mr(10px)
+					content: '\f096'
+					+transition(.4s)
+						
+				+hover
+					+before
+						content: '\f0c8'
+		
+		
+			+nth1
+				a
+					+before
+						content: '\f0ae'	
+		
+.myUp
+	+none

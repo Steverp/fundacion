@@ -1,0 +1,146 @@
+<!-- Login  -->
+<div class="bg_login marco_login bg_action">
+    <div class="marco elem_negros">
+       <a href="javascript:void(0)" class="close_login"></a> 
+        <!---Fomulario Login-->
+      <div class="bg_form_login">
+         <h2>INICIAR SESIÓN</h2>
+        <?php echo form_open('users/login', array('class'=>'user_form form-horizontal'), array('redirect_to' => current_url())) ?>
+            <fieldset class="fila large-6 medium-6 columns item1">
+             <?php echo form_input('email', $this->input->post('email') ? $this->input->post('email') : '', 'class="w300 input-h" placeholder="E-mail"' )?>
+            </fieldset>    
+            <fieldset class="fila large-3 medium-6 columns">
+              <input type="password" id="password" name="password" maxlength="20" class="input-h w180" placeholder="Contraseña"/>
+            </fieldset>  
+            <fieldset class="large-3 medium-3 columns item2">
+              <input type="submit" value="INGRESAR" name="btnLogin" Class="btn_border_blan">
+           </fieldset>       
+               <div class="clear"></div>
+           <div class="large-12 medium-12">
+            <div class="link2">
+                <?php echo anchor('users/reset_pass', lang('user:reset_password_link'));?>
+            </div>
+             <!-- <a href="{{ url:site }}users/reset_pass" data-effect="mfp-3d-unfold" class="link2">¿Olvidaste tu contraseña?</a> -->
+           </div>         
+            
+        <?php echo form_close() ?>
+      </div>
+       <!---Fin Fomulario Login-->
+    </div>
+</div>
+<!-- end Login  --> 
+<!-- register  --> 
+<div class="bg_register marco_login bg_action">
+    <div class="marco elem_negros">
+        <a href="javascript:void(0)" class="close_register close_login"></a>
+         <!---Fomulario Login-->
+        <div class="bg_form_registro">
+            <h2>REGÍSTRATE</h2>
+            <?php echo form_open('register', array('class'=>'user_form form-horizontal')) ?>
+                <?php if ( ! Settings::get('auto_username')): ?>
+                  <div class="control-group">
+                    <label class="control-label" for="username"><?php echo lang('user:username') ?></label>
+                    <div class="controls">
+                      <input type="text" name="username" maxlength="100" />
+                    </div>
+                  </div>
+                <?php endif ?>
+            <fieldset class="fila item1">
+             <input type="text" maxlength="50" id="first_name" value="" name="first_name" placeholder="Nombre" />
+            </fieldset>
+            <fieldset class="fila item1">
+               <input type="text" maxlength="50" id="last_name" value="" name="last_name" placeholder="Apellidos" />
+            </fieldset>
+            <fieldset class="fila item1">
+              <input type="text" name="email" maxlength="100" placeholder="E-mail" class="input-h w180" />
+                <?php echo form_input('d0ntf1llth1s1n', ' ', 'class="default-form" style="display:none"') ?>
+            </fieldset>
+            <fieldset class="fila item1">
+              <input type="password" name="password" maxlength="100" placeholder="Contraseña"/>
+            </fieldset>          
+            <fieldset class="fila2">
+              <input type="submit" value="Registrar" name="btnSubmit" Class="btn_border_blan">                  
+            </fieldset>
+              <div class="clear"></div>                
+            <?php echo form_close() ?>
+        </div>
+         <!---Fomulario Login-->
+    </div>
+</div>
+<!-- end register  -->
+
+<header class="animated fadeInDown">
+    <section class="marco">
+        <!--Logo-->
+        <a href="{{ url:site }}" class="logo"><img src="{{ url:site }}{{ widgets:instance id='2'}}" alt="Logo"/></a>
+        <!--Fin Logo-->
+        <div class="acceos_site animated fadeInDown" data-wow-delay="0.2s">
+          <!--Idiomas-->
+          <div class="idiomas">
+            <a href="{{ url:site }}home/change_lenguage/es" class="active_idiomas">Esp</a>
+            / <a href="{{ url:site }}home/change_lenguage/en">Eng</a>
+          </div>
+          <!--Fin Idiomas-->
+          <ul class="ingresos">
+            <!--Buscador-->
+            <li> 
+              <a href="javascript:void(0)" class="search_button bottom_tip" data-tips="Buscar">
+                <span><i class="fa fa-search"></i></span>
+              </a> 
+            </li>
+            <!--Fin Buscador-->                
+            {{ if user:logged_in }} 
+              <li class="close_Sesion perfil_h user_menu"><a href="{{ url:site uri='my-profile' }}" title=""><span></span> Mi Cuenta </a>
+                 <div class="subnav_menu">
+                      <ul>                    
+                        {{ theme:partial name="header-userLogin" }}
+                         <div class="clear"></div>
+                      </ul>  
+                  </div>
+              </li> 
+            {{ endif }}
+                {{ if user:logged_in }}
+            {{ else }}               
+                <li class="registro_h top-elem">
+                    <a href="javascript:void(0)" class="register"><span></span> Regístrate</a>
+                </li>
+                <li class="login_h top-elem">
+                    <a href="javascript:void(0)" class="login"><span></span> Iniciar sesión</a>
+                </li>
+            {{ endif }}
+          </ul>
+        </div>
+
+    	  <nav>
+    	      <ul>
+                
+                <li class="li_nav_header"><a href="{{url:base}}products">{{ if {session:data name="lang_code"} == 'en'}}Products{{ else }}Productos{{ endif }}</a>
+                    <!-- subcategory  -->
+                    {{ widgets:instance id="5"}}
+                </li>
+                {{ if {session:data name="lang_code"} == 'en'}}
+    				{{ navigation:links group="headeren" }}
+    			{{ else }}
+    				{{ navigation:links group="header" }}
+    			{{ endif }}
+
+    	      </ul>
+    	  </nav>
+
+    </section>
+</header>
+
+<!-- Modal Buscador  -->
+<section class="bg_buscador_over">
+  <div class="marco elem_blancos">
+    <div class="close_login"></div>
+      <h3>¿Qué está buscando?</h3>
+      <?php echo form_open_multipart(site_url('/products/'), 'class="form_buscar" role="form"'); ?>
+          <?php echo form_input('shearch', set_value('shearch'), 'class="search_big" maxlength="100" placeholder="Buscar producto..."'); ?>
+          <button type="submit" name="btnAction" value="search" class="search-btn"><i class="fa fa-search"></i></button>
+      <?php echo form_close(); ?>
+      <p>Si su búsqueda no ha obtenido ningún resultado. Por favor, vuelva a intentarlo.</p>
+    </div>
+</section>
+<!-- Fin Modal Buscador  -->
+

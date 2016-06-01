@@ -1,0 +1,93 @@
+
+
+//@Services
+
+
+main.services
+	.col-sm-12.col-md12
+		+none
+	.row
+		+m0
+
+	article
+		+tCenter
+		+mb(20px)
+		//		background-image: linear-gradient(#fff 30%, #ededed 90%)
+		+transition(.2s)
+		padding: 0px
+		+bc($gray-light + 10)
+		height: 380px
+		border: thin solid $gray-light - 20
+		+hover
+			+bc($gray-light)
+			box-shadow: (0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19))
+		.card-content
+			padding: 0
+		h2
+			+fs(2, 100%, 300)
+			+co($white)
+			+bg($color)
+			padding: 10px
+		.text
+			+mb(10px)
+			+font-text
+			padding: 10px
+			+fs(1.4, 150%, 300)
+			+co($gray-dark)
+			+tLeft
+		.card-reveal
+			i
+				+fs(3)
+				+co($colorSec)
+				+relative
+				+z(9999)
+				+mb(20px)
+			.text
+				+fs(1.4, 140%, 300)
+				+co($gray-dark)
+			.btn
+				+ib
+				+co(white)
+				i
+					+co(white)
+			
+	figure
+		+tCenter
+		height: 200px
+		+background
+	
+	video
+		+border
+		+mb(20px)
+
+	
+	
+main.services.categories
+	ul.list-group
+		+bg($gray-light + 25)
+		> li
+			+bb(1px solid $colorSec)
+			padding: 15px 10px
+			+relative
+			+before
+				+content('')
+				+size(20px 4px)
+				+bg($color)
+				+transition
+				+block
+				+bot-left(-2px, 0%)
+			+hover
+				+bb(thin solid $gray)
+
+			> a
+				+block
+				+co($colorSec)
+				+fs(1.6, 100%, 500)
+				+hover
+					+gray
+				
+			> ul
+				+none
+
+
+	

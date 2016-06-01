@@ -1,0 +1,89 @@
+
+
+
+//@Services
+
+
+main.libraries
+	article
+		+hover
+			figure
+				i
+					+co($color)
+		h2, p
+			+co($gray $i)
+		p
+			+mt(20px)
+		.btn
+			+co(white)
+
+			+f(1.2rem)
+		
+		h2
+			+fs(1.6, 100%, 700)
+	
+			span
+				+ib
+				width: 88%
+				+va
+
+			i
+				+ib
+				+va
+
+	
+			
+	figure
+		+tCenter
+		+figure
+		i
+			+transition
+	
+
+	.card-action
+		+tCenter
+		padding: 10px $i
+	
+	
+	.card-title
+		+lh(100%)
+	
+	i
+		+pointer
+	
+	.btn
+		i
+			+ml(10px)
+			+co(white)
+	
+	.card-content
+		padding: 10px $i
+	
+main.libraries.categories
+	ul.list-group
+		+bg($gray-light + 25)
+		> li
+			+bb(1px solid $colorSec)
+			padding: 15px 10px
+			+relative
+			+before
+				+content('')
+				+size(20px 4px)
+
+				+transition
+				+block
+				+bot-left(-2px, 0%)
+			+hover
+				+bb(thin solid $gray)
+
+			> a
+				+block
+
+				+fs(1.6, 100%, 500)
+				+hover
+					+gray
+				i
+					+mr(10px)
+			> ul
+				+none
+

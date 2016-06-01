@@ -1,0 +1,71 @@
+
+
+
+
+//@Services
+
+
+main.services
+
+	
+	article
+		h2, p
+			+co($gray $i)
+		p
+			+mt(20px)
+		.btn
+			+co(white $i)
+			+m0
+		h2
+			+fs(1.8, 100%, 700)
+			
+	figure
+		height: 192px
+		+figure
+
+
+	.card-action
+		+tCenter
+		padding: 10px $i
+	
+	
+	.card-title
+		+lh(100%)
+	
+	i
+		+pointer
+	
+	
+main.services.categories
+	ul.list-group
+		+bg($gray-light + 25)
+		> li
+			+bb(1px solid $colorSec)
+			padding: 15px 10px
+			+relative
+			+before
+				+content('')
+				+size(20px 4px)
+				+bg($color)
+				+transition
+				+block
+				+bot-left(-2px, 0%)
+			+hover
+				+bb(thin solid $gray)
+
+			> a
+				+block
+				+co($colorSec)
+				+fs(1.6, 100%, 500)
+				+hover
+					+gray
+				
+			> ul
+				+none
+
+.aboutUs.services
+	figure
+		height: 100px
+	
+	article.card
+		height: 430px

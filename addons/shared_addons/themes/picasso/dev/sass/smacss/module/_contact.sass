@@ -1,0 +1,90 @@
+
+
+
+//@Contact
+
+
+main.contact
+	+tLeft
+	textarea
+		height: 100px $i
+	
+	.modal-close
+		+right
+	.message-success
+		margin: 0 20px 
+		+fs(3, 100%, 100)
+	#map_wrapper,
+	.mapping
+		height: 355px
+	
+	form
+		padding: 10px
+		+bg($gray-light)
+		+mt(-10px)
+
+	label.error
+		+co($error)
+		+tRight
+		left: $in
+		right: 0
+		+fs(1, 100%, 300)
+		
+	#map_wrapper
+		border: 4px solid $gray-light
+		+noScroll
+		+mt(20px)
+	.contact-data
+		+mt($space)
+		+bc($gray-light)
+		+co($gray-dark)
+		+mb(20px)
+		padding: 10px $space 10px
+		h3
+			+mb(20px)
+			+tCenter
+			+pb(10px)
+			+fs(1.6, 100%, 400)
+			+upper
+			+bb(thin solid $colorSec)
+		ul
+			+tCenter
+		li
+			margin: 0 5px
+			+mb(10px)
+			+ib
+			+fs(1.4, 100%, 400)
+			+wauto
+			i
+				+co($color)
+	input[type="submit"]
+		+bg(none)
+		+pointer
+		+noBorder
+		+white
+		+ls(.1rem)
+		
+	.datos_contac
+		+mt(20px)
+.center
+	margin-bottom: 25px
+
+	.tabs
+		li.tab
+			a
+				color: #20607a
+				line-height: 4
+				&:hover
+					color: #3683a3
+		.indicator
+			display: none
+		li.tab
+			.active
+				background: rgba(54, 131, 163, 0.8)
+				color: #fff !important
+				width: 180px
+				margin: 0 auto
+				line-height: 4
+			
+				
+		

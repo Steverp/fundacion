@@ -1,0 +1,354 @@
+//@projects
+
+$height-box: 420px
+
+main.projects
+	+bg(white)
+	h1
+		+mb(20px)
+	.row
+		+m0
+	.panel
+		+mb(20px)
+		height: 100%
+		min-height: 600px
+		padding: 10px
+		+patt(5)
+		+bc($color)
+		+co($white)
+		+fs(1.5, 150%, 300)
+		.container
+			width: 100%
+		.text
+			+bb(thin dotted $gray)
+			+pb(10px)
+	.myText
+		
+		+radius-custom(0px, 0px, 4px, 4px)
+		+z(999999)
+		+bgBlue()
+		+fs(2, 130%, 100)
+		padding: 10px
+		+co(white)
+		+transition(.2s)
+		height: 70px
+		+tCenter
+		+relative
+		+mt(-70px)
+		pointer-events: none
+
+	.myText-active
+		//		+z(-1)
+		+opa(0)
+	
+	.theBox
+		+relative
+		+noScroll
+		+mb(20px)
+	
+	.myCategories
+		+bg(white)
+
+.da-thumbs
+	+relative
+
+	.myBox
+
+		padding: 0px
+		+relative
+		border: thin solid $gray-light - 10
+		+w100
+		+block
+		height: $height-box
+		+transition(.2s)
+		+bc(white)
+		margin: 0 0 20px
+
+		+hover
+			+bc($gray-light - 15)
+			border: thin solid $gray-light - 15
+		figure
+			height: 160px
+			+background
+		h2
+
+			+fs(1.6, 110%, 400)
+			padding: 10px 0
+			margin: 20px 20px 0px
+			+upper
+			+co($gray-dark)
+		a
+			+block
+			+relative
+			margin: 0
+			+tCenter
+			+bgWhite
+			+radius(4px)
+			+s100
+			img
+				+ib
+				+relative
+				margin: 30px 0 0
+				height: 80px
+			div
+				+absolute
+				+s100
+				margin: 0
+				span
+					+block
+					padding: 10px 0
+					margin: 20px 20px 20px
+					+fs(1.6, 140%, 300)
+					+co($gray-dark)
+					border-bottom: 1px solid $color
+					box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 -10px 0 rgba(055, 055, 055, 0.3)
+		
+		
+main.projects.categories
+	ul.list-group
+		+mb(20px)
+		+bg($gray-light)
+		+tCenter
+		> li
+			+bb(1px solid $gray-light + 10)
+			padding: 15px 30px
+			+transition
+			+ib
+			> a
+				+block
+				+co($colorSec)
+				+fs(1.6, 100%, 400)
+				+before
+					+co($colorSec $i)
+
+			+hover
+				+bg($white)
+				> a
+					+co($color $i)
+					+before 
+						+co($color $i)
+			> ul
+				+none
+		> .class_active
+			margin: 0 $i
+			> a
+				+co($color)
+				+before
+					content: '\f111'
+				+hover
+					+co($colorSec)
+	.text
+		+mb(20px)
+	
+	.ico-more
+		+none
+		
+		
+		
+
+main.projects.categories
+	ul.list-group
+
+		> li
+			a
+				+before
+					font-family: fontAwesome 
+					color: $white
+					+mr(10px)
+					content: '\f10c'
+					+transition(.4s)
+						
+				+hover
+					+before
+						content: '\f192'
+		
+		
+			+nth1
+				a
+					+before
+						content: '\f0ae'	
+		
+
+.distribuitors
+	+background
+	background-size: 30%
+	background-position: bottom right
+	+tCenter
+	padding: 0px 0
+	h2
+		+co($colorSec)
+		+fs(4, 100%, 700)
+		+ib
+		+wauto
+		+upper
+		+radius(4px)
+		+mb(20px)
+		strong
+			+co($color)
+	.button-group
+		+noFont
+		button
+			+font-site
+			margin: 0 5px
+			padding: 8px 10px
+			+bc(transparent)
+			+pointer
+			+radius(4px)
+			+fs(1.6, 100%, 400)
+			+co(white)
+			+transition(.2s)
+			+mb(10px)
+			border: none
+			+bg($colorSec + 10)
+		.button:active,
+		.button:hover,
+		.button.is-checked 
+			+bg($color)
+
+
+	.element-item
+		width: 33%
+		padding: 10px
+		height: 310px
+		+mb(20px)
+		+relative
+		+noScroll
+		+radius(6px)
+		+pointer
+		+hover
+			.text
+				+top-left(0,0)
+		> div
+			border: thin solid $gray-light - 20
+			height: 100%
+			+radius(6px)
+			+relative
+		h3
+			margin: 10px
+			+fs(1.6, 100%, 400)
+			+upper
+			height: 80px
+		.text
+			+fs(1.4, 130%, 300)
+			+font-text
+			height: 60px
+		
+		.btn-floating
+			+bot-right(10px, 50%)
+			+mr(-14px)
+			
+		figure
+			height: 240px
+			+background
+			+radius(6px)
+		.text
+			+top-left(-300px, 0)
+			+bgBlack(.7)
+			height: 240px
+			+co(white)
+			+transition(.2s)
+			padding: 20px 20px 60px
+			+radius(6px)
+		
+main.gallery
+	.distribuitors
+		.button-group
+			+noFont
+			button
+				+font-site
+				margin: 0 5px
+				padding: 8px 10px
+				+pointer
+				+radius(4px)
+				+fs(1.6, 100%, 400)
+				+co($colorSec)
+				+transition(.2s)
+				+mb(10px)
+				border: none
+				+bg(transparent)
+			.button:active,
+			.button:hover,
+			.button.is-checked 
+				+bg($color)
+				+co(white)
+.list-detail
+	background-color: #a8171f
+	min-height: 224px
+	height: auto
+	h2
+		background-color: #3a3e3f
+		color: #fff
+		padding: 15px
+		text-align: center
+		font-weight: 200
+	p
+		color: #fff
+		padding: 20px
+		i
+			margin-right: 5px
+
+	ul
+		li
+			color: #fff
+			padding: 10px
+			font-size: 1.5rem
+			&:hover
+				background-color: #b22027
+				color: #fff
+			i
+				margin-right: 5px
+	.text
+		strong
+			color: red
+
+
+
+.gallery-images
+	margin-bottom: 15px
+	h2
+		margin-bottom: 18px
+		font-weight: 500
+		padding-bottom: 18px
+		width: 193px
+		color: #a8171f
+	.image
+		position: relative
+		overflow: hidden
+		height: 220px
+		margin-bottom: 10px
+		a
+			position: absolute
+			width: 100%
+			height: 160px
+			top: 0
+		figure
+			height: 220px
+			background-repeat: no-repeat
+			background-position: center
+			background-size: cover
+		.fondo
+			top: -100%
+			left: 0
+			opacity: 1
+			background-color: #a8171f
+			position: absolute
+			height: 95%
+			width: 98%
+			transition: all 0.5s ease
+			i
+				position: absolute
+				top: 87px
+				left: 129px
+				font-size: 38px
+				color: #c6c6c6
+				cursor: pointer
+
+
+		&:hover		
+			.fondo
+				top: 6px
+				left: 0
+
+main .text
+	strong
+		font-size: 1.4rem

@@ -1,0 +1,192 @@
+//section.video
+//	+size(100% 300px)
+//	+pointer
+//	video
+//		height: auto $i
+//		width: 100% $i
+	
+	
+section.video
+	+relative
+	+tCenter
+	margin: 0
+	+pointer
+
+	h1
+		+co($white)
+		+fs(5, 100%, 300)
+		+upper
+		+ib
+		+wauto
+		+bg($colorSec)
+		padding: 10px 60px 
+		+mb(20px)
+
+	.text
+		+ib
+		+co($white)
+		margin: 0px
+		+fs(3, 150%, 100)
+		+w100
+	
+	i
+		+mt(20px)
+		+fs(8)
+		+co($white)
+		+opa(.8)
+		+borderFix
+	
+	.capa
+		+bgBlack(.3)
+		padding: 40px 0
+		+transition(.2s)
+	
+//	+hover
+//		.capa
+//			+bgBlack(.5)
+	
+section.banner
+	+w100
+	height: $slider-height
+
+
+.slider
+	height: $slider-height
+	+top-left
+	+z(2)
+	+w100
+	.slides
+		height: $slider-height
+	h2
+		+co($white)
+		+fs(3.6, 120%, 300)
+		+upper
+		+mb(30px)
+		+w100
+		+mt(20px)
+	
+	p
+		+co($white)
+		+fs(2, 150%, 100)
+		+w100
+		+mb(30px)
+
+	.btn
+		+upper
+		margin: 0 5px 10px
+	.btn-link
+		+block
+		+upper
+		+co(white)
+		+fs(1.6, 150%, 300)
+		+hover
+			+co($colorSec)
+
+	.caption
+		+tCenter
+		top: 0px
+		height: 100%
+		.caption-container
+			+top-right()
+			+size(340px auto)
+			+bgBlack(.8)
+			padding: 20px
+	
+	
+		.caption-container.left
+			+tLeft
+			+left
+
+		.caption-container.right
+			+tRight
+			+right
+
+	.indicators
+		bottom: 10px
+		text-align: $bullet-align
+		+z(99)
+		li.indicator-item 
+			border: $border-bullet 
+			width: $size-bullet 
+			height: $size-bullet 
+			margin: 0 $space-bullet 
+			+bg($color-bullet)
+			+radius(100%)
+			+transition
+			&.active
+				+bg($color-bullet_active)
+				border: $border-bullet_active 
+
+	
+	
+.slider 
+	+mobil
+		h2
+			+fs(2.4, 120%, 700)
+		p
+			+fs(1.6, 140%, 400)
+
+	+fluid	
+		img
+			+background
+	
+
+.mySlide
+	height: $slider-height
+	+background
+	.caption
+		+top-right()
+		+size(400px $slider-height)
+		+block
+		+bgBlack(.5)
+		+tCenter
+		padding: 20px
+		h2
+			+co($white)
+			+fs(4, 120%, 300)
+			+upper
+		p
+			+co($white)
+			+fs(2.4, 110%, 100)
+			+w100
+			margin: 10px 0 0
+		.text
+			+tLeft
+			+co($white)
+			+fs(1.6, 100%, 300)
+			ul li::before
+				top: 3px
+		.actions
+			+noFont
+			margin: 20px 0
+			a
+				+f(1.4rem)
+				margin: 0 5px
+		
+.banner 	
+	.bx-wrapper .bx-pager, 
+	.bx-wrapper .bx-controls-auto
+		bottom: 10px 
+	
+	.bx-wrapper .bx-pager.bx-default-pager a
+		border: $border-bullet 
+		width: $size-bullet 
+		height: $size-bullet 
+		margin: 0 $space-bullet 
+		+bg($color-bullet)
+		+radius(100%)
+		+transition(.2s)
+	
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, 
+	.bx-wrapper .bx-pager.bx-default-pager a.active
+		+bg($color-bullet_active)
+		border: $border-bullet_active 
+	
+	.btnTer
+		+hover
+			border: 2px solid $white $i
+		+after
+			+none
+	
+
+

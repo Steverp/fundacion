@@ -1,0 +1,55 @@
+
+
+//@AboutUs
+
+$tab-color_active:  $color
+$tab-color: $colorSec
+
+$border-active: true !default
+
+=border-active
+	@if $border-active
+		@debug "$border-active is #{$border-active}"
+		border: 4px solid $gray-light
+
+	@else
+		@debug "$border-active is #{$border-active}"
+
+
+
+main.aboutUs
+
+	figure
+		margin: 0 0 $space 
+		+size(100% 300px)
+		+border-active
+		+figure
+	
+	.row
+		+mb(0)
+	
+	.tabs
+		height: 30px $i
+		+bg($transparent $i)
+		+mb(20px)
+
+		li
+			height: auto $i
+			+bg($transparent $i)
+			a
+				+fs(1.6, 100%, 600)
+				+upper
+				+co($tab-color $i)
+			.active
+				+co($tab-color_active $i)
+		
+		
+	.tabs .indicator
+		+bg($tab-color_active $i)
+		
+	.tab-content
+		+mb($space)
+		h2
+			+fs(2, 100%, 700)
+			+mb($space)
+	

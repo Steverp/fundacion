@@ -1,0 +1,31 @@
+#baseurl.hide {{ url:site }}
+main.home
+	{{ if banner }}
+	section.banner
+		ul#slider-home.bxslider
+			{{ banner }}
+			li
+				a(href="{{link}}", target="_blank")
+					img(src="{{image}}", alt="{{title}}")
+
+				.wrapper
+					.caption
+						span
+							{{title}}
+						{{text}}
+			{{ /banner }}
+
+
+		.wrapper
+			.form-filters
+				h2 Encuentra tu pareja 
+				<?php echo form_open( 'register', array( 'id'=> 'register', 'class' => 'form_register_ajax')) ?>
+				#loading_contacts
+				.gender
+					legend Soy
+					input(type="radio", id="hombre", class="gender1", name="gender1", value="m")
+					label(for="hombre")
+						span
+						i.fa.fa-mars
+	{{ endif }}
+	

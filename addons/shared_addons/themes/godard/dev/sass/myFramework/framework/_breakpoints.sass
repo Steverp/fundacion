@@ -1,0 +1,64 @@
+//BREAKPOINTS
+
+=mobil($viewportMax:601)
+	@media screen and (max-width: $viewportMax+px)
+		@content
+
+=mobil-land($viewportMin:480, $viewportMax:568)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+
+=nexus($viewportMin:359, $viewportMax:480)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+
+=tablet($viewportMin:600, $viewportMax:1024)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+
+
+=onlytablet($viewportMin:767, $viewportMax:959)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+
+=smalltablet($viewportMin:600, $viewportMax:767)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+
+=flextablet($viewportMax:767)
+	@media screen and (max-width: $viewportMax+px)
+		@content
+
+=smalltablet-land($viewportMin:568, $viewportMax:800)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+
+=ipad($viewportMin:800, $viewportMax:940)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+
+=fluid($viewportMax:960)
+	@media screen and (max-width: $viewportMax+px)
+		@content
+			
+
+=desk($viewportMin:940, $viewportMax:1280)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+
+=mq($viewportMax)
+	@media screen and (max-width: $viewportMax+px)
+		@content
+
+=vmax($viewportMax)
+	@media screen and (max-width: $viewportMax+px)
+		@content
+
+=vmin($viewportMin)
+	@media screen and (min-width: $viewportMin+px)
+		@content
+
+=motog($viewportMin:359, $viewportMax:600)
+	@media screen and (min-width: $viewportMin+px) and (max-width: $viewportMax+px)
+		@content
+	

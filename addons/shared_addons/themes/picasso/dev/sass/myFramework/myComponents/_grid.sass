@@ -1,0 +1,141 @@
+/*GRID*/
+
+.col-1
+  +w100
+  .col-item
+    +ml(10px)
+    width: 97.6%
+
+.col-1-align
+  +w100
+  .col-item
+    width: 100%
+
+.col-2
+  +box
+  +space($start)
+  +w100
+  .col-item
+    margin: 0 10px
+    flex: 0 1 47.5%
+  
+.col-1-2
+  +box
+  +space($start)
+  +w100
+  .col-item
+    +nth1
+      flex: 1
+      +mr(20px)
+    +nth2
+      flex: 2
+    +mobil
+      max-width: 100%
+      width: 100%
+      min-width: 100%
+      +nth1
+        +mr(0px)
+        +mb(10px)
+
+
+  
+.col-2-ns
+  +box
+  +space($start)
+  +w100
+  .col-item
+    flex: 0 1 50%
+
+.col-2-align
+  +box
+  +space()
+  +w100
+  .col-item
+    flex: 0 1 49%
+    
+.col-2-1
+  +grid
+  .col-item
+    +nth1
+      flex: 2
+      +mr(20px)
+    +nth2
+      flex: 1
+    +mobil
+      max-width: 100%
+      width: 100%
+      min-width: 100%
+      +nth1
+        +mr(0px)
+        +mb(10px)
+
+.col-3
+  +box
+  +space($start)
+  +align
+  +w100
+  .col-item
+    flex: 0 1 32%
+    +nth2
+      margin: 0 10px
+    +mobil
+      flex: 0 1 100%
+      +nth2
+        margin: 10px 0
+    
+    
+.col-3-1
+  +box
+  +space($start)
+  +w100
+  .col-item
+    +nth1
+      flex: 3
+      +mr(20px)
+    +nth2
+      flex: 1
+    +mobil
+      max-width: 100%
+      width: 100%
+      min-width: 100%
+      +nth1
+        +mr(0px)
+        +mb(10px)
+    
+
+
+
+.modal-container
+  .col-1
+    +box
+    +space($start)
+    +w100
+    .col-item
+      +flex
+      margin: 0 0px 20px
+      width: 100%
+      min-width: 100%
+      max-width: 100%
+
+  .col-2
+    +box
+    +space($bet)
+    +w100
+    .col-item
+      flex: 0 1 49%
+      +m0
+
+
+  .col-3
+    +box
+    +space($start)
+    +align
+    +w100
+    .col-item
+      +flex
+      margin: 0 10px 20px
+      width: 30.5%
+      min-width: 30.5%
+      max-width: 30.5%
+      
+      

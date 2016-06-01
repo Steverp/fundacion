@@ -1,0 +1,41 @@
+.modal-login
+	.container
+		+w100
+		+p0
+	.row
+		+mb(0)
+	.form-loguin
+		.myActions
+			a
+				+ib
+				+left
+				width: 50%
+				+co($color)
+				+under
+				+fs(1.4, 100%, 400)
+				+mt(8px)
+				+hover
+					+co($color - 30)
+	
+.form-help
+	+bg($color)
+	height: 150px
+	padding: 10px
+	+relative
+	h2
+		+mb(10px)
+		+z(9)
+		+co($white)
+		+fs(2.2, 120%, 500)
+	.text
+		+co($white)
+		+fs(1.6, 140%, 300)
+		+z(9)
+	.icon
+		+bot-right(10px, 10px)
+		+opa(.2)
+		+z(1)
+		i
+			+fs(8)
+			+co($white)
+		

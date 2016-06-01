@@ -1,0 +1,361 @@
+//@highlight	
+
+
+=highlight-efect
+	@if $highlight-efect 
+		@debug "$highlight-efect is #{$highlight-efect}"
+		box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21)
+
+
+	@else
+		@debug "$highlight-efect is #{$highlight-efect}"
+
+	
+section.outstanding
+	+tCenter
+	+bg($gray-light)
+	+patt(0)
+	+relative
+	+tCenter
+	margin: 0
+	padding: 25px 0 10px
+
+	h2
+		+co($white)
+		+mb(30px)
+		+ib
+		+wauto
+		+tCenter
+		+upper
+		+fs(2.6, 100%, 400)
+		+bg($color)
+		+ib
+		padding: 10px 60px
+		+fs(2.6, 100%, 300)
+
+	a
+		+block
+	
+	article
+		+tCenter
+		+block
+		+transition
+		height: 340px
+		+bb(thin dotted $gray)
+
+		//		&:hover
+		//			box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21)
+
+
+		figure
+			+size(150px)
+			margin: 0 auto
+			+radius(100%)
+			border: 4px solid white
+			+background
+		
+		h3
+			+tCenter
+			padding: 10px
+			+transition(.4s)
+			+fs(1.8, 130%, 400)
+			+co($color)
+			+block
+			+relative
+			+fw(bold)
+			+upper
+			margin: 10px 0 0
+
+	
+		p
+			+transition
+			+tLeft
+			+co($gray-dark)
+			+fs(1.6, 140%, 400)
+
+
+		.btn
+			+ib
+			+mt(10px)
+			+upper
+			+fs(1.4, 36px, 300)
+			+mr(20px)
+			+white
+			i
+				+ml(10px)
+		
+		.text
+			+tLeft
+			+co($gray-dark)
+		
+		
+		
+		
+section.highlight		
+	.news
+		+tLeft
+		+relative
+		h2
+			+co($color)
+			+mb(10px)
+			+ib
+			+upper
+			+w100
+			+tLeft
+			+fs(2.6, 100%, 500)
+			+fw(bold)
+			i
+				+mr(10px)
+				+ib
+				+va
+		.bx-wrapper .bx-pager, 
+		.bx-wrapper .bx-controls-auto
+			bottom: 20px
+			+tCenter
+			+p0
+			
+		.bx-wrapper .bx-pager.bx-default-pager a
+			border: $border-bullet 
+			width: $size-bullet - 4px
+			height: $size-bullet - 4px
+			margin: 0 $space-bullet 
+			+bg($color-bullet)
+			+radius(100%)
+			+transition(.2s)
+			+f(0rem)
+
+		.bx-wrapper .bx-pager.bx-default-pager a:hover, 
+		.bx-wrapper .bx-pager.bx-default-pager a.active
+			+bg($color-bullet_active)
+			border: $border-bullet_active 
+	
+	
+		article
+			+relative
+			height: 480px
+			+bb(thin dotted $gray)
+			figure
+				height: 200px
+				+background
+				border: 4px solid $gray-light
+			
+			.icon
+				+block
+				margin: 10px 0
+				+tCenter
+				+relative
+				
+				i
+					+fs(2.4)
+					+co($gray ) 
+				+before
+					+content('')
+					+size(200px 1px)
+					+bg($gray)
+					+top-left(10px, 30px)
+				+after
+					+content('')
+					+size(200px 1px)
+					+bg($gray)
+					+top-right(10px, 30px)
+		
+			h3
+				+tCenter
+				padding: 0 10px 0 0
+				+fs(2, 130%, 700)
+				+co($highlight-colorSubtitle)
+				+block
+				+relative
+				+upper
+				margin: 15px 20px 0
+
+
+			p
+				+transition
+				padding: 0 20px
+				+tLeft
+				+co($highlight-colorTxt)
+				+fs(1.6, 160%, 300)
+
+
+			.btn
+				+ib
+				+mt(10px)
+				+upper
+				+fs(1.4, 36px, 300)
+				+mr(20px)
+				+white
+				i
+					+ml(10px)
+
+
+
+section.highlight
+
+	+tCenter
+	+bg($highlight-bgColor)
+	+patt($highlight-bgPattern)
+	+relative
+	+tCenter
+	margin: 0
+	padding: 25px 0 10px
+
+
+
+	.weDo
+		+tLeft
+		
+		h2
+			+co($color)
+			+mb(20px)
+			+ib
+			+w100
+			+bb(thin solid $color)
+			+tLeft
+			+upper
+			padding: 0 10px 5px 10px
+			+fs(2.6, 100%, 300)
+
+		.text
+			+fs(1.6, 150%, 300)
+			padding: 0 10px
+	
+	
+		.icon
+			+block
+			margin: 20px 0 0
+			+tCenter
+			+relative
+			i
+				+fs(2.4)
+				+co($gray-light - 30 ) 
+			+before
+				+content('')
+				+size(230px 1px)
+				+bg($gray-light - 30)
+				+top-left(10px, 10px)
+			+after
+				+content('')
+				+size(230px 1px)
+				+bg($gray-light - 30)
+				+top-right(10px, 10px)
+				
+		
+		h3
+			+tCenter
+			padding: 0 10px 0 0
+			+fs(2, 130%, 700)
+			+co($highlight-colorSubtitle)
+			+block
+			+relative
+			+upper
+			margin: 15px 20px 0
+
+
+		p
+			+transition
+			padding: 0 20px
+			+tLeft
+			+co($highlight-colorTxt)
+			+fs(1.6, 160%, 300)
+
+
+
+	.hireUs
+		+bg($color)
+		height: 300px
+		padding: 20px
+		+relative
+		+noScroll
+		+bb(4px solid $colorSec)
+		h2
+			+co($gray-light)
+			+fs(2.6, 100%, 300)
+			+mb(15px)
+			+upper
+			+relative
+		.text
+			+co($white)
+			+fs(1.7, 150%, 100)
+			text-align: justify
+		.btn
+			+mt(10px)
+			//			+before
+			//				+content('')
+			//				+size(100px 1px)
+			//				+bgWhite
+			//				+top-left(14px, 0)
+			//			+after
+			//				+content('')
+			//				+size(100px 1px)
+			//				+bgWhite
+			//				+top-right(14px, 0)
+		.icon
+			+opa(.1)
+			+size(182px 120px)
+			+top-left(50%, 50%)
+			margin: -60px 0 0 -91px
+			+background
+			i
+				+fs(20)
+		
+section.highlight	
+	.book
+		+noScroll
+		height: 520px
+		padding: 20px
+		+bg($colorSec)
+		+relative
+		figure
+			+centered(10px, 10px)
+			width: 100%
+			height: 260px
+			
+			+background
+		.icon2
+			+bot-right(-60px, -50px)
+			+size(240px 320px)
+			+background
+			+opa(.2)
+		h3
+			+co($white)
+			+fs(2.6, 100%, 500)
+			+upper
+			+mb(5px)
+		.icon
+			+block
+			+relative
+			+mb(10px)
+			+tCenter
+			+before
+				+content('')
+				+block
+				+top-left(13px, 10px)
+				+bg($white)
+				+size(130px 1px)
+			+after
+				+content('')
+				+block
+				+top-right(13px, 10px)
+				+bg($white)
+				+size(130px 1px)
+			i
+				+white
+				+fs(1.8)
+				+pt(6px)
+				+size(30px)
+				+radius(100%)
+				+bg($colorTer)
+		.text
+			padding: 0 20px
+			+co($white)
+			+tCenter
+			+fs(1.6, 150%, 100)
+
+		.btn
+			+mt(15px $i)
+			border: 2px solid $white $i
+			+hover
+				+co($color)
+			+after
+				+bg($white)

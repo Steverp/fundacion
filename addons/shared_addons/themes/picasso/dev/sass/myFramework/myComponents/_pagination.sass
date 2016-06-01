@@ -1,0 +1,94 @@
+/*PAGINATION*/
+
+.pagination
+	+tCenter
+	ul
+		+box
+		+space($cen)
+		li
+			+relative
+			margin: 0 -2px
+			a,
+			span
+				+block
+				+bg($transparent)
+				+co($colorSec)
+				+size(30px)
+				+fs(1.4, 23px, 700)
+				+pointer
+				+transition
+				border: 4px solid $colorSec
+				+radius(100%)
+				+hover
+					
+					+bg($transparent)
+					+co($color)
+					border: 4px solid $color
+
+				i
+					+mt(3px)
+		.active	
+			+z(99999)
+			a,
+			span
+				+co($color)
+				+bg($transparent)
+				border: 4px solid $color
+		
+		.prev,
+		.next
+			a
+				+lh(22px $i)
+
+//.pager-rounded
+//	+tCenter
+//	+w100
+//	+clear
+//	+relative
+//	+z(99)
+//	ul
+//		+wauto
+//		+inline-block
+//		box-shadow: 1px 1px 0px rgba(0,0,0,.2)
+//		+radius(10px)
+//		li
+//
+//			border-left: thin solid $gray-light
+//			+m0
+//			+left
+//			a
+//				+block
+//				+bg(white)
+//				+co($gray-dark)
+//				+size(35px)
+//				+fs(1.6, 35px, null)
+//				+pointer
+//				+transition
+//				+hover
+//					+co($pink)
+//				i
+//					+mt(8px)
+//			.active
+//				+bg($pink)
+//				+co(white)
+//				+hover
+//					+co(white)
+//		.first
+//			border-left: thin solid $gray-light
+//
+//		.last
+//			border-right: thin solid $gray-light
+//
+//		.prev
+//			+noBorder
+//			a
+//				+radius-custom(10px, 0, 0, 10px)
+//
+//		.next
+//			+noBorder
+//			a
+//				+radius-custom(0, 10px, 10px, 0)
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ template:title }} | {{ settings:site_name }}</title>
+	<base href="{{ url:base }}" />
+	{{ theme:partial name="metadata-css" }}
+
+
+	<style>
+		/*.preload {
+			bottom: 0;
+			height: 100%;
+			left: 0;
+			position: fixed;
+			right: 0;
+			overflow: hidden;
+			top: 0;
+			width: 100%;
+			z-index: 99999999999;
+			background: #fff url(addons/shared_addons/themes/picasso/img/loading.gif) center center no-repeat
+				
+		}*/
+		
+		@media screen and (max-width: 960px) {
+			.preload {
+				background-size: 50%
+			}
+		}
+	</style>
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<aside class="preload"></aside>
+
+<body>
+  <div class="social">
+                            {{ widgets:instance id="6"}}
+                        </div>
+		     <?php 
+        $baseH = base_url();
+        $url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+
+        
+		if($url != $baseH){ ?>
+        <header class="wow">
+            {{ theme:partial name="header" }}
+        </header>
+		<div class="fix"></div>
+        <?php }else{ ?>
+
+        <header class="fixed wow">
+            {{ theme:partial name="header" }}
+        </header>
+        <?php }?>
+	<!--
+	<aside class="alerts hide">
+		<div class="wrapper">
+			{{ session:messages success="alert alert-success" notice="alert alert-notice" error="alert alert-error" }}
+		</div>
+	</aside>
+-->
+	{{ template:body }}
+
+		{{ theme:partial name="footer" }} {{ theme:partial name="metadata-js" }}
+
+
+
+
+</body>
+
+</html>

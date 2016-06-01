@@ -1,0 +1,53 @@
+
+
+
+//@News
+
+
+main.news
+	article
+		+bb(thin solid $gray-light)
+		+relative
+		+mb(30px)
+		height: 230px
+		+w100
+		h2
+			+lh(150%)
+
+		figure
+			+size(350px 200px)	
+			+right
+			+mt(5px)
+			+ml(20px)
+			+figure
+			border: 4px solid $gray-light
+	
+		a.btn-link
+			+ib
+
+		.icon
+			+bot-left(-12px, 50%)
+			+ml(-24px)
+			padding: 0 10px
+			+bg(white)
+			+patt(5)
+			+block
+			+tCenter
+
+			i
+				+fs(2)
+				+co($gray-light - 10)
+		
+.noMargin
+	+mb(0)
+
+main.news
+	+fluid
+		article
+			height: auto
+			+pb(60px)
+			figure
+				+tCenter
+				max-width: 100%
+				+noFloat
+				margin: 0 0 20px

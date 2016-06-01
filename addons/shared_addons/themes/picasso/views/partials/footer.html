@@ -1,0 +1,95 @@
+<div class="back">
+	<footer>
+
+<!-- <section class="newLetter">
+<div class="container">
+    <div class="row">
+        <div id="loading_contacts2"></div>
+        <div class="s2"></div>    
+       
+        <div class="col s12 l5">
+            <div class="newsletter">
+                <input placeholder="Nombre" id="nombre" type="text" class="validate name" name="name" value="">
+            </div>
+        </div>
+        <div class="col s12 l5">
+            <div class="newsletter">
+                <input placeholder="Correo Electronico" id="email" type="text" class="validate email" name="email" value="">
+            </div>
+        </div>
+        <div class="col s12 l2">
+            <div class="two_newsletter">
+                <button type="submit" name="bntAction" class="btn">Enviar</button>
+            </div>
+        </div>
+        <div class="col l12 s12">
+            <div class="one_newsletter">Lorem ipsum dolor sit amet.</div>
+            <input type="checkbox" id="test5" class="validate check" name="check" />
+            <label for="test5" class="news"></label>
+            <p class="open-modal news2 modal-trigger" href="#terminos">Acepto Terminos y condiciones</p>
+        </div>
+       
+    </div>
+</div>
+</section> -->
+
+
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		{{ if theme:options:showmenu_footer == 'yes' }}
+		<div class="col s12">
+		
+			<nav>
+				<ul>
+					{{ navigation:links group="header" }}
+				</ul>
+			</nav>
+		</div>
+		{{else}} {{ endif }}
+		
+		<div class="col s12">
+			<div class="contact-info">{{ widgets:instance id="3"}} </div>
+		</div>
+</footer>
+<div class="postFooter">		
+<div class="container"><div class="row">
+		<div class="col s12 l8">
+			<div class="copyright">&#169; {{ helper:date format="Y" }} - <span>{{ settings:site_name }}</span> - {{ helper:lang line="all_right_reserved" }}</div>
+		</div>
+		<div class="col s12 l4">
+			<div class="ahorranito">
+				<a href="http://imaginamos.com/" target="_blank">Diseño páginas web <div class="ahorranito-icon"></div> imagin<span>a</span>mos.com</a> </div>
+		</div>
+</div></div>
+	</div>
+</div>
+  <div id="modal1" class="modal bottom-sheet">
+   <main class="contact">
+      <h1><div class="container">Contacto  <a href="#!" class="modal-action modal-close waves-effect waves-green btn ">Cerrar</a></div></h1>
+      <div class="container">{{ widgets:instance id="6"}}</div>
+    </main>
+  </div>
+</div>	
+	
+	
+</div>
+
+
+<!-- <div id="terminos" class="modal">
+    <div class="modal-content">
+      <h4>Terminos y condiciones</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic iste nesciunt saepe reiciendis cum placeat incidunt sint quae dolor esse omnis corrupti nemo, nisi error atque, voluptate nulla ut. Totam. 
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo adipisci minima delectus repellendus reprehenderit dolorem reiciendis recusandae provident. Eligendi in quos, quo vero, sint nesciunt eaque neque quas numquam non!
+      	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia placeat fugiat ducimus tempora dolorem odit praesentium repellat adipisci sint debitis atque reprehenderit accusantium quaerat cupiditate quae, qui repudiandae, possimus tenetur.
+      
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn">Cerrar</a>
+    </div>
+  </div> -->
