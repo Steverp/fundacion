@@ -1,23 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.11.1deb2+deb7u2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 26-11-2015 a las 21:03:33
--- Versión del servidor: 5.5.46
--- Versión de PHP: 5.4.45-0+deb7u2
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 02-06-2016 a las 18:22:49
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.21
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `pag_coldpack`
+-- Base de datos: `fundacion`
 --
 
 -- --------------------------------------------------------
@@ -26,15 +26,12 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `core_domains`
 --
 
-CREATE TABLE IF NOT EXISTS `core_domains` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `core_domains` (
+  `id` int(11) NOT NULL,
   `domain` varchar(100) NOT NULL,
   `site_id` int(11) NOT NULL,
-  `type` enum('park','redirect') NOT NULL DEFAULT 'park',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `unique` (`domain`),
-  KEY `domain` (`domain`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  `type` enum('park','redirect') NOT NULL DEFAULT 'park'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -42,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `core_domains` (
 -- Estructura de tabla para la tabla `core_settings`
 --
 
-CREATE TABLE IF NOT EXISTS `core_settings` (
+CREATE TABLE `core_settings` (
   `slug` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `default` text COLLATE utf8_unicode_ci NOT NULL,
   `value` text COLLATE utf8_unicode_ci NOT NULL
@@ -63,7 +60,7 @@ INSERT INTO `core_settings` (`slug`, `default`, `value`) VALUES
 -- Estructura de tabla para la tabla `core_sites`
 --
 
-CREATE TABLE IF NOT EXISTS `core_sites` (
+CREATE TABLE `core_sites` (
   `id` int(5) NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `ref` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -86,8 +83,8 @@ INSERT INTO `core_sites` (`id`, `name`, `ref`, `domain`, `active`, `created_on`,
 -- Estructura de tabla para la tabla `core_users`
 --
 
-CREATE TABLE IF NOT EXISTS `core_users` (
-  `id` smallint(5) unsigned NOT NULL,
+CREATE TABLE `core_users` (
+  `id` smallint(5) UNSIGNED NOT NULL,
   `email` varchar(60) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `salt` varchar(6) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -115,7 +112,7 @@ INSERT INTO `core_users` (`id`, `email`, `password`, `salt`, `group_id`, `ip_add
 -- Estructura de tabla para la tabla `default_about_us`
 --
 
-CREATE TABLE IF NOT EXISTS `default_about_us` (
+CREATE TABLE `default_about_us` (
   `id` int(11) NOT NULL,
   `footer` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `intro` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -138,7 +135,7 @@ INSERT INTO `default_about_us` (`id`, `footer`, `intro`, `video`, `text`, `lang`
 -- Estructura de tabla para la tabla `default_about_us_allies`
 --
 
-CREATE TABLE IF NOT EXISTS `default_about_us_allies` (
+CREATE TABLE `default_about_us_allies` (
   `id` int(11) NOT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL
@@ -160,22 +157,21 @@ INSERT INTO `default_about_us_allies` (`id`, `name`, `image`) VALUES
 -- Estructura de tabla para la tabla `default_about_us_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_about_us_intro` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_about_us_intro` (
+  `id` int(11) NOT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `intro` text COLLATE utf8_unicode_ci,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8_unicode_ci,
-  `section` int(1) DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+  `section` int(1) DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_about_us_intro`
 --
 
 INSERT INTO `default_about_us_intro` (`id`, `title`, `intro`, `image`, `text`, `section`) VALUES
-(1, 'SOBRE <strong>NOSOTROS</strong>', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit molestias, amet atque praesentium sequi, est nostrum et officia asperiores. Earum expedita explicabo odio minima aliquid, est dolorum facilis eaque asperiores!&nbsp;pisicing elit. Impedit molestias, amet atque praesentium sequi, est nostrum et officia asperiores.', 'uploads/default/about_us_multiples/e2d421bd574e7c85171fb9dd40548f84.jpg', '<strong>HISTORIA</strong><br />\r\n<br />\r\nAtque praesentium sequi, est nostrum et officia asperiores. Earum expedita explicabo odio minima aliquid, est dolorum facilis eaque asperiores!&nbsp;atque praesentium sequi, est nostrum et officia asperiores. Earum expedita explicabo odio minima aliquid, est dolorum facilis eaque asperiores!', 1);
+(1, 'Acerca De', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit molestias, amet atque praesentium sequi, est nostrum et officia asperiores. Earum expedita explicabo odio minima aliquid, est dolorum facilis eaque asperiores!&nbsp;pisicing elit. Impedit molestias, amet atque praesentium sequi, est nostrum et officia asperiores.', 'uploads/default/about_us_multiples/67458f26ffe3e3e4d22117ca220f71eb.jpg', '<strong>HISTORIA</strong><br />\r\n<br />\r\nAtque praesentium sequi, est nostrum et officia asperiores. Earum expedita explicabo odio minima aliquid, est dolorum facilis eaque asperiores!&nbsp;atque praesentium sequi, est nostrum et officia asperiores. Earum expedita explicabo odio minima aliquid, est dolorum facilis eaque asperiores!', 1);
 
 -- --------------------------------------------------------
 
@@ -183,8 +179,8 @@ INSERT INTO `default_about_us_intro` (`id`, `title`, `intro`, `image`, `text`, `
 -- Estructura de tabla para la tabla `default_about_us_multiples`
 --
 
-CREATE TABLE IF NOT EXISTS `default_about_us_multiples` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_about_us_multiples` (
+  `id` int(11) NOT NULL,
   `title` text COLLATE utf8_unicode_ci,
   `slug` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` text COLLATE utf8_unicode_ci,
@@ -193,9 +189,8 @@ CREATE TABLE IF NOT EXISTS `default_about_us_multiples` (
   `date` datetime DEFAULT NULL,
   `position` int(11) DEFAULT NULL,
   `outstanding` int(1) DEFAULT NULL,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -203,12 +198,11 @@ CREATE TABLE IF NOT EXISTS `default_about_us_multiples` (
 -- Estructura de tabla para la tabla `default_about_us_partners`
 --
 
-CREATE TABLE IF NOT EXISTS `default_about_us_partners` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_about_us_partners` (
+  `id` int(11) NOT NULL,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `link` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+  `link` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_about_us_partners`
@@ -223,12 +217,11 @@ INSERT INTO `default_about_us_partners` (`id`, `image`, `link`) VALUES
 -- Estructura de tabla para la tabla `default_about_us_slide`
 --
 
-CREATE TABLE IF NOT EXISTS `default_about_us_slide` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_about_us_slide` (
+  `id` int(11) NOT NULL,
   `image` text COLLATE utf8_unicode_ci,
-  `link` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+  `link` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_about_us_slide`
@@ -244,7 +237,7 @@ INSERT INTO `default_about_us_slide` (`id`, `image`, `link`) VALUES
 -- Estructura de tabla para la tabla `default_ask`
 --
 
-CREATE TABLE IF NOT EXISTS `default_ask` (
+CREATE TABLE `default_ask` (
   `id` int(11) NOT NULL,
   `text` longtext COLLATE utf8_unicode_ci,
   `title1` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -269,7 +262,7 @@ INSERT INTO `default_ask` (`id`, `text`, `title1`, `text1`, `title2`, `text2`, `
 -- Estructura de tabla para la tabla `default_ask_allies`
 --
 
-CREATE TABLE IF NOT EXISTS `default_ask_allies` (
+CREATE TABLE `default_ask_allies` (
   `id` int(11) NOT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -293,7 +286,7 @@ INSERT INTO `default_ask_allies` (`id`, `name`, `image`, `text`, `lang`) VALUES
 -- Estructura de tabla para la tabla `default_ask_mail`
 --
 
-CREATE TABLE IF NOT EXISTS `default_ask_mail` (
+CREATE TABLE `default_ask_mail` (
   `id` int(11) NOT NULL,
   `place` varchar(445) COLLATE utf8_unicode_ci DEFAULT NULL,
   `type` varchar(445) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -315,7 +308,7 @@ INSERT INTO `default_ask_mail` (`id`, `place`, `type`, `message`, `date`, `statu
 -- Estructura de tabla para la tabla `default_blog`
 --
 
-CREATE TABLE IF NOT EXISTS `default_blog` (
+CREATE TABLE `default_blog` (
   `id` int(9) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime DEFAULT NULL,
@@ -351,7 +344,7 @@ INSERT INTO `default_blog` (`id`, `created`, `updated`, `created_by`, `ordering_
 -- Estructura de tabla para la tabla `default_blog_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_blog_categories` (
+CREATE TABLE `default_blog_categories` (
   `id` int(11) NOT NULL,
   `slug` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL
@@ -363,7 +356,7 @@ CREATE TABLE IF NOT EXISTS `default_blog_categories` (
 -- Estructura de tabla para la tabla `default_chat`
 --
 
-CREATE TABLE IF NOT EXISTS `default_chat` (
+CREATE TABLE `default_chat` (
   `id` int(9) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime DEFAULT NULL,
@@ -387,7 +380,7 @@ INSERT INTO `default_chat` (`id`, `created`, `updated`, `created_by`, `ordering_
 -- Estructura de tabla para la tabla `default_chat_assign`
 --
 
-CREATE TABLE IF NOT EXISTS `default_chat_assign` (
+CREATE TABLE `default_chat_assign` (
   `id` int(9) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime DEFAULT NULL,
@@ -414,7 +407,7 @@ INSERT INTO `default_chat_assign` (`id`, `created`, `updated`, `created_by`, `or
 -- Estructura de tabla para la tabla `default_chat_message`
 --
 
-CREATE TABLE IF NOT EXISTS `default_chat_message` (
+CREATE TABLE `default_chat_message` (
   `id` int(9) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime DEFAULT NULL,
@@ -441,7 +434,7 @@ INSERT INTO `default_chat_message` (`id`, `created`, `updated`, `created_by`, `o
 -- Estructura de tabla para la tabla `default_chat_state`
 --
 
-CREATE TABLE IF NOT EXISTS `default_chat_state` (
+CREATE TABLE `default_chat_state` (
   `state` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -458,11 +451,11 @@ INSERT INTO `default_chat_state` (`state`) VALUES
 -- Estructura de tabla para la tabla `default_ci_sessions`
 --
 
-CREATE TABLE IF NOT EXISTS `default_ci_sessions` (
+CREATE TABLE `default_ci_sessions` (
   `session_id` varchar(40) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `ip_address` varchar(45) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `user_agent` varchar(120) COLLATE utf8_unicode_ci NOT NULL,
-  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `last_activity` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `user_data` text COLLATE utf8_unicode_ci
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -1008,7 +1001,7 @@ INSERT INTO `default_ci_sessions` (`session_id`, `ip_address`, `user_agent`, `la
 -- Estructura de tabla para la tabla `default_comments`
 --
 
-CREATE TABLE IF NOT EXISTS `default_comments` (
+CREATE TABLE `default_comments` (
   `id` int(11) NOT NULL,
   `is_active` int(1) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL DEFAULT '0',
@@ -1041,7 +1034,7 @@ INSERT INTO `default_comments` (`id`, `is_active`, `user_id`, `user_name`, `user
 -- Estructura de tabla para la tabla `default_comment_blacklists`
 --
 
-CREATE TABLE IF NOT EXISTS `default_comment_blacklists` (
+CREATE TABLE `default_comment_blacklists` (
   `id` int(11) NOT NULL,
   `website` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `email` varchar(150) COLLATE utf8_unicode_ci NOT NULL DEFAULT ''
@@ -1053,7 +1046,7 @@ CREATE TABLE IF NOT EXISTS `default_comment_blacklists` (
 -- Estructura de tabla para la tabla `default_contact_log`
 --
 
-CREATE TABLE IF NOT EXISTS `default_contact_log` (
+CREATE TABLE `default_contact_log` (
   `id` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `subject` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -1071,8 +1064,8 @@ CREATE TABLE IF NOT EXISTS `default_contact_log` (
 -- Estructura de tabla para la tabla `default_contact_us`
 --
 
-CREATE TABLE IF NOT EXISTS `default_contact_us` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_contact_us` (
+  `id` int(11) NOT NULL,
   `facebook` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `twitter` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `youtube` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1086,16 +1079,15 @@ CREATE TABLE IF NOT EXISTS `default_contact_us` (
   `intro` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `footer` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_contact_us`
 --
 
 INSERT INTO `default_contact_us` (`id`, `facebook`, `twitter`, `youtube`, `linkedin`, `instagram`, `adress`, `phone`, `email`, `map`, `schedule`, `intro`, `footer`, `image`, `lang`) VALUES
-(1, 'https://www.facebook.com/es', 'https://twitter.com/', '', '', '', 'Calle 93 No. 14-20 Oficina 303', '+57 (1) 6184034', 'info@nivel.com', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia repellat, officiis dolorem? Non accusantium, dolores quibusdam fugiat sapiente tempora labore animi corporis repellat quod accusamus, vitae laboriosam, eaque officiis quis tempora labore animi corporis repellat quod accusamus!!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus natus doloribus assumenda rem iure quasi, libero sit fugiat nam accusantium! Dicta mollitia doloribus quibusdam placeat iusto blanditiis sequi quos doloremque.', 'Somos <strong>gente9</strong> con mente abierta, innovadores y con pensamiento social', 'mapa.jpg', 'es'),
+(1, 'https://www.facebook.com/es', 'https://twitter.com/', '', '', '', 'Calle 93 No. 14-20 Oficina 303', '+57 (1) 6184034', 'ksteve9519@gmail.com', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia repellat, officiis dolorem? Non accusantium, dolores quibusdam fugiat sapiente tempora labore animi corporis repellat quod accusamus, vitae laboriosam, eaque officiis quis tempora labore animi corporis repellat quod accusamus!!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus natus doloribus assumenda rem iure quasi, libero sit fugiat nam accusantium! Dicta mollitia doloribus quibusdam placeat iusto blanditiis sequi quos doloremque.', 'Somos <strong>gente9</strong> con mente abierta, innovadores y con pensamiento social', 'mapa.jpg', 'es'),
 (2, 'https://www.facebook.com/en', 'https://twitter.com/en', 'https://co.linkedin.com/en', NULL, NULL, 'Cra 50 A # 31C - 23', '(57) 224 14 17 123', 'william.daza.66@gmail.com', '', 'Horario oficina', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus natus doloribus assumenda rem iure quasi, libero sit fugiat nam accusantium! Dicta mollitia doloribus quibusdam placeat iusto blanditiis sequi quos doloremque.', 'Somos <strong>gente9</strong> con mente abierta, innovadores y con pensamiento social', NULL, 'en');
 
 -- --------------------------------------------------------
@@ -1104,8 +1096,8 @@ INSERT INTO `default_contact_us` (`id`, `facebook`, `twitter`, `youtube`, `linke
 -- Estructura de tabla para la tabla `default_contact_us_emails`
 --
 
-CREATE TABLE IF NOT EXISTS `default_contact_us_emails` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_contact_us_emails` (
+  `id` int(11) NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `phone` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1115,9 +1107,8 @@ CREATE TABLE IF NOT EXISTS `default_contact_us_emails` (
   `message` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   `status` int(11) DEFAULT '0',
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_contact_us_emails`
@@ -1125,7 +1116,12 @@ CREATE TABLE IF NOT EXISTS `default_contact_us_emails` (
 
 INSERT INTO `default_contact_us_emails` (`id`, `name`, `email`, `phone`, `cell`, `company`, `city`, `message`, `date`, `status`, `lang`) VALUES
 (16, 'LOREM IPSUM DOLOR SIT AMET', 'carolina.rodriguez@imagina.co', '571+6134923', '3119380282', 'imaginamos', 'Bogota', 'Mensaje de Prueba -- no responder --', '2015-05-21 10:08:38', 1, 'es'),
-(17, 'Carolina Rodriguez', 'carolina.bonilla@imaginamos.co', '8445755', NULL, 'Imaginamos', 'Bogota D.C', 'Mensaje de prueba', '2015-09-18 12:21:19', 1, 'es');
+(17, 'Carolina Rodriguez', 'carolina.bonilla@imaginamos.co', '8445755', NULL, 'Imaginamos', 'Bogota D.C', 'Mensaje de prueba', '2015-09-18 12:21:19', 1, 'es'),
+(18, 'Kevin', 'steverp95@outlook.es', 'Romero', NULL, 'Pepsi', 'Bogota', 'Test de Funcionamiento', '2016-06-02 11:02:39', 0, 'es'),
+(19, 'Kevin', 'steverp95@outlook.es', 'Romero', NULL, 'Pepsi', 'Bogota', 'Test de Funcionamiento', '2016-06-02 11:03:01', 0, 'es'),
+(20, 'Kevin', 'steverp95@outlook.es', 'Romero', NULL, 'Pepsi', 'Bogota', 'Test de Funcionamiento', '2016-06-02 11:03:22', 0, 'es'),
+(21, 'Kevin', 'steverp95@outlook.es', 'Romero', NULL, 'Pepsi', 'Bogota', 'Test de Funcionamiento', '2016-06-02 11:03:42', 0, 'es'),
+(22, 'Kevin', 'steverp95@outlook.es', 'Romero', NULL, 'Pepsi', 'Bogota', 'Test de Funcionamiento', '2016-06-02 11:04:03', 0, 'es');
 
 -- --------------------------------------------------------
 
@@ -1133,7 +1129,7 @@ INSERT INTO `default_contact_us_emails` (`id`, `name`, `email`, `phone`, `cell`,
 -- Estructura de tabla para la tabla `default_contact_us_emails_area`
 --
 
-CREATE TABLE IF NOT EXISTS `default_contact_us_emails_area` (
+CREATE TABLE `default_contact_us_emails_area` (
   `id` int(11) NOT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `title_en` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1158,7 +1154,7 @@ INSERT INTO `default_contact_us_emails_area` (`id`, `title`, `title_en`, `email`
 -- Estructura de tabla para la tabla `default_contact_us_email_products`
 --
 
-CREATE TABLE IF NOT EXISTS `default_contact_us_email_products` (
+CREATE TABLE `default_contact_us_email_products` (
   `id` int(11) NOT NULL,
   `id_product` int(11) DEFAULT NULL,
   `id_email` int(11) DEFAULT NULL,
@@ -1182,8 +1178,8 @@ INSERT INTO `default_contact_us_email_products` (`id`, `id_product`, `id_email`,
 -- Estructura de tabla para la tabla `default_data_fields`
 --
 
-CREATE TABLE IF NOT EXISTS `default_data_fields` (
-  `id` int(11) unsigned NOT NULL,
+CREATE TABLE `default_data_fields` (
+  `id` int(11) UNSIGNED NOT NULL,
   `field_name` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `field_slug` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `field_namespace` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1235,8 +1231,8 @@ INSERT INTO `default_data_fields` (`id`, `field_name`, `field_slug`, `field_name
 -- Estructura de tabla para la tabla `default_data_field_assignments`
 --
 
-CREATE TABLE IF NOT EXISTS `default_data_field_assignments` (
-  `id` int(11) unsigned NOT NULL,
+CREATE TABLE `default_data_field_assignments` (
+  `id` int(11) UNSIGNED NOT NULL,
   `sort_order` int(11) NOT NULL,
   `stream_id` int(11) NOT NULL,
   `field_id` int(11) NOT NULL,
@@ -1288,8 +1284,8 @@ INSERT INTO `default_data_field_assignments` (`id`, `sort_order`, `stream_id`, `
 -- Estructura de tabla para la tabla `default_data_streams`
 --
 
-CREATE TABLE IF NOT EXISTS `default_data_streams` (
-  `id` int(10) unsigned NOT NULL,
+CREATE TABLE `default_data_streams` (
+  `id` int(10) UNSIGNED NOT NULL,
   `stream_name` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `stream_slug` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `stream_namespace` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1321,8 +1317,8 @@ INSERT INTO `default_data_streams` (`id`, `stream_name`, `stream_slug`, `stream_
 -- Estructura de tabla para la tabla `default_data_stream_searches`
 --
 
-CREATE TABLE IF NOT EXISTS `default_data_stream_searches` (
-  `id` int(11) unsigned NOT NULL,
+CREATE TABLE `default_data_stream_searches` (
+  `id` int(11) UNSIGNED NOT NULL,
   `stream_slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `stream_namespace` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `search_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -1338,7 +1334,7 @@ CREATE TABLE IF NOT EXISTS `default_data_stream_searches` (
 -- Estructura de tabla para la tabla `default_def_page_fields`
 --
 
-CREATE TABLE IF NOT EXISTS `default_def_page_fields` (
+CREATE TABLE `default_def_page_fields` (
   `id` int(9) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime DEFAULT NULL,
@@ -1364,7 +1360,7 @@ INSERT INTO `default_def_page_fields` (`id`, `created`, `updated`, `created_by`,
 -- Estructura de tabla para la tabla `default_email_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `default_email_templates` (
+CREATE TABLE `default_email_templates` (
   `id` int(11) NOT NULL,
   `slug` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -1395,10 +1391,31 @@ INSERT INTO `default_email_templates` (`id`, `slug`, `name`, `description`, `sub
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `default_features`
+--
+
+CREATE TABLE `default_features` (
+  `id` int(11) NOT NULL,
+  `text` varchar(500) NOT NULL,
+  `kind` int(11) NOT NULL,
+  `lang` varchar(4) NOT NULL DEFAULT 'es',
+  `id_pro` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `default_features`
+--
+
+INSERT INTO `default_features` (`id`, `text`, `kind`, `lang`, `id_pro`) VALUES
+(1, 'Test de Funcionamiento', 1, 'es', 26);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `default_files`
 --
 
-CREATE TABLE IF NOT EXISTS `default_files` (
+CREATE TABLE `default_files` (
   `id` char(15) COLLATE utf8_unicode_ci NOT NULL,
   `folder_id` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL DEFAULT '1',
@@ -1433,7 +1450,7 @@ INSERT INTO `default_files` (`id`, `folder_id`, `user_id`, `type`, `name`, `file
 -- Estructura de tabla para la tabla `default_file_folders`
 --
 
-CREATE TABLE IF NOT EXISTS `default_file_folders` (
+CREATE TABLE `default_file_folders` (
   `id` int(11) NOT NULL,
   `parent_id` int(11) DEFAULT '0',
   `slug` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -1459,8 +1476,8 @@ INSERT INTO `default_file_folders` (`id`, `parent_id`, `slug`, `name`, `location
 -- Estructura de tabla para la tabla `default_gallerys`
 --
 
-CREATE TABLE IF NOT EXISTS `default_gallerys` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_gallerys` (
+  `id` int(11) NOT NULL,
   `date` date DEFAULT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1469,9 +1486,8 @@ CREATE TABLE IF NOT EXISTS `default_gallerys` (
   `position` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_gallerys`
@@ -1489,7 +1505,7 @@ INSERT INTO `default_gallerys` (`id`, `date`, `name`, `slug`, `image`, `intro`, 
 -- Estructura de tabla para la tabla `default_gallerys_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_gallerys_categories` (
+CREATE TABLE `default_gallerys_categories` (
   `gallery_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1510,13 +1526,12 @@ INSERT INTO `default_gallerys_categories` (`gallery_id`, `category_id`) VALUES
 -- Estructura de tabla para la tabla `default_gallerys_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_gallerys_intro` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_gallerys_intro` (
+  `id` int(11) NOT NULL,
   `title` varchar(455) CHARACTER SET utf32 COLLATE utf32_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8_unicode_ci,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_gallerys_intro`
@@ -1531,17 +1546,16 @@ INSERT INTO `default_gallerys_intro` (`id`, `title`, `text`, `lang`) VALUES
 -- Estructura de tabla para la tabla `default_gallery_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_gallery_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_gallery_categories` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `position` int(11) DEFAULT NULL,
   `parent` int(11) NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_gallery_categories`
@@ -1558,16 +1572,15 @@ INSERT INTO `default_gallery_categories` (`id`, `title`, `position`, `parent`, `
 -- Estructura de tabla para la tabla `default_gallery_images`
 --
 
-CREATE TABLE IF NOT EXISTS `default_gallery_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_gallery_images` (
+  `id` int(11) NOT NULL,
   `gallery_id` int(11) NOT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `path` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `video` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `position` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_gallery_images`
@@ -1599,7 +1612,7 @@ INSERT INTO `default_gallery_images` (`id`, `gallery_id`, `title`, `path`, `vide
 -- Estructura de tabla para la tabla `default_gallery_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_gallery_intro` (
+CREATE TABLE `default_gallery_intro` (
   `id` int(11) NOT NULL,
   `text` text COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1617,8 +1630,8 @@ INSERT INTO `default_gallery_intro` (`id`, `text`) VALUES
 -- Estructura de tabla para la tabla `default_google_maps`
 --
 
-CREATE TABLE IF NOT EXISTS `default_google_maps` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_google_maps` (
+  `id` int(11) NOT NULL,
   `adress` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1630,9 +1643,8 @@ CREATE TABLE IF NOT EXISTS `default_google_maps` (
   `position` int(11) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_google_maps`
@@ -1648,7 +1660,7 @@ INSERT INTO `default_google_maps` (`id`, `adress`, `name`, `slug`, `description`
 -- Estructura de tabla para la tabla `default_google_maps_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_google_maps_categories` (
+CREATE TABLE `default_google_maps_categories` (
   `google_map_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1667,7 +1679,7 @@ INSERT INTO `default_google_maps_categories` (`google_map_id`, `category_id`) VA
 -- Estructura de tabla para la tabla `default_google_maps_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_google_maps_intro` (
+CREATE TABLE `default_google_maps_intro` (
   `id` int(11) NOT NULL,
   `text` text COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1678,8 +1690,8 @@ CREATE TABLE IF NOT EXISTS `default_google_maps_intro` (
 -- Estructura de tabla para la tabla `default_google_map_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_google_map_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_google_map_categories` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `position` int(11) DEFAULT NULL,
   `parent` int(11) NOT NULL,
@@ -1687,9 +1699,8 @@ CREATE TABLE IF NOT EXISTS `default_google_map_categories` (
   `outstanding` int(1) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_google_map_categories`
@@ -1705,7 +1716,7 @@ INSERT INTO `default_google_map_categories` (`id`, `title`, `position`, `parent`
 -- Estructura de tabla para la tabla `default_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `default_groups` (
+CREATE TABLE `default_groups` (
   `id` int(11) NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL
@@ -1725,15 +1736,14 @@ INSERT INTO `default_groups` (`id`, `name`, `description`) VALUES
 -- Estructura de tabla para la tabla `default_history_numbers`
 --
 
-CREATE TABLE IF NOT EXISTS `default_history_numbers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_history_numbers` (
+  `id` int(11) NOT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8_unicode_ci,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lang` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_history_numbers`
@@ -1751,8 +1761,8 @@ INSERT INTO `default_history_numbers` (`id`, `title`, `text`, `image`, `link`, `
 -- Estructura de tabla para la tabla `default_home_banner`
 --
 
-CREATE TABLE IF NOT EXISTS `default_home_banner` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_home_banner` (
+  `id` int(11) NOT NULL,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8_unicode_ci,
@@ -1760,17 +1770,16 @@ CREATE TABLE IF NOT EXISTS `default_home_banner` (
   `position_text` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `color_text` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_home_banner`
 --
 
 INSERT INTO `default_home_banner` (`id`, `image`, `title`, `text`, `solution`, `position_text`, `color_text`, `link`, `lang`) VALUES
-(1, 'uploads/default/home_banner/8e95270e0e3ec1af25efec279997153c.jpg', 'Conoce nuestros productos', '', '', 'left', '#00ffff', 'http://imaginamos.com', 'es'),
-(2, 'uploads/default/home_banner/a158b4eaafff20ab581bfbcd41834699.jpg', 'Conozca nuestros servicios', '', '', 'right', '#fcf50c', 'http://eltiempo.com', 'es'),
+(1, 'uploads/default/home_banner/868d05d7b04df270864e2905c2a48e6b.jpg', 'Conoce nuestros productos', '', '', 'left', '#00ffff', 'https://www.google.com.co', 'es'),
+(2, 'uploads/default/home_banner/8ab2d6b738dbe14db99c5134c6aa052d.jpg', 'Conozca nuestros servicios', '', '', 'right', '#fcf50c', 'http://eltiempo.com', 'es'),
 (6, 'uploads/default/home_banner/82a530e759e36146f38f42e4c5c4b36e.jpg', 'Imaginamos', 'Estrategias Digitales apoyadas en desarrollos innovadores que atrapan a sus clientes.', '<ul>  <li>Inversi&oacute;n extranjera</li>  <li>Comercio exterior</li>  <li>Negocio internacionales</li></ul>', NULL, '', 'https://www.facebook.com/', 'en'),
 (7, 'uploads/default/home_banner/511f0c5b1df084dd90d6fb36206a2100.jpg', 'Bitbucket', 'Git the whole picture in JIRA Keep team leads, project managers and product own', '<ul>  <li>Inversi&oacute;n extranjera</li>  <li>Comercio exterior</li>  <li>Negocio internacionales</li></ul>', NULL, '', 'http://imaginamos.com/', 'en');
 
@@ -1780,13 +1789,12 @@ INSERT INTO `default_home_banner` (`id`, `image`, `title`, `text`, `solution`, `
 -- Estructura de tabla para la tabla `default_home_links`
 --
 
-CREATE TABLE IF NOT EXISTS `default_home_links` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_home_links` (
+  `id` int(11) NOT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_home_links`
@@ -1802,15 +1810,14 @@ INSERT INTO `default_home_links` (`id`, `title`, `link`, `lang`) VALUES
 -- Estructura de tabla para la tabla `default_home_links_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_home_links_intro` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_home_links_intro` (
+  `id` int(11) NOT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `logo` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `linkbanner` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `titlelinkbanner` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_home_links_intro`
@@ -1826,24 +1833,23 @@ INSERT INTO `default_home_links_intro` (`id`, `title`, `logo`, `linkbanner`, `ti
 -- Estructura de tabla para la tabla `default_home_video_info`
 --
 
-CREATE TABLE IF NOT EXISTS `default_home_video_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_home_video_info` (
+  `id` int(11) NOT NULL,
   `title1` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `clientes` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `text` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `video` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_home_video_info`
 --
 
 INSERT INTO `default_home_video_info` (`id`, `title1`, `image`, `clientes`, `title`, `text`, `video`, `lang`) VALUES
-(1, 'Producto<strong> Destacado</strong>', 'uploads/default/home_video_info/a7ca29029332349bc2af16048aafb518.jpg', 'Nuestros <strong>Clientes</strong>', '<b>COLDPACK</b><br />\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit.&nbsp;<br />\r\n&nbsp;', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime blanditiis facere animi quidem assumenda.', 'uploads/default/home_video_info/07179eadfb5ac7ec66dfe408f18bd796.mp4', 'es'),
+(1, 'Producto<strong> Destacado</strong>', 'uploads/default/home_video_info/a7ca29029332349bc2af16048aafb518.jpg', 'Nuestros <strong>Clientes</strong>', '<b>Agrollano</b><br />\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit.&nbsp;<br />\r\n&nbsp;', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime blanditiis facere animi quidem assumenda.', 'uploads/default/home_video_info/07179eadfb5ac7ec66dfe408f18bd796.mp4', 'es'),
 (2, NULL, 'uploads/default/home_video_info/642dab08c82051e0abe69ffef7c1ae3a.jpg', NULL, '<strong>9</strong>Alliance', 'Lorem ipsum dolor sit amet.', 'uploads/default/home_video_info/5bb21f876bccb2654ef2d7ca0abb5bb2.mp4', 'en');
 
 -- --------------------------------------------------------
@@ -1852,7 +1858,7 @@ INSERT INTO `default_home_video_info` (`id`, `title1`, `image`, `clientes`, `tit
 -- Estructura de tabla para la tabla `default_keywords`
 --
 
-CREATE TABLE IF NOT EXISTS `default_keywords` (
+CREATE TABLE `default_keywords` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1863,7 +1869,7 @@ CREATE TABLE IF NOT EXISTS `default_keywords` (
 -- Estructura de tabla para la tabla `default_keywords_applied`
 --
 
-CREATE TABLE IF NOT EXISTS `default_keywords_applied` (
+CREATE TABLE `default_keywords_applied` (
   `id` int(11) NOT NULL,
   `hash` char(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `keyword_id` int(11) NOT NULL
@@ -1875,7 +1881,7 @@ CREATE TABLE IF NOT EXISTS `default_keywords_applied` (
 -- Estructura de tabla para la tabla `default_migrations`
 --
 
-CREATE TABLE IF NOT EXISTS `default_migrations` (
+CREATE TABLE `default_migrations` (
   `version` int(3) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -1892,8 +1898,8 @@ INSERT INTO `default_migrations` (`version`) VALUES
 -- Estructura de tabla para la tabla `default_modules`
 --
 
-CREATE TABLE IF NOT EXISTS `default_modules` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_modules` (
+  `id` int(11) NOT NULL,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
   `slug` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `version` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -1906,9 +1912,8 @@ CREATE TABLE IF NOT EXISTS `default_modules` (
   `enabled` tinyint(1) NOT NULL,
   `installed` tinyint(1) NOT NULL,
   `is_core` tinyint(1) NOT NULL,
-  `updated_on` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=110 ;
+  `updated_on` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_modules`
@@ -1932,11 +1937,11 @@ INSERT INTO `default_modules` (`id`, `name`, `slug`, `version`, `type`, `descrip
 (15, 'a:25:{s:2:"en";s:11:"Permissions";s:2:"ar";s:18:"الصلاحيات";s:2:"br";s:11:"Permissões";s:2:"pt";s:11:"Permissões";s:2:"cs";s:12:"Oprávnění";s:2:"da";s:14:"Adgangskontrol";s:2:"de";s:14:"Zugriffsrechte";s:2:"el";s:20:"Δικαιώματα";s:2:"es";s:8:"Permisos";s:2:"fa";s:15:"اجازه ها";s:2:"fi";s:16:"Käyttöoikeudet";s:2:"fr";s:11:"Permissions";s:2:"he";s:12:"הרשאות";s:2:"id";s:9:"Perizinan";s:2:"it";s:8:"Permessi";s:2:"lt";s:7:"Teisės";s:2:"nl";s:15:"Toegangsrechten";s:2:"pl";s:11:"Uprawnienia";s:2:"ru";s:25:"Права доступа";s:2:"sl";s:10:"Dovoljenja";s:2:"tw";s:6:"權限";s:2:"cn";s:6:"权限";s:2:"hu";s:14:"Jogosultságok";s:2:"th";s:18:"สิทธิ์";s:2:"se";s:13:"Behörigheter";}', 'permissions', '1.0.0', NULL, 'a:25:{s:2:"en";s:68:"Control what type of users can see certain sections within the site.";s:2:"ar";s:127:"التحكم بإعطاء الصلاحيات للمستخدمين للوصول إلى أقسام الموقع المختلفة.";s:2:"br";s:68:"Controle quais tipos de usuários podem ver certas seções no site.";s:2:"pt";s:75:"Controle quais os tipos de utilizadores podem ver certas secções no site.";s:2:"cs";s:93:"Spravujte oprávnění pro jednotlivé typy uživatelů a ke kterým sekcím mají přístup.";s:2:"da";s:72:"Kontroller hvilken type brugere der kan se bestemte sektioner på sitet.";s:2:"de";s:70:"Regelt welche Art von Benutzer welche Sektion in der Seite sehen kann.";s:2:"el";s:180:"Ελέγξτε τα δικαιώματα χρηστών και ομάδων χρηστών όσο αφορά σε διάφορες λειτουργίες του ιστοτόπου.";s:2:"es";s:81:"Controla que tipo de usuarios pueden ver secciones específicas dentro del sitio.";s:2:"fa";s:59:"مدیریت اجازه های گروه های کاربری";s:2:"fi";s:72:"Hallitse minkä tyyppisiin osioihin käyttäjät pääsevät sivustolla.";s:2:"fr";s:104:"Permet de définir les autorisations des groupes d''utilisateurs pour afficher les différentes sections.";s:2:"he";s:75:"ניהול הרשאות כניסה לאיזורים מסוימים באתר";s:2:"id";s:76:"Mengontrol tipe pengguna mana yang dapat mengakses suatu bagian dalam situs.";s:2:"it";s:78:"Controlla che tipo di utenti posssono accedere a determinate sezioni del sito.";s:2:"lt";s:72:"Kontroliuokite kokio tipo varotojai kokią dalį puslapio gali pasiekti.";s:2:"nl";s:71:"Bepaal welke typen gebruikers toegang hebben tot gedeeltes van de site.";s:2:"pl";s:79:"Ustaw, którzy użytkownicy mogą mieć dostęp do odpowiednich sekcji witryny.";s:2:"ru";s:209:"Управление правами доступа, ограничение доступа определённых групп пользователей к произвольным разделам сайта.";s:2:"sl";s:85:"Uredite dovoljenja kateri tip uporabnika lahko vidi določena področja vaše strani.";s:2:"tw";s:81:"用來控制不同類別的用戶，設定其瀏覽特定網站內容的權限。";s:2:"cn";s:81:"用来控制不同类别的用户，设定其浏览特定网站内容的权限。";s:2:"hu";s:129:"A felhasználók felügyelet alatt tartására, hogy milyen típusú felhasználók, mit láthatnak, mely szakaszain az oldalnak.";s:2:"th";s:117:"ควบคุมว่าผู้ใช้งานจะเห็นหมวดหมู่ไหนบ้าง";s:2:"se";s:27:"Hantera gruppbehörigheter.";}', 0, 0, 1, 'users', 1, 1, 1, 1439567495),
 (16, 'a:24:{s:2:"en";s:9:"Redirects";s:2:"ar";s:18:"التوجيهات";s:2:"br";s:17:"Redirecionamentos";s:2:"pt";s:17:"Redirecionamentos";s:2:"cs";s:16:"Přesměrování";s:2:"da";s:13:"Omadressering";s:2:"el";s:30:"Ανακατευθύνσεις";s:2:"es";s:13:"Redirecciones";s:2:"fa";s:17:"انتقال ها";s:2:"fi";s:18:"Uudelleenohjaukset";s:2:"fr";s:12:"Redirections";s:2:"he";s:12:"הפניות";s:2:"id";s:8:"Redirect";s:2:"it";s:11:"Reindirizzi";s:2:"lt";s:14:"Peradresavimai";s:2:"nl";s:12:"Verwijzingen";s:2:"ru";s:30:"Перенаправления";s:2:"sl";s:12:"Preusmeritve";s:2:"tw";s:6:"轉址";s:2:"cn";s:6:"转址";s:2:"hu";s:17:"Átirányítások";s:2:"pl";s:14:"Przekierowania";s:2:"th";s:42:"เปลี่ยนเส้นทาง";s:2:"se";s:14:"Omdirigeringar";}', 'redirects', '1.0.0', NULL, 'a:24:{s:2:"en";s:33:"Redirect from one URL to another.";s:2:"ar";s:47:"التوجيه من رابط URL إلى آخر.";s:2:"br";s:39:"Redirecionamento de uma URL para outra.";s:2:"pt";s:40:"Redirecionamentos de uma URL para outra.";s:2:"cs";s:43:"Přesměrujte z jedné adresy URL na jinou.";s:2:"da";s:35:"Omadresser fra en URL til en anden.";s:2:"el";s:81:"Ανακατευθείνετε μια διεύθυνση URL σε μια άλλη";s:2:"es";s:34:"Redireccionar desde una URL a otra";s:2:"fa";s:63:"انتقال دادن یک صفحه به یک آدرس دیگر";s:2:"fi";s:45:"Uudelleenohjaa käyttäjän paikasta toiseen.";s:2:"fr";s:34:"Redirection d''une URL à un autre.";s:2:"he";s:43:"הפניות מכתובת אחת לאחרת";s:2:"id";s:40:"Redirect dari satu URL ke URL yang lain.";s:2:"it";s:35:"Reindirizza da una URL ad un altra.";s:2:"lt";s:56:"Peradresuokite puslapį iš vieno adreso (URL) į kitą.";s:2:"nl";s:38:"Verwijs vanaf een URL naar een andere.";s:2:"ru";s:78:"Перенаправления с одного адреса на другой.";s:2:"sl";s:44:"Preusmeritev iz enega URL naslova na drugega";s:2:"tw";s:33:"將網址轉址、重新定向。";s:2:"cn";s:33:"将网址转址、重新定向。";s:2:"hu";s:38:"Egy URL átirányítása egy másikra.";s:2:"pl";s:44:"Przekierowanie z jednego adresu URL na inny.";s:2:"th";s:123:"เปลี่ยนเส้นทางจากที่หนึ่งไปยังอีกที่หนึ่ง";s:2:"se";s:38:"Omdirigera från en URL till en annan.";}', 0, 0, 1, 'structure', 1, 1, 1, 1439567495),
 (17, 'a:9:{s:2:"en";s:6:"Search";s:2:"fr";s:9:"Recherche";s:2:"se";s:4:"Sök";s:2:"ar";s:10:"البحث";s:2:"tw";s:6:"搜尋";s:2:"cn";s:6:"搜寻";s:2:"it";s:7:"Ricerca";s:2:"fa";s:10:"جستجو";s:2:"fi";s:4:"Etsi";}', 'search', '1.0.0', NULL, 'a:9:{s:2:"en";s:72:"Search through various types of content with this modular search system.";s:2:"fr";s:84:"Rechercher parmi différents types de contenus avec système de recherche modulaire.";s:2:"se";s:36:"Sök igenom olika typer av innehåll";s:2:"ar";s:102:"ابحث في أنواع مختلفة من المحتوى باستخدام نظام البحث هذا.";s:2:"tw";s:63:"此模組可用以搜尋網站中不同類型的資料內容。";s:2:"cn";s:63:"此模组可用以搜寻网站中不同类型的资料内容。";s:2:"it";s:71:"Cerca tra diversi tipi di contenuti con il sistema di reicerca modulare";s:2:"fa";s:115:"توسط این ماژول می توانید در محتواهای مختلف وبسایت جستجو نمایید.";s:2:"fi";s:76:"Etsi eri tyypistä sisältöä tällä modulaarisella hakujärjestelmällä.";}', 0, 0, 0, '0', 1, 1, 1, 1439567495),
-(18, 'a:20:{s:2:"en";s:7:"Sitemap";s:2:"ar";s:23:"خريطة الموقع";s:2:"br";s:12:"Mapa do Site";s:2:"pt";s:12:"Mapa do Site";s:2:"de";s:7:"Sitemap";s:2:"el";s:31:"Χάρτης Ιστότοπου";s:2:"es";s:14:"Mapa del Sitio";s:2:"fa";s:17:"نقشه سایت";s:2:"fi";s:10:"Sivukartta";s:2:"fr";s:12:"Plan du site";s:2:"id";s:10:"Peta Situs";s:2:"it";s:14:"Mappa del sito";s:2:"lt";s:16:"Svetainės medis";s:2:"nl";s:7:"Sitemap";s:2:"ru";s:21:"Карта сайта";s:2:"tw";s:12:"網站地圖";s:2:"cn";s:12:"网站地图";s:2:"th";s:21:"ไซต์แมพ";s:2:"hu";s:13:"Oldaltérkép";s:2:"se";s:9:"Sajtkarta";}', 'sitemap', '1.3.0', NULL, 'a:21:{s:2:"en";s:87:"The sitemap module creates an index of all pages and an XML sitemap for search engines.";s:2:"ar";s:120:"وحدة خريطة الموقع تنشئ فهرساً لجميع الصفحات وملف XML لمحركات البحث.";s:2:"br";s:102:"O módulo de mapa do site cria um índice de todas as páginas e um sitemap XML para motores de busca.";s:2:"pt";s:102:"O módulo do mapa do site cria um índice de todas as páginas e um sitemap XML para motores de busca.";s:2:"da";s:86:"Sitemapmodulet opretter et indeks over alle sider og et XML sitemap til søgemaskiner.";s:2:"de";s:92:"Die Sitemap Modul erstellt einen Index aller Seiten und eine XML-Sitemap für Suchmaschinen.";s:2:"el";s:190:"Δημιουργεί έναν κατάλογο όλων των σελίδων και έναν χάρτη σελίδων σε μορφή XML για τις μηχανές αναζήτησης.";s:2:"es";s:111:"El módulo de mapa crea un índice de todas las páginas y un mapa del sitio XML para los motores de búsqueda.";s:2:"fa";s:150:"ماژول نقشه سایت یک لیست از همه ی صفحه ها به فرمت فایل XML برای موتور های جستجو می سازد";s:2:"fi";s:82:"sivukartta moduuli luo hakemisto kaikista sivuista ja XML sivukartta hakukoneille.";s:2:"fr";s:106:"Le module sitemap crée un index de toutes les pages et un plan de site XML pour les moteurs de recherche.";s:2:"id";s:110:"Modul peta situs ini membuat indeks dari setiap halaman dan sebuah format XML untuk mempermudah mesin pencari.";s:2:"it";s:104:"Il modulo mappa del sito crea un indice di tutte le pagine e una sitemap in XML per i motori di ricerca.";s:2:"lt";s:86:"struktūra modulis sukuria visų puslapių ir XML Sitemap paieškos sistemų indeksas.";s:2:"nl";s:89:"De sitemap module maakt een index van alle pagina''s en een XML sitemap voor zoekmachines.";s:2:"ru";s:144:"Карта модуль создает индекс всех страниц и карта сайта XML для поисковых систем.";s:2:"tw";s:84:"站點地圖模塊創建一個索引的所有網頁和XML網站地圖搜索引擎。";s:2:"cn";s:84:"站点地图模块创建一个索引的所有网页和XML网站地图搜索引擎。";s:2:"th";s:202:"โมดูลไซต์แมพสามารถสร้างดัชนีของหน้าเว็บทั้งหมดสำหรับเครื่องมือค้นหา.";s:2:"hu";s:94:"Ez a modul indexeli az összes oldalt és egy XML oldaltéképet generál a keresőmotoroknak.";s:2:"se";s:86:"Sajtkarta, modulen skapar ett index av alla sidor och en XML-sitemap för sökmotorer.";}', 0, 1, 0, 'content', 1, 1, 1, 1439567495);
-INSERT INTO `default_modules` (`id`, `name`, `slug`, `version`, `type`, `description`, `skip_xss`, `is_frontend`, `is_backend`, `menu`, `enabled`, `installed`, `is_core`, `updated_on`) VALUES
+(18, 'a:20:{s:2:"en";s:7:"Sitemap";s:2:"ar";s:23:"خريطة الموقع";s:2:"br";s:12:"Mapa do Site";s:2:"pt";s:12:"Mapa do Site";s:2:"de";s:7:"Sitemap";s:2:"el";s:31:"Χάρτης Ιστότοπου";s:2:"es";s:14:"Mapa del Sitio";s:2:"fa";s:17:"نقشه سایت";s:2:"fi";s:10:"Sivukartta";s:2:"fr";s:12:"Plan du site";s:2:"id";s:10:"Peta Situs";s:2:"it";s:14:"Mappa del sito";s:2:"lt";s:16:"Svetainės medis";s:2:"nl";s:7:"Sitemap";s:2:"ru";s:21:"Карта сайта";s:2:"tw";s:12:"網站地圖";s:2:"cn";s:12:"网站地图";s:2:"th";s:21:"ไซต์แมพ";s:2:"hu";s:13:"Oldaltérkép";s:2:"se";s:9:"Sajtkarta";}', 'sitemap', '1.3.0', NULL, 'a:21:{s:2:"en";s:87:"The sitemap module creates an index of all pages and an XML sitemap for search engines.";s:2:"ar";s:120:"وحدة خريطة الموقع تنشئ فهرساً لجميع الصفحات وملف XML لمحركات البحث.";s:2:"br";s:102:"O módulo de mapa do site cria um índice de todas as páginas e um sitemap XML para motores de busca.";s:2:"pt";s:102:"O módulo do mapa do site cria um índice de todas as páginas e um sitemap XML para motores de busca.";s:2:"da";s:86:"Sitemapmodulet opretter et indeks over alle sider og et XML sitemap til søgemaskiner.";s:2:"de";s:92:"Die Sitemap Modul erstellt einen Index aller Seiten und eine XML-Sitemap für Suchmaschinen.";s:2:"el";s:190:"Δημιουργεί έναν κατάλογο όλων των σελίδων και έναν χάρτη σελίδων σε μορφή XML για τις μηχανές αναζήτησης.";s:2:"es";s:111:"El módulo de mapa crea un índice de todas las páginas y un mapa del sitio XML para los motores de búsqueda.";s:2:"fa";s:150:"ماژول نقشه سایت یک لیست از همه ی صفحه ها به فرمت فایل XML برای موتور های جستجو می سازد";s:2:"fi";s:82:"sivukartta moduuli luo hakemisto kaikista sivuista ja XML sivukartta hakukoneille.";s:2:"fr";s:106:"Le module sitemap crée un index de toutes les pages et un plan de site XML pour les moteurs de recherche.";s:2:"id";s:110:"Modul peta situs ini membuat indeks dari setiap halaman dan sebuah format XML untuk mempermudah mesin pencari.";s:2:"it";s:104:"Il modulo mappa del sito crea un indice di tutte le pagine e una sitemap in XML per i motori di ricerca.";s:2:"lt";s:86:"struktūra modulis sukuria visų puslapių ir XML Sitemap paieškos sistemų indeksas.";s:2:"nl";s:89:"De sitemap module maakt een index van alle pagina''s en een XML sitemap voor zoekmachines.";s:2:"ru";s:144:"Карта модуль создает индекс всех страниц и карта сайта XML для поисковых систем.";s:2:"tw";s:84:"站點地圖模塊創建一個索引的所有網頁和XML網站地圖搜索引擎。";s:2:"cn";s:84:"站点地图模块创建一个索引的所有网页和XML网站地图搜索引擎。";s:2:"th";s:202:"โมดูลไซต์แมพสามารถสร้างดัชนีของหน้าเว็บทั้งหมดสำหรับเครื่องมือค้นหา.";s:2:"hu";s:94:"Ez a modul indexeli az összes oldalt és egy XML oldaltéképet generál a keresőmotoroknak.";s:2:"se";s:86:"Sajtkarta, modulen skapar ett index av alla sidor och en XML-sitemap för sökmotorer.";}', 0, 1, 0, 'content', 1, 1, 1, 1439567495),
 (19, 'a:6:{s:2:"en";s:7:"Streams";s:2:"es";s:7:"Streams";s:2:"de";s:7:"Streams";s:2:"el";s:8:"Ροές";s:2:"lt";s:7:"Srautai";s:2:"fr";s:7:"Streams";}', 'streams', '2.3.3', NULL, 'a:6:{s:2:"en";s:36:"Manage, structure, and display data.";s:2:"es";s:41:"Administra, estructura, y presenta datos.";s:2:"de";s:49:"Verwalte, strukturiere und veröffentliche Daten.";s:2:"el";s:106:"Διαχείριση, δόμηση και προβολή πληροφοριών και δεδομένων.";s:2:"lt";N;s:2:"fr";s:43:"Gérer, structurer et afficher des données";}', 0, 0, 1, 'content', 1, 1, 1, 1439567495),
 (20, 'a:25:{s:2:"en";s:5:"Users";s:2:"ar";s:20:"المستخدمون";s:2:"br";s:9:"Usuários";s:2:"pt";s:12:"Utilizadores";s:2:"cs";s:11:"Uživatelé";s:2:"da";s:7:"Brugere";s:2:"de";s:8:"Benutzer";s:2:"el";s:14:"Χρήστες";s:2:"es";s:8:"Usuarios";s:2:"fa";s:14:"کاربران";s:2:"fi";s:12:"Käyttäjät";s:2:"fr";s:12:"Utilisateurs";s:2:"he";s:14:"משתמשים";s:2:"id";s:8:"Pengguna";s:2:"it";s:6:"Utenti";s:2:"lt";s:10:"Vartotojai";s:2:"nl";s:10:"Gebruikers";s:2:"pl";s:12:"Użytkownicy";s:2:"ru";s:24:"Пользователи";s:2:"sl";s:10:"Uporabniki";s:2:"tw";s:6:"用戶";s:2:"cn";s:6:"用户";s:2:"hu";s:14:"Felhasználók";s:2:"th";s:27:"ผู้ใช้งาน";s:2:"se";s:10:"Användare";}', 'users', '1.1.0', NULL, 'a:25:{s:2:"en";s:81:"Let users register and log in to the site, and manage them via the control panel.";s:2:"ar";s:133:"تمكين المستخدمين من التسجيل والدخول إلى الموقع، وإدارتهم من لوحة التحكم.";s:2:"br";s:125:"Permite com que usuários se registrem e entrem no site e também que eles sejam gerenciáveis apartir do painel de controle.";s:2:"pt";s:125:"Permite com que os utilizadores se registem e entrem no site e também que eles sejam geriveis apartir do painel de controlo.";s:2:"cs";s:103:"Umožňuje uživatelům se registrovat a přihlašovat a zároveň jejich správu v Kontrolním panelu.";s:2:"da";s:89:"Lader brugere registrere sig og logge ind på sitet, og håndtér dem via kontrolpanelet.";s:2:"de";s:108:"Erlaube Benutzern das Registrieren und Einloggen auf der Seite und verwalte sie über die Admin-Oberfläche.";s:2:"el";s:208:"Παρέχει λειτουργίες εγγραφής και σύνδεσης στους επισκέπτες. Επίσης από εδώ γίνεται η διαχείριση των λογαριασμών.";s:2:"es";s:138:"Permite el registro de nuevos usuarios quienes podrán loguearse en el sitio. Estos podrán controlarse desde el panel de administración.";s:2:"fa";s:151:"به کاربر ها امکان ثبت نام و لاگین در سایت را بدهید و آنها را در پنل مدیریت نظارت کنید";s:2:"fi";s:126:"Antaa käyttäjien rekisteröityä ja kirjautua sisään sivustolle sekä mahdollistaa niiden muokkaamisen hallintapaneelista.";s:2:"fr";s:112:"Permet aux utilisateurs de s''enregistrer et de se connecter au site et de les gérer via le panneau de contrôle";s:2:"he";s:62:"ניהול משתמשים: רישום, הפעלה ומחיקה";s:2:"id";s:102:"Memungkinkan pengguna untuk mendaftar dan masuk ke dalam situs, dan mengaturnya melalui control panel.";s:2:"it";s:95:"Fai iscrivere de entrare nel sito gli utenti, e gestiscili attraverso il pannello di controllo.";s:2:"lt";s:106:"Leidžia vartotojams registruotis ir prisijungti prie puslapio, ir valdyti juos per administravimo panele.";s:2:"nl";s:88:"Laat gebruikers registreren en inloggen op de site, en beheer ze via het controlepaneel.";s:2:"pl";s:87:"Pozwól użytkownikom na logowanie się na stronie i zarządzaj nimi za pomocą panelu.";s:2:"ru";s:155:"Управление зарегистрированными пользователями, активирование новых пользователей.";s:2:"sl";s:96:"Dovoli uporabnikom za registracijo in prijavo na strani, urejanje le teh preko nadzorne plošče";s:2:"tw";s:87:"讓用戶可以註冊並登入網站，並且管理者可在控制台內進行管理。";s:2:"cn";s:87:"让用户可以注册并登入网站，并且管理者可在控制台内进行管理。";s:2:"th";s:210:"ให้ผู้ใช้ลงทะเบียนและเข้าสู่เว็บไซต์และจัดการกับพวกเขาผ่านทางแผงควบคุม";s:2:"hu";s:120:"Hogy a felhasználók tudjanak az oldalra regisztrálni és belépni, valamint lehessen őket kezelni a vezérlőpulton.";s:2:"se";s:111:"Låt dina besökare registrera sig och logga in på webbplatsen. Hantera sedan användarna via kontrollpanelen.";}', 0, 0, 1, '0', 1, 1, 1, 1439567495),
-(21, 'a:25:{s:2:"en";s:9:"Variables";s:2:"ar";s:20:"المتغيّرات";s:2:"br";s:10:"Variáveis";s:2:"pt";s:10:"Variáveis";s:2:"cs";s:10:"Proměnné";s:2:"da";s:8:"Variable";s:2:"de";s:9:"Variablen";s:2:"el";s:20:"Μεταβλητές";s:2:"es";s:9:"Variables";s:2:"fa";s:16:"متغییرها";s:2:"fi";s:9:"Muuttujat";s:2:"fr";s:9:"Variables";s:2:"he";s:12:"משתנים";s:2:"id";s:8:"Variabel";s:2:"it";s:9:"Variabili";s:2:"lt";s:10:"Kintamieji";s:2:"nl";s:10:"Variabelen";s:2:"pl";s:7:"Zmienne";s:2:"ru";s:20:"Переменные";s:2:"sl";s:13:"Spremenljivke";s:2:"tw";s:12:"系統變數";s:2:"cn";s:12:"系统变数";s:2:"th";s:18:"ตัวแปร";s:2:"se";s:9:"Variabler";s:2:"hu";s:10:"Változók";}', 'variables', '1.0.0', NULL, 'a:25:{s:2:"en";s:59:"Manage global variables that can be accessed from anywhere.";s:2:"ar";s:97:"إدارة المُتغيّرات العامة لاستخدامها في أرجاء الموقع.";s:2:"br";s:61:"Gerencia as variáveis globais acessíveis de qualquer lugar.";s:2:"pt";s:58:"Gerir as variáveis globais acessíveis de qualquer lugar.";s:2:"cs";s:56:"Spravujte globální proměnné přístupné odkudkoliv.";s:2:"da";s:51:"Håndtér globale variable som kan tilgås overalt.";s:2:"de";s:74:"Verwaltet globale Variablen, auf die von überall zugegriffen werden kann.";s:2:"el";s:129:"Διαχείριση μεταβλητών που είναι προσβάσιμες από παντού στον ιστότοπο.";s:2:"es";s:50:"Manage global variables to access from everywhere.";s:2:"fa";s:136:"مدیریت متغییر های جامع که می توانند در هر جای سایت مورد استفاده قرار بگیرند";s:2:"fi";s:66:"Hallitse globaali muuttujia, joihin pääsee käsiksi mistä vain.";s:2:"fr";s:92:"Gérer des variables globales pour pouvoir y accéder depuis n''importe quel endroit du site.";s:2:"he";s:96:"ניהול משתנים גלובליים אשר ניתנים להמרה בכל חלקי האתר";s:2:"id";s:59:"Mengatur variabel global yang dapat diakses dari mana saja.";s:2:"it";s:58:"Gestisci le variabili globali per accedervi da ogni parte.";s:2:"lt";s:64:"Globalių kintamujų tvarkymas kurie yra pasiekiami iš bet kur.";s:2:"nl";s:54:"Beheer globale variabelen die overal beschikbaar zijn.";s:2:"pl";s:86:"Zarządzaj globalnymi zmiennymi do których masz dostęp z każdego miejsca aplikacji.";s:2:"ru";s:136:"Управление глобальными переменными, которые доступны в любом месте сайта.";s:2:"sl";s:53:"Urejanje globalnih spremenljivk za dostop od kjerkoli";s:2:"th";s:148:"จัดการตัวแปรทั่วไปโดยที่สามารถเข้าถึงได้จากทุกที่.";s:2:"tw";s:45:"管理此網站內可存取的全局變數。";s:2:"cn";s:45:"管理此网站内可存取的全局变数。";s:2:"hu";s:62:"Globális változók kezelése a hozzáféréshez, bárhonnan.";s:2:"se";s:66:"Hantera globala variabler som kan avändas över hela webbplatsen.";}', 0, 0, 1, 'data', 1, 1, 1, 1439567495),
+(21, 'a:25:{s:2:"en";s:9:"Variables";s:2:"ar";s:20:"المتغيّرات";s:2:"br";s:10:"Variáveis";s:2:"pt";s:10:"Variáveis";s:2:"cs";s:10:"Proměnné";s:2:"da";s:8:"Variable";s:2:"de";s:9:"Variablen";s:2:"el";s:20:"Μεταβλητές";s:2:"es";s:9:"Variables";s:2:"fa";s:16:"متغییرها";s:2:"fi";s:9:"Muuttujat";s:2:"fr";s:9:"Variables";s:2:"he";s:12:"משתנים";s:2:"id";s:8:"Variabel";s:2:"it";s:9:"Variabili";s:2:"lt";s:10:"Kintamieji";s:2:"nl";s:10:"Variabelen";s:2:"pl";s:7:"Zmienne";s:2:"ru";s:20:"Переменные";s:2:"sl";s:13:"Spremenljivke";s:2:"tw";s:12:"系統變數";s:2:"cn";s:12:"系统变数";s:2:"th";s:18:"ตัวแปร";s:2:"se";s:9:"Variabler";s:2:"hu";s:10:"Változók";}', 'variables', '1.0.0', NULL, 'a:25:{s:2:"en";s:59:"Manage global variables that can be accessed from anywhere.";s:2:"ar";s:97:"إدارة المُتغيّرات العامة لاستخدامها في أرجاء الموقع.";s:2:"br";s:61:"Gerencia as variáveis globais acessíveis de qualquer lugar.";s:2:"pt";s:58:"Gerir as variáveis globais acessíveis de qualquer lugar.";s:2:"cs";s:56:"Spravujte globální proměnné přístupné odkudkoliv.";s:2:"da";s:51:"Håndtér globale variable som kan tilgås overalt.";s:2:"de";s:74:"Verwaltet globale Variablen, auf die von überall zugegriffen werden kann.";s:2:"el";s:129:"Διαχείριση μεταβλητών που είναι προσβάσιμες από παντού στον ιστότοπο.";s:2:"es";s:50:"Manage global variables to access from everywhere.";s:2:"fa";s:136:"مدیریت متغییر های جامع که می توانند در هر جای سایت مورد استفاده قرار بگیرند";s:2:"fi";s:66:"Hallitse globaali muuttujia, joihin pääsee käsiksi mistä vain.";s:2:"fr";s:92:"Gérer des variables globales pour pouvoir y accéder depuis n''importe quel endroit du site.";s:2:"he";s:96:"ניהול משתנים גלובליים אשר ניתנים להמרה בכל חלקי האתר";s:2:"id";s:59:"Mengatur variabel global yang dapat diakses dari mana saja.";s:2:"it";s:58:"Gestisci le variabili globali per accedervi da ogni parte.";s:2:"lt";s:64:"Globalių kintamujų tvarkymas kurie yra pasiekiami iš bet kur.";s:2:"nl";s:54:"Beheer globale variabelen die overal beschikbaar zijn.";s:2:"pl";s:86:"Zarządzaj globalnymi zmiennymi do których masz dostęp z każdego miejsca aplikacji.";s:2:"ru";s:136:"Управление глобальными переменными, которые доступны в любом месте сайта.";s:2:"sl";s:53:"Urejanje globalnih spremenljivk za dostop od kjerkoli";s:2:"th";s:148:"จัดการตัวแปรทั่วไปโดยที่สามารถเข้าถึงได้จากทุกที่.";s:2:"tw";s:45:"管理此網站內可存取的全局變數。";s:2:"cn";s:45:"管理此网站内可存取的全局变数。";s:2:"hu";s:62:"Globális változók kezelése a hozzáféréshez, bárhonnan.";s:2:"se";s:66:"Hantera globala variabler som kan avändas över hela webbplatsen.";}', 0, 0, 1, 'data', 1, 1, 1, 1439567495);
+INSERT INTO `default_modules` (`id`, `name`, `slug`, `version`, `type`, `description`, `skip_xss`, `is_frontend`, `is_backend`, `menu`, `enabled`, `installed`, `is_core`, `updated_on`) VALUES
 (22, 'a:23:{s:2:"en";s:7:"Widgets";s:2:"br";s:7:"Widgets";s:2:"pt";s:7:"Widgets";s:2:"cs";s:7:"Widgety";s:2:"da";s:7:"Widgets";s:2:"de";s:7:"Widgets";s:2:"el";s:7:"Widgets";s:2:"es";s:7:"Widgets";s:2:"fa";s:13:"ویجت ها";s:2:"fi";s:9:"Vimpaimet";s:2:"fr";s:7:"Widgets";s:2:"id";s:6:"Widget";s:2:"it";s:7:"Widgets";s:2:"lt";s:11:"Papildiniai";s:2:"nl";s:7:"Widgets";s:2:"ru";s:14:"Виджеты";s:2:"sl";s:9:"Vtičniki";s:2:"tw";s:9:"小組件";s:2:"cn";s:9:"小组件";s:2:"hu";s:9:"Widget-ek";s:2:"th";s:21:"วิดเจ็ต";s:2:"se";s:8:"Widgetar";s:2:"ar";s:14:"الودجتس";}', 'widgets', '1.2.0', NULL, 'a:23:{s:2:"en";s:69:"Manage small sections of self-contained logic in blocks or "Widgets".";s:2:"ar";s:132:"إدارة أقسام صغيرة من البرمجيات في مساحات الموقع أو ما يُسمّى بالـ"ودجتس".";s:2:"br";s:77:"Gerenciar pequenas seções de conteúdos em bloco conhecidos como "Widgets".";s:2:"pt";s:74:"Gerir pequenas secções de conteúdos em bloco conhecidos como "Widgets".";s:2:"cs";s:56:"Spravujte malé funkční části webu neboli "Widgety".";s:2:"da";s:74:"Håndter små sektioner af selv-opretholdt logik i blokke eller "Widgets".";s:2:"de";s:62:"Verwaltet kleine, eigentständige Bereiche, genannt "Widgets".";s:2:"el";s:149:"Διαχείριση μικρών τμημάτων αυτόνομης προγραμματιστικής λογικής σε πεδία ή "Widgets".";s:2:"es";s:75:"Manejar pequeñas secciones de lógica autocontenida en bloques o "Widgets"";s:2:"fa";s:76:"مدیریت قسمت های کوچکی از سایت به طور مستقل";s:2:"fi";s:81:"Hallitse pieniä osioita, jotka sisältävät erillisiä lohkoja tai "Vimpaimia".";s:2:"fr";s:41:"Gérer des mini application ou "Widgets".";s:2:"id";s:101:"Mengatur bagian-bagian kecil dari blok-blok yang memuat sesuatu atau dikenal dengan istilah "Widget".";s:2:"it";s:70:"Gestisci piccole sezioni di logica a se stante in blocchi o "Widgets".";s:2:"lt";s:43:"Nedidelių, savarankiškų blokų valdymas.";s:2:"nl";s:75:"Beheer kleine onderdelen die zelfstandige logica bevatten, ofwel "Widgets".";s:2:"ru";s:91:"Управление небольшими, самостоятельными блоками.";s:2:"sl";s:61:"Urejanje manjših delov blokov strani ti. Vtičniki (Widgets)";s:2:"tw";s:103:"可將小段的程式碼透過小組件來管理。即所謂 "Widgets"，或稱為小工具、部件。";s:2:"cn";s:103:"可将小段的程式码透过小组件来管理。即所谓 "Widgets"，或称为小工具、部件。";s:2:"hu";s:56:"Önálló kis logikai tömbök vagy widget-ek kezelése.";s:2:"th";s:152:"จัดการส่วนเล็ก ๆ ในรูปแบบของตัวเองในบล็อกหรือวิดเจ็ต";s:2:"se";s:83:"Hantera små sektioner med egen logik och innehåll på olika delar av webbplatsen.";}', 1, 0, 1, 'content', 1, 1, 1, 1439567495),
 (23, 'a:9:{s:2:"en";s:7:"WYSIWYG";s:2:"fa";s:7:"WYSIWYG";s:2:"fr";s:7:"WYSIWYG";s:2:"pt";s:7:"WYSIWYG";s:2:"se";s:15:"HTML-redigerare";s:2:"tw";s:7:"WYSIWYG";s:2:"cn";s:7:"WYSIWYG";s:2:"ar";s:27:"المحرر الرسومي";s:2:"it";s:7:"WYSIWYG";}', 'wysiwyg', '1.0.0', NULL, 'a:10:{s:2:"en";s:60:"Provides the WYSIWYG editor for PyroCMS powered by CKEditor.";s:2:"fa";s:73:"ویرایشگر WYSIWYG که توسطCKEditor ارائه شده است. ";s:2:"fr";s:63:"Fournit un éditeur WYSIWYG pour PyroCMS propulsé par CKEditor";s:2:"pt";s:61:"Fornece o editor WYSIWYG para o PyroCMS, powered by CKEditor.";s:2:"el";s:113:"Παρέχει τον επεξεργαστή WYSIWYG για το PyroCMS, χρησιμοποιεί το CKEDitor.";s:2:"se";s:37:"Redigeringsmodul för HTML, CKEditor.";s:2:"tw";s:83:"提供 PyroCMS 所見即所得（WYSIWYG）編輯器，由 CKEditor 技術提供。";s:2:"cn";s:83:"提供 PyroCMS 所见即所得（WYSIWYG）编辑器，由 CKEditor 技术提供。";s:2:"ar";s:76:"توفر المُحرّر الرسومي لـPyroCMS من خلال CKEditor.";s:2:"it";s:57:"Fornisce l''editor WYSIWYG per PtroCMS creato con CKEditor";}', 0, 0, 0, '0', 1, 1, 1, 1439567495),
 (24, 'a:4:{s:2:"en";s:14:"API Management";s:2:"el";s:24:"Διαχείριση API";s:2:"fr";s:18:"Gestionnaire d''API";s:2:"hu";s:12:"API Kezelés";}', 'api', '1.0.0', NULL, 'a:4:{s:2:"en";s:66:"Set up a RESTful API with API Keys and out in JSON, XML, CSV, etc.";s:2:"el";s:129:"Ρυθμίσεις για ένα RESTful API με κλειδιά API και αποτελέσματα σε JSON, XML, CSV, κτλ.";s:2:"fr";s:79:"Paramétrage d''une API RESTgul avec clés API et export en JSON, XML, CSV, etc.";s:2:"hu";s:159:"Körültekintően állítsd be az API-t (alkalmazásprogramozási felület) az API Kulcsokkal együtt és küldd JSON-ba, XML-be, CSV-be, vagy bármi egyébbe.";}', 0, 1, 1, 'utilities', 0, 0, 0, 1439567495),
@@ -1975,7 +1980,7 @@ INSERT INTO `default_modules` (`id`, `name`, `slug`, `version`, `type`, `descrip
 -- Estructura de tabla para la tabla `default_multi_upload_files`
 --
 
-CREATE TABLE IF NOT EXISTS `default_multi_upload_files` (
+CREATE TABLE `default_multi_upload_files` (
   `id` int(11) NOT NULL,
   `category` int(11) NOT NULL,
   `image` text COLLATE utf8_unicode_ci NOT NULL,
@@ -2008,7 +2013,7 @@ INSERT INTO `default_multi_upload_files` (`id`, `category`, `image`, `extencion`
 -- Estructura de tabla para la tabla `default_navigation_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `default_navigation_groups` (
+CREATE TABLE `default_navigation_groups` (
   `id` int(11) NOT NULL,
   `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `abbrev` varchar(50) COLLATE utf8_unicode_ci NOT NULL
@@ -2031,7 +2036,7 @@ INSERT INTO `default_navigation_groups` (`id`, `title`, `abbrev`) VALUES
 -- Estructura de tabla para la tabla `default_navigation_links`
 --
 
-CREATE TABLE IF NOT EXISTS `default_navigation_links` (
+CREATE TABLE `default_navigation_links` (
   `id` int(11) NOT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `parent` int(11) DEFAULT NULL,
@@ -2082,7 +2087,7 @@ INSERT INTO `default_navigation_links` (`id`, `title`, `parent`, `link_type`, `p
 -- Estructura de tabla para la tabla `default_news`
 --
 
-CREATE TABLE IF NOT EXISTS `default_news` (
+CREATE TABLE `default_news` (
   `id` int(11) NOT NULL,
   `title` text COLLATE utf8_unicode_ci,
   `slug` varchar(455) COLLATE utf8_unicode_ci NOT NULL,
@@ -2111,7 +2116,7 @@ INSERT INTO `default_news` (`id`, `title`, `slug`, `autor`, `image`, `video`, `c
 -- Estructura de tabla para la tabla `default_news_comments`
 --
 
-CREATE TABLE IF NOT EXISTS `default_news_comments` (
+CREATE TABLE `default_news_comments` (
   `id` int(10) NOT NULL,
   `id_new` int(10) DEFAULT '0',
   `email` varchar(100) DEFAULT '',
@@ -2134,7 +2139,7 @@ INSERT INTO `default_news_comments` (`id`, `id_new`, `email`, `name`, `comment`)
 -- Estructura de tabla para la tabla `default_new_info`
 --
 
-CREATE TABLE IF NOT EXISTS `default_new_info` (
+CREATE TABLE `default_new_info` (
   `id` int(11) NOT NULL,
   `intro` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `footer` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2155,7 +2160,7 @@ INSERT INTO `default_new_info` (`id`, `intro`, `footer`, `lang`) VALUES
 -- Estructura de tabla para la tabla `default_others_conf`
 --
 
-CREATE TABLE IF NOT EXISTS `default_others_conf` (
+CREATE TABLE `default_others_conf` (
   `id` int(11) NOT NULL,
   `logo` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `city` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
@@ -2166,7 +2171,7 @@ CREATE TABLE IF NOT EXISTS `default_others_conf` (
 --
 
 INSERT INTO `default_others_conf` (`id`, `logo`, `city`) VALUES
-(1, 'uploads/default/others_conf/d55f6856e2e9dbec97955db33fa1d911.png', '');
+(1, 'uploads/default/others_conf/0d72cec5257deee039f84cdc894bc628.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -2174,7 +2179,7 @@ INSERT INTO `default_others_conf` (`id`, `logo`, `city`) VALUES
 -- Estructura de tabla para la tabla `default_pages`
 --
 
-CREATE TABLE IF NOT EXISTS `default_pages` (
+CREATE TABLE `default_pages` (
   `id` int(11) NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `class` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -2218,7 +2223,7 @@ INSERT INTO `default_pages` (`id`, `slug`, `class`, `title`, `uri`, `parent_id`,
 -- Estructura de tabla para la tabla `default_page_types`
 --
 
-CREATE TABLE IF NOT EXISTS `default_page_types` (
+CREATE TABLE `default_page_types` (
   `id` int(11) NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `title` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
@@ -2250,14 +2255,13 @@ INSERT INTO `default_page_types` (`id`, `slug`, `title`, `description`, `stream_
 -- Estructura de tabla para la tabla `default_people`
 --
 
-CREATE TABLE IF NOT EXISTS `default_people` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_people` (
+  `id` int(11) NOT NULL,
   `image` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8_unicode_ci,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_people`
@@ -2275,13 +2279,12 @@ INSERT INTO `default_people` (`id`, `image`, `title`, `text`, `lang`) VALUES
 -- Estructura de tabla para la tabla `default_permissions`
 --
 
-CREATE TABLE IF NOT EXISTS `default_permissions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_permissions` (
+  `id` int(11) NOT NULL,
   `group_id` int(11) NOT NULL,
   `module` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `roles` text COLLATE utf8_unicode_ci,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+  `roles` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_permissions`
@@ -2301,8 +2304,8 @@ INSERT INTO `default_permissions` (`id`, `group_id`, `module`, `roles`) VALUES
 -- Estructura de tabla para la tabla `default_process`
 --
 
-CREATE TABLE IF NOT EXISTS `default_process` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_process` (
+  `id` int(11) NOT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `reference` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2314,9 +2317,8 @@ CREATE TABLE IF NOT EXISTS `default_process` (
   `outstanding` int(1) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2324,7 +2326,7 @@ CREATE TABLE IF NOT EXISTS `default_process` (
 -- Estructura de tabla para la tabla `default_process_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_process_categories` (
+CREATE TABLE `default_process_categories` (
   `proces_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -2335,7 +2337,7 @@ CREATE TABLE IF NOT EXISTS `default_process_categories` (
 -- Estructura de tabla para la tabla `default_process_doc`
 --
 
-CREATE TABLE IF NOT EXISTS `default_process_doc` (
+CREATE TABLE `default_process_doc` (
   `id` int(11) NOT NULL,
   `file` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2357,12 +2359,11 @@ INSERT INTO `default_process_doc` (`id`, `file`, `name`, `id_user_process`) VALU
 -- Estructura de tabla para la tabla `default_process_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_process_intro` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_process_intro` (
+  `id` int(11) NOT NULL,
   `text` text COLLATE utf8_unicode_ci,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_process_intro`
@@ -2377,7 +2378,7 @@ INSERT INTO `default_process_intro` (`id`, `text`, `lang`) VALUES
 -- Estructura de tabla para la tabla `default_process_state`
 --
 
-CREATE TABLE IF NOT EXISTS `default_process_state` (
+CREATE TABLE `default_process_state` (
   `id` int(11) NOT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -2397,17 +2398,16 @@ INSERT INTO `default_process_state` (`id`, `name`) VALUES
 -- Estructura de tabla para la tabla `default_proces_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_proces_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_proces_categories` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `position` int(11) DEFAULT NULL,
   `parent` int(11) NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2415,14 +2415,13 @@ CREATE TABLE IF NOT EXISTS `default_proces_categories` (
 -- Estructura de tabla para la tabla `default_proces_images`
 --
 
-CREATE TABLE IF NOT EXISTS `default_proces_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_proces_images` (
+  `id` int(11) NOT NULL,
   `proces_id` int(11) NOT NULL,
   `path` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `video` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -2430,7 +2429,7 @@ CREATE TABLE IF NOT EXISTS `default_proces_images` (
 -- Estructura de tabla para la tabla `default_products`
 --
 
-CREATE TABLE IF NOT EXISTS `default_products` (
+CREATE TABLE `default_products` (
   `id` int(11) NOT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `video` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2459,7 +2458,7 @@ INSERT INTO `default_products` (`id`, `name`, `video`, `slug`, `introduction`, `
 -- Estructura de tabla para la tabla `default_products_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_products_categories` (
+CREATE TABLE `default_products_categories` (
   `product_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -2477,7 +2476,7 @@ INSERT INTO `default_products_categories` (`product_id`, `category_id`) VALUES
 -- Estructura de tabla para la tabla `default_products_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_products_intro` (
+CREATE TABLE `default_products_intro` (
   `id` int(11) NOT NULL,
   `text` text COLLATE utf8_unicode_ci,
   `footer` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2498,7 +2497,7 @@ INSERT INTO `default_products_intro` (`id`, `text`, `footer`, `lang`) VALUES
 -- Estructura de tabla para la tabla `default_product_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_product_categories` (
+CREATE TABLE `default_product_categories` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `position` int(11) DEFAULT NULL,
@@ -2524,7 +2523,7 @@ INSERT INTO `default_product_categories` (`id`, `title`, `position`, `parent`, `
 -- Estructura de tabla para la tabla `default_product_images`
 --
 
-CREATE TABLE IF NOT EXISTS `default_product_images` (
+CREATE TABLE `default_product_images` (
   `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `path` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2538,13 +2537,13 @@ CREATE TABLE IF NOT EXISTS `default_product_images` (
 -- Estructura de tabla para la tabla `default_profiles`
 --
 
-CREATE TABLE IF NOT EXISTS `default_profiles` (
+CREATE TABLE `default_profiles` (
   `id` int(9) NOT NULL,
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `ordering_count` int(11) DEFAULT NULL,
-  `user_id` int(11) unsigned NOT NULL,
+  `user_id` int(11) UNSIGNED NOT NULL,
   `display_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `first_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `last_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -2560,7 +2559,7 @@ CREATE TABLE IF NOT EXISTS `default_profiles` (
   `address_line3` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `postcode` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `website` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `updated_on` int(11) unsigned DEFAULT NULL
+  `updated_on` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -2577,8 +2576,8 @@ INSERT INTO `default_profiles` (`id`, `created`, `updated`, `created_by`, `order
 -- Estructura de tabla para la tabla `default_projects`
 --
 
-CREATE TABLE IF NOT EXISTS `default_projects` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_projects` (
+  `id` int(11) NOT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `file` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2592,9 +2591,8 @@ CREATE TABLE IF NOT EXISTS `default_projects` (
   `outstanding` int(1) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_projects`
@@ -2611,7 +2609,7 @@ INSERT INTO `default_projects` (`id`, `name`, `file`, `slug`, `introduction`, `d
 -- Estructura de tabla para la tabla `default_projects_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_projects_categories` (
+CREATE TABLE `default_projects_categories` (
   `project_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -2629,13 +2627,12 @@ INSERT INTO `default_projects_categories` (`project_id`, `category_id`) VALUES
 -- Estructura de tabla para la tabla `default_projects_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_projects_intro` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_projects_intro` (
+  `id` int(11) NOT NULL,
   `text` text COLLATE utf8_unicode_ci,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_projects_intro`
@@ -2651,17 +2648,16 @@ INSERT INTO `default_projects_intro` (`id`, `text`, `title`, `lang`) VALUES
 -- Estructura de tabla para la tabla `default_project_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_project_categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_project_categories` (
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `position` int(11) DEFAULT NULL,
   `parent` int(11) NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_project_categories`
@@ -2676,14 +2672,13 @@ INSERT INTO `default_project_categories` (`id`, `title`, `position`, `parent`, `
 -- Estructura de tabla para la tabla `default_project_images`
 --
 
-CREATE TABLE IF NOT EXISTS `default_project_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_project_images` (
+  `id` int(11) NOT NULL,
   `project_id` int(11) NOT NULL,
   `path` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `video` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_project_images`
@@ -2697,10 +2692,23 @@ INSERT INTO `default_project_images` (`id`, `project_id`, `path`, `video`, `crea
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `default_quiz`
+--
+
+CREATE TABLE `default_quiz` (
+  `id` int(11) DEFAULT NULL,
+  `title` varchar(100) NOT NULL,
+  `text` varchar(500) NOT NULL,
+  `lang` varchar(4) NOT NULL DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `default_redirects`
 --
 
-CREATE TABLE IF NOT EXISTS `default_redirects` (
+CREATE TABLE `default_redirects` (
   `id` int(11) NOT NULL,
   `from` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `to` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
@@ -2713,8 +2721,8 @@ CREATE TABLE IF NOT EXISTS `default_redirects` (
 -- Estructura de tabla para la tabla `default_search_index`
 --
 
-CREATE TABLE IF NOT EXISTS `default_search_index` (
-  `id` int(10) unsigned NOT NULL,
+CREATE TABLE `default_search_index` (
+  `id` int(10) UNSIGNED NOT NULL,
   `title` char(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci,
   `keywords` text COLLATE utf8_unicode_ci,
@@ -2746,8 +2754,8 @@ INSERT INTO `default_search_index` (`id`, `title`, `description`, `keywords`, `k
 -- Estructura de tabla para la tabla `default_services`
 --
 
-CREATE TABLE IF NOT EXISTS `default_services` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_services` (
+  `id` int(11) NOT NULL,
   `name` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `file` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `slug` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2759,9 +2767,8 @@ CREATE TABLE IF NOT EXISTS `default_services` (
   `outstanding` int(1) NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_services`
@@ -2781,7 +2788,7 @@ INSERT INTO `default_services` (`id`, `name`, `file`, `slug`, `introduction`, `d
 -- Estructura de tabla para la tabla `default_services_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_services_categories` (
+CREATE TABLE `default_services_categories` (
   `service_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -2799,14 +2806,13 @@ INSERT INTO `default_services_categories` (`service_id`, `category_id`) VALUES
 -- Estructura de tabla para la tabla `default_services_intro`
 --
 
-CREATE TABLE IF NOT EXISTS `default_services_intro` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_services_intro` (
+  `id` int(11) NOT NULL,
   `title` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
   `text` text COLLATE utf8_unicode_ci,
   `section` int(1) DEFAULT '1',
-  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+  `lang` varchar(2) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_services_intro`
@@ -2822,7 +2828,7 @@ INSERT INTO `default_services_intro` (`id`, `title`, `text`, `section`, `lang`) 
 -- Estructura de tabla para la tabla `default_service_categories`
 --
 
-CREATE TABLE IF NOT EXISTS `default_service_categories` (
+CREATE TABLE `default_service_categories` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `position` int(11) DEFAULT NULL,
@@ -2847,7 +2853,7 @@ INSERT INTO `default_service_categories` (`id`, `title`, `position`, `parent`, `
 -- Estructura de tabla para la tabla `default_service_images`
 --
 
-CREATE TABLE IF NOT EXISTS `default_service_images` (
+CREATE TABLE `default_service_images` (
   `id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL,
   `path` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2871,7 +2877,7 @@ INSERT INTO `default_service_images` (`id`, `service_id`, `path`, `video`, `crea
 -- Estructura de tabla para la tabla `default_settings`
 --
 
-CREATE TABLE IF NOT EXISTS `default_settings` (
+CREATE TABLE `default_settings` (
   `slug` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
@@ -2940,7 +2946,7 @@ INSERT INTO `default_settings` (`slug`, `title`, `description`, `type`, `default
 ('rss_feed_items', 'Feed item count', 'How many items should we show in RSS/blog feeds?', 'select', '25', '', '10=10|25=25|50=50|100=100', 1, 1, '', 991),
 ('server_email', 'Server E-mail', 'All e-mails to users will come from this e-mail address.', 'text', 'admin@localhost', 'info@fastproject.co', '', 1, 1, 'email', 978),
 ('site_lang', 'Site Language', 'The native language of the website, used to choose templates of e-mail notifications, contact form, and other features that should not depend on the language of a user.', 'select', 'en', 'es', 'func:get_supported_lang', 1, 1, '', 997),
-('site_name', 'Site Name', 'The name of the website for page titles and for use around the site.', 'text', 'Un-named Website', 'Coldpack', '', 1, 1, '', 1000),
+('site_name', 'Site Name', 'The name of the website for page titles and for use around the site.', 'text', 'Un-named Website', 'Agrollano', '', 1, 1, '', 1000),
 ('site_public_lang', 'Public Languages', 'Which are the languages really supported and offered on the front-end of your website?', 'checkbox', 'en', 'es', 'func:get_supported_lang', 1, 1, '', 996),
 ('site_slogan', 'Site Slogan', 'The slogan of the website for page titles and for use around the site', 'text', '', '', '', 0, 1, '', 999),
 ('unavailable_message', 'Unavailable Message', 'When the site is turned off or there is a major problem, this message will show to users.', 'textarea', 'Sorry, this website is currently unavailable.', '', '', 0, 1, '', 987);
@@ -2951,7 +2957,7 @@ INSERT INTO `default_settings` (`slug`, `title`, `description`, `type`, `default
 -- Estructura de tabla para la tabla `default_theme_options`
 --
 
-CREATE TABLE IF NOT EXISTS `default_theme_options` (
+CREATE TABLE `default_theme_options` (
   `id` int(11) NOT NULL,
   `slug` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -2996,8 +3002,8 @@ INSERT INTO `default_theme_options` (`id`, `slug`, `title`, `description`, `type
 -- Estructura de tabla para la tabla `default_users`
 --
 
-CREATE TABLE IF NOT EXISTS `default_users` (
-  `id` smallint(5) unsigned NOT NULL,
+CREATE TABLE `default_users` (
+  `id` smallint(5) UNSIGNED NOT NULL,
   `email` varchar(60) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `salt` varchar(6) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -3017,7 +3023,7 @@ CREATE TABLE IF NOT EXISTS `default_users` (
 --
 
 INSERT INTO `default_users` (`id`, `email`, `password`, `salt`, `group_id`, `ip_address`, `active`, `activation_code`, `created_on`, `last_login`, `username`, `forgotten_password_code`, `remember_code`) VALUES
-(2, 'carolina.bonilla@imaginamos.co', '59cd9599b4523c87f6d3f723454784c0aa96e266', 'f12a55', 1, '127.0.0.1', 1, NULL, 1405184484, 1446751960, 'carolina.rodriguez', NULL, '728fe8b07b15736caf3752d3762c325c9548d282'),
+(2, 'carolina.bonilla@imaginamos.co', '59cd9599b4523c87f6d3f723454784c0aa96e266', 'f12a55', 1, '127.0.0.1', 1, NULL, 1405184484, 1464871823, 'carolina.rodriguez', NULL, '728fe8b07b15736caf3752d3762c325c9548d282'),
 (5, 'admin@escalaurbana.com', 'dbc8a33683f1cf79528274e47b2c6211bdcbb1f2', 'fafdd9', 2, '::1', 1, '37c137ca094851082f1bb97b6bed6057d220f2b7', 1424601514, 1443295123, 'administrador', NULL, '68f5566baedc3c7b1c5ece916054326f5d65c985');
 
 -- --------------------------------------------------------
@@ -3026,7 +3032,7 @@ INSERT INTO `default_users` (`id`, `email`, `password`, `salt`, `group_id`, `ip_
 -- Estructura de tabla para la tabla `default_user_process`
 --
 
-CREATE TABLE IF NOT EXISTS `default_user_process` (
+CREATE TABLE `default_user_process` (
   `id` int(11) NOT NULL,
   `id_user` int(11) DEFAULT NULL,
   `cod` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -3050,7 +3056,7 @@ INSERT INTO `default_user_process` (`id`, `id_user`, `cod`, `introduction`, `des
 -- Estructura de tabla para la tabla `default_variables`
 --
 
-CREATE TABLE IF NOT EXISTS `default_variables` (
+CREATE TABLE `default_variables` (
   `id` int(11) NOT NULL,
   `name` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `data` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL
@@ -3069,7 +3075,7 @@ INSERT INTO `default_variables` (`id`, `name`, `data`) VALUES
 -- Estructura de tabla para la tabla `default_widgets`
 --
 
-CREATE TABLE IF NOT EXISTS `default_widgets` (
+CREATE TABLE `default_widgets` (
   `id` int(11) NOT NULL,
   `slug` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `title` text COLLATE utf8_unicode_ci NOT NULL,
@@ -3108,7 +3114,7 @@ INSERT INTO `default_widgets` (`id`, `slug`, `title`, `description`, `author`, `
 -- Estructura de tabla para la tabla `default_widget_areas`
 --
 
-CREATE TABLE IF NOT EXISTS `default_widget_areas` (
+CREATE TABLE `default_widget_areas` (
   `id` int(11) NOT NULL,
   `slug` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
@@ -3127,7 +3133,7 @@ INSERT INTO `default_widget_areas` (`id`, `slug`, `title`) VALUES
 -- Estructura de tabla para la tabla `default_widget_instances`
 --
 
-CREATE TABLE IF NOT EXISTS `default_widget_instances` (
+CREATE TABLE `default_widget_instances` (
   `id` int(11) NOT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `widget_id` int(11) DEFAULT NULL,
@@ -3156,14 +3162,13 @@ INSERT INTO `default_widget_instances` (`id`, `title`, `widget_id`, `widget_area
 -- Estructura de tabla para la tabla `default_work_team`
 --
 
-CREATE TABLE IF NOT EXISTS `default_work_team` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `default_work_team` (
+  `id` int(11) NOT NULL,
   `link` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
   `outstanding` int(1) DEFAULT '0',
-  `lang` varchar(10) COLLATE utf8_unicode_ci DEFAULT 'es',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+  `lang` varchar(10) COLLATE utf8_unicode_ci DEFAULT 'es'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `default_work_team`
@@ -3173,6 +3178,379 @@ INSERT INTO `default_work_team` (`id`, `link`, `image`, `outstanding`, `lang`) V
 (15, 'http://www.google.com', 'uploads/default/about_us_multiples/2fccd6c755396ab846b3eebe112a73af.png', 0, 'es'),
 (17, 'http://www.google.com', 'uploads/default/about_us_multiples/e21687d4f11a7a0b022cb5f8414a1395.png', 0, 'es');
 
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `core_domains`
+--
+ALTER TABLE `core_domains`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique` (`domain`),
+  ADD KEY `domain` (`domain`);
+
+--
+-- Indices de la tabla `default_about_us_intro`
+--
+ALTER TABLE `default_about_us_intro`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_about_us_multiples`
+--
+ALTER TABLE `default_about_us_multiples`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_about_us_partners`
+--
+ALTER TABLE `default_about_us_partners`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_about_us_slide`
+--
+ALTER TABLE `default_about_us_slide`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_contact_us`
+--
+ALTER TABLE `default_contact_us`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_contact_us_emails`
+--
+ALTER TABLE `default_contact_us_emails`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_features`
+--
+ALTER TABLE `default_features`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_gallerys`
+--
+ALTER TABLE `default_gallerys`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_gallerys_intro`
+--
+ALTER TABLE `default_gallerys_intro`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_gallery_categories`
+--
+ALTER TABLE `default_gallery_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_gallery_images`
+--
+ALTER TABLE `default_gallery_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_google_maps`
+--
+ALTER TABLE `default_google_maps`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_google_map_categories`
+--
+ALTER TABLE `default_google_map_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_history_numbers`
+--
+ALTER TABLE `default_history_numbers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_home_banner`
+--
+ALTER TABLE `default_home_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_home_links`
+--
+ALTER TABLE `default_home_links`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_home_links_intro`
+--
+ALTER TABLE `default_home_links_intro`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_home_video_info`
+--
+ALTER TABLE `default_home_video_info`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_modules`
+--
+ALTER TABLE `default_modules`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_people`
+--
+ALTER TABLE `default_people`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_permissions`
+--
+ALTER TABLE `default_permissions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_process`
+--
+ALTER TABLE `default_process`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_process_intro`
+--
+ALTER TABLE `default_process_intro`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_proces_categories`
+--
+ALTER TABLE `default_proces_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_proces_images`
+--
+ALTER TABLE `default_proces_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_projects`
+--
+ALTER TABLE `default_projects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_projects_intro`
+--
+ALTER TABLE `default_projects_intro`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_project_categories`
+--
+ALTER TABLE `default_project_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_project_images`
+--
+ALTER TABLE `default_project_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_services`
+--
+ALTER TABLE `default_services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_services_intro`
+--
+ALTER TABLE `default_services_intro`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `default_work_team`
+--
+ALTER TABLE `default_work_team`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `core_domains`
+--
+ALTER TABLE `core_domains`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `default_about_us_intro`
+--
+ALTER TABLE `default_about_us_intro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `default_about_us_multiples`
+--
+ALTER TABLE `default_about_us_multiples`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `default_about_us_partners`
+--
+ALTER TABLE `default_about_us_partners`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `default_about_us_slide`
+--
+ALTER TABLE `default_about_us_slide`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `default_contact_us`
+--
+ALTER TABLE `default_contact_us`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `default_contact_us_emails`
+--
+ALTER TABLE `default_contact_us_emails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT de la tabla `default_features`
+--
+ALTER TABLE `default_features`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `default_gallerys`
+--
+ALTER TABLE `default_gallerys`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `default_gallerys_intro`
+--
+ALTER TABLE `default_gallerys_intro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `default_gallery_categories`
+--
+ALTER TABLE `default_gallery_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `default_gallery_images`
+--
+ALTER TABLE `default_gallery_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
+-- AUTO_INCREMENT de la tabla `default_google_maps`
+--
+ALTER TABLE `default_google_maps`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `default_google_map_categories`
+--
+ALTER TABLE `default_google_map_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `default_history_numbers`
+--
+ALTER TABLE `default_history_numbers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `default_home_banner`
+--
+ALTER TABLE `default_home_banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de la tabla `default_home_links`
+--
+ALTER TABLE `default_home_links`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `default_home_links_intro`
+--
+ALTER TABLE `default_home_links_intro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `default_home_video_info`
+--
+ALTER TABLE `default_home_video_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `default_modules`
+--
+ALTER TABLE `default_modules`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+--
+-- AUTO_INCREMENT de la tabla `default_people`
+--
+ALTER TABLE `default_people`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT de la tabla `default_permissions`
+--
+ALTER TABLE `default_permissions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+--
+-- AUTO_INCREMENT de la tabla `default_process`
+--
+ALTER TABLE `default_process`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `default_process_intro`
+--
+ALTER TABLE `default_process_intro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `default_proces_categories`
+--
+ALTER TABLE `default_proces_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `default_proces_images`
+--
+ALTER TABLE `default_proces_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `default_projects`
+--
+ALTER TABLE `default_projects`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `default_projects_intro`
+--
+ALTER TABLE `default_projects_intro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `default_project_categories`
+--
+ALTER TABLE `default_project_categories`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `default_project_images`
+--
+ALTER TABLE `default_project_images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `default_services`
+--
+ALTER TABLE `default_services`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT de la tabla `default_services_intro`
+--
+ALTER TABLE `default_services_intro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `default_work_team`
+--
+ALTER TABLE `default_work_team`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

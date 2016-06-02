@@ -254,7 +254,7 @@ class Contact_Us extends Public_Controller {
         $this->load->library('user_agent');
 
         Events::trigger('email', array(
-            'name' => 'coldpack',
+            'name' => 'agrollano',
             'nombre' => $data['id_subject'],
             'comment' => $data['comment'],
             'slug' => 'quiz-notification',

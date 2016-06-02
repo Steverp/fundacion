@@ -8,7 +8,7 @@
         <div class="center">
             <ul class="tabs">
                 <li class="tab col s3"><a class="active" href="#test1">Cotizador</a></li>
-                <li class="tab col s3"><a  href="#test2">Encuesta de servicio</a></li>
+                <li class="tab col s3"><a  href="#test2">Donaciones</a></li>
             </ul>
         </div>
         <div id="test1">
