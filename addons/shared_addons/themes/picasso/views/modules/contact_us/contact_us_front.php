@@ -97,24 +97,38 @@
             <div class="row">
                 <div class="clear">&nbsp;&nbsp;</div>
                 <div id="loading_contacts2"></div>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_donations">
+                    <input type="hidden" name="business" value="steverp95@outlook.es">
+                    <input type="hidden" name="lc" value="CO">
+                    <input type="hidden" name="item_name" value="Fundacion Agrollano">
+                    <input type="hidden" name="no_note" value="0">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
+
                 <?php echo form_open(site_url('contact_us/quiz'), 'class="crud form_contac_ajax2"'); ?>
                 <div class="col s12 l6">
-                    <label for="textarea1">Lorem ipsum dolor sit amet, consectetur ¿Lorem ipsum dolor sit amet, consectetur?</label>
-                    <div class="input-field ">      
-                        <select style="display:block" name="id_subject" id="id_subject" class="id_subject">
-                            {{ emails_area }}
-                            <option value="{{ id }}">{{ title }}</option>
-                            {{ /emails_area }}
-                        </select>
-                    </div>
+                    <!--                    <label for="textarea1">Lorem ipsum dolor sit amet, consectetur ¿Lorem ipsum dolor sit amet, consectetur?</label>
+                                        <div class="input-field ">      
+                                            <select style="display:block" name="id_subject" id="id_subject" class="id_subject">
+                                                {{ emails_area }}
+                                                <option value="{{ id }}">{{ title }}</option>
+                                                {{ /emails_area }}
+                                            </select>
+                                        </div>-->
+
                 </div>
-                <div class="col s12 l6">
-                    <div class="input-field ">
-                        <textarea id="comment" name="comment" class="materialize-textarea comment"></textarea>
-                        <label for="comment">Lorem ipsum dolor sit amet, consectetur ¿Lorem ipsum dolor sit amet, consectetur?</label>
-                    </div>
-                    <input type="submit" class="waves-effect waves-light btn right" name="btnAction" value="Enviar">
-                </div>
+                <!--                <div class="col s12 l6">
+                                    <div class="input-field ">
+                                        <textarea id="comment" name="comment" class="materialize-textarea comment"></textarea>
+                                        <label for="comment">Lorem ipsum dolor sit amet, consectetur ¿Lorem ipsum dolor sit amet, consectetur?</label>
+                                    </div>
+                                    <input type="submit" class="waves-effect waves-light btn right" name="btnAction" value="Enviar">
+                                </div>-->
                 <?php echo form_close(); ?>
             </div>
 

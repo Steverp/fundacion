@@ -65,7 +65,7 @@
 	<div class="wrapper animated fadeInUp" id="login-credits">
 		<!--Copyright &copy; <?php echo date('Y'); ?> FireSale 
 		<span id="version">Version <?php echo FS_VERSION; ?></span> -->
-        <div class="footer-autor"><span id="ahorranito2"></span><a href="http://www.imaginamos.com" target="_blank">Diseño Web</a><div>:</div><a href="http://www.imaginamos.com" target="_blank">imagin<span>a</span>mos.com</a></div>
+        <div class="footer-autor"><span id="ahorranito2"></span><a href="www.koi-ti.com" target="_blank">KOI Tecnologias de la Información</a><div></div>
 	</div>
 </footer>
 </body>

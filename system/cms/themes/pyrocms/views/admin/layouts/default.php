@@ -94,7 +94,7 @@
         <footer class="clearfix">
             <div class="wrapper">
                 <!--<p class="credits">Copyright &copy; <?php echo date('Y'); ?> FireSale &nbsp; <span>Version <?php echo FS_VERSION; ?> &nbsp; Rendered in {elapsed_time} sec. using {memory_usage}.</span></p> -->
-    			<div class="footer-autor"><span id="ahorranito2"></span><a href="http://www.imaginamos.com" target="_blank">Diseño Web</a><div>:</div><a href="http://www.imaginamos.com" target="_blank">imagin<span>a</span>mos.com</a></div>
+    			<div class="footer-autor"><a href="www.koi-ti.com" target="_blank">KOI Tecnologias de la Información</a><div></div></div>
                 <ul id="lang">
                     <form action="<?php echo current_url(); ?>" id="change_language" method="get">
                         <select class="chzn" name="lang" onchange="this.form.submit();">
